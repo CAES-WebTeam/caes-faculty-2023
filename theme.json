@@ -1,0 +1,107 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"custom": false,
+			"customGradient": false,
+			"customDuotone": false,
+			"palette": [
+				{
+					"slug": "background",
+					"color": "#ffffff",
+					"name": "Background"
+				},
+				{
+					"slug": "foreground",
+					"color": "#333333",
+					"name": "Foreground"
+				},
+				{
+					"slug": "primary",
+					"color": "#ba0c2f",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#00a3ad",
+					"name": "Secondary"
+				}
+			]
+		},
+		"spacing": {
+			"units": []
+		},
+		"layout": {
+			"contentSize": "700px",
+			"wideSize": "1100px"
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "",
+					"slug": "",
+					"fontFamily": ""
+				}
+			],
+			"fontSizes":[
+				{
+					"slug": "",
+					"size": "",
+					"name": ""
+				}
+			]
+		},
+		"custom": {}
+	},
+	"styles": {
+		"spacing":{
+			"blockGap": "",
+			"margin": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"color": {
+			"background": "",
+			"text": ""
+		},
+		"typography": {
+			"fontSize": "",
+			"fontFamily": "",
+			"lineHeight": ""
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": ""
+				}
+			}
+		},
+		"blocks": {}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	],
+	"customTemplates": [
+		{
+			"name": "",
+			"title": "",
+			"postTypes": [ "post","page" ]
+		}
+	]
+}
