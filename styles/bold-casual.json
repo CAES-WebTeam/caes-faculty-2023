@@ -1,0 +1,45 @@
+{
+	"version": 2,
+	"title": "Casual Bold",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "background",
+					"color": "#ffffff",
+					"name": "Chapell Bell White - Background"
+				},
+				{
+					"slug": "background2",
+					"color": "#eaeaea",
+					"name": "Gray - Background 2"
+				},
+				{
+					"slug": "foreground",
+					"color": "#000000",
+					"name": "Arch Black - Foreground"
+				},
+				{
+					"slug": "foreground2",
+					"color": "#333333",
+					"name": "Dark Gray - Foreground 2"
+				},
+				{
+					"slug": "primary",
+					"color": "#ba0c2f",
+					"name": "Bulldog Red - Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#004e60",
+					"name": "Olympic - Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#e4002b",
+					"name": "Glory Glory - Tertiary"
+				}
+			]
+		}
+	}
+}

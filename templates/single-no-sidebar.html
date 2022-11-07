@@ -1,0 +1,51 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"full","layout":{"inherit":true}} -->
+<main class="wp-block-group alignfull">
+
+	<!-- wp:group {"align":"full","className":"caes-fac-post-info","layout":{"type":"flex","orientation":"vertical","inherit":true}} -->
+	<div class="wp-block-group alignfull caes-fac-post-info">
+		<!-- wp:post-title {"level":1,"fontSize":"gigantic"} /-->
+		<!-- wp:group {"className":"caes-fac-post-info-group","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom","orientation":"horizontal"}} -->
+		<div class="wp-block-group caes-fac-post-info-group">
+			<!-- wp:post-author {"showAvatar":false,"byline":"Written by"} /-->
+			<!-- wp:post-date {"format":null} /-->
+			<!-- wp:uga-caes/caes-fac-post-social-share /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:post-featured-image {"align":"wide"} /-->
+
+	<!-- wp:post-content {"align":"full","layout":{"inherit":true}} /-->
+
+	<!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+	<div class="wp-block-group">
+		<!-- wp:post-terms {"term":"category","prefix":"Posted in: "} /-->
+
+		<!-- wp:post-terms {"term":"post_tag","prefix":"Tags: "} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:spacer {"height":"10px"} -->
+	<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:post-author {"avatarSize":96,"showBio":true,"style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"backgroundColor":"background-two","fontSize":"medium"} /-->
+
+	<!-- wp:spacer {"height":"10px"} -->
+	<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:group {"align":"full","className":"caes-fac-post-prev-next","layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between","flexWrap":"wrap","inherit":true}} -->
+	<div class="wp-block-group caes-fac-post-prev-next alignfull">
+		<!-- wp:post-navigation-link {"type":"previous","label":"Previous: ","showTitle":true,"className":"caes-fac-post-prev"} /-->
+		<!-- wp:post-navigation-link {"showTitle":true,"label":"Next: ","className":"caes-fac-post-next"} /-->
+	</div>
+	<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

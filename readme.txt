@@ -1,4 +1,4 @@
-=== UGA CAES 2023 ===
+=== UGA CAES FACULTY 2023 ===
 Contributors: OIT Web Team
 Tested up to: 6.0
 Requires at least: 5.8
@@ -14,7 +14,7 @@ A full site editing theme. Empty version.
 1.0.0 Initial release
 
 == Licence ==
-UGA CAES 2023 is distributed under the terms of the GNU GPL.
+UGA CAES FACULTY 2023 is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
