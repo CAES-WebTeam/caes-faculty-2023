@@ -1,0 +1,306 @@
+@import 'reusable';
+
+/* CAES STYLES */
+
+main,
+footer {
+  margin-block-start: 0 !important;
+}
+
+input,
+button,
+textarea {
+  font-family: var(--wp--preset--font-family--merriweather-sans);
+}
+
+// Body
+
+.caes-fac-body-padding {
+  padding-left: clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+  padding-right: clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+}
+
+// Preheader
+
+.caes-fac-preheader {
+  padding: 0 !important;
+}
+
+.caes-fac-preheader .wp-block-group {
+  gap: var(--wp--custom--spacing--third-baseline) !important;
+}
+
+
+.caes-fac-preheader .components-resizable-box__container,
+.caes-fac-preheader-uga-logo>a {
+  display: flex;
+  align-items: center;
+}
+
+// Header
+
+.caes-fac-header {
+  padding: var(--wp--custom--spacing--half-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline)) !important;
+}
+
+// Sub Footer
+
+.caes-fac-sub-footer {
+  padding: var(--wp--custom--spacing--half-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline)) !important;
+
+  .wp-block-loginout {
+    font-size: var(--wp--preset--font-size--small);
+  }
+}
+
+// Left column
+
+.caes-fac-post-info-group {
+  align-items: end !important;
+}
+
+.caes-fac-post-cols-left {
+  margin-top: var(--wp--custom--spacing--baseline) !important;
+}
+
+.caes-fac-post-cols-left>.caes-fac-post-info {
+  margin-top: 0 !important;
+}
+
+@media (min-width:600px) {
+  .caes-fac-post-cols-left>.caes-fac-post-info {
+    margin-top: 0 !important;
+  }
+}
+
+// Right column / sidebar styles
+
+.caes-fac-post-cols-right {
+  margin-bottom: var(--wp--custom--spacing--baseline) !important;
+}
+
+.caes-fac-post-cols-right h2 {
+  font-size: var(--wp--preset--font-size--large);
+}
+
+.caes-fac-post-cols-right h3 {
+  font-size: var(--wp--preset--font-size--medium);
+}
+
+.caes-fac-post-cols-right h4 {
+  font-size: var(--wp--preset--font-size--normal);
+}
+
+.caes-fac-post-cols-right h5 {
+  font-size: var(--wp--preset--font-size--small);
+}
+
+.caes-fac-post-cols-right h6 {
+  font-size: var(--wp--preset--font-size--tiny);
+}
+
+.caes-fac-post-cols-right .sidebar-title {
+  text-align: center;
+  padding: var(--wp--custom--spacing--half-baseline);
+  background-color: var(--wp--preset--color--background-two);
+}
+
+@media (max-width:781px) {
+  main.caes-fac-body-padding .caes-fac-post-cols-right {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Post information
+
+.caes-fac-post-info {
+  margin-top: var(--wp--custom--spacing--baseline) !important;
+  margin-bottom: var(--wp--custom--spacing--baseline) !important;
+}
+
+.wp-block-post-author__byline {
+  font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-author__bio {
+  font-size: var(--wp--preset--font-size--normal);
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+// Spacing helpers
+
+.wp-block-post-content>.alignfull,
+.block-editor-block-list__layout.is-root-container>.wp-block[data-align=full] {
+  margin-left: calc(-1 * clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline))) !important;
+  margin-right: calc(-1 * clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline))) !important;
+  width: calc(100% + clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline)) + clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline))) !important;
+}
+
+.wp-block-group.has-background:not([style*="padding"]) {
+  padding: clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+}
+
+@media (min-width:600px) {
+  .caes-fac-post-info,
+  .caes-fac-post-cols-left,
+  .caes-fac-post-cols-right {
+    margin-top: var(--wp--custom--spacing--double-baseline) !important;
+    margin-bottom: var(--wp--custom--spacing--double-baseline) !important;
+  }
+}
+
+// Helper classes
+
+.caes-fac-b-margin {
+  margin-block-end: var(--wp--custom--spacing--baseline) !important;
+}
+
+// Block editor overrides
+
+.is-root-container.edit-site-block-editor__block-list {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Search
+
+.wp-block-search__button {
+  background-color: var(--wp--preset--color--primary);
+  padding: 0.5rem;
+  margin-left: 0.2rem;
+  transition: box-shadow 300ms ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+  }
+}
+
+// Media and text
+
+.wp-block-media-text__content {
+  margin-block-start: var(--wp--custom--spacing--baseline);
+  margin-block-end: var(--wp--custom--spacing--baseline);
+}
+
+// Excerpt more link
+
+a.wp-block-post-excerpt__more-link {
+  font-size: var(--wp--preset--font-size--small);
+  line-height: 1;
+}
+
+// Latest posts block
+
+.wp-block-latest-posts__post-excerpt {
+  font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-latest-posts.wp-block-latest-posts__list li {
+  margin-block-start: 0.8rem;
+  line-height: 1.5;
+}
+
+// RSS
+
+li.wp-block-rss__item {
+  margin-block-start: 1rem;
+  line-height: 1.5;
+}
+
+.wp-block-rss__item-title {
+  font-size: var(--wp--preset--font-size--medium);
+}
+
+.wp-block-rss__item-excerpt {
+  margin-block-start: 0.5rem;
+}
+
+// Headshot - Quote Style
+
+figure.caes-fac-headshot {
+  max-width: 300px;
+  aspect-ratio: 1/1;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  // added for editor view
+  &>div {
+    height: 100% !important;
+  }
+}
+
+// Information and Important Notes
+
+.important,
+.information {
+  .note-text {
+    &::before {
+      margin-top: 3px;
+      content: "";
+      display: block;
+      height: 30px;
+      width: 30px;
+      background-color: var(--wp--preset--color--foreground-two);
+    }
+  }
+}
+
+.important {
+  .note-text {
+    &::before {
+      -webkit-mask: url('../images/important.svg') no-repeat 50% 50%;
+      mask: url('../images/important.svg') no-repeat 50% 50%;
+    }
+  }
+}
+
+.information {
+  .note-text {
+    &::before {
+      -webkit-mask: url('../images/information.svg') no-repeat 50% 50%;
+      mask: url('../images/information.svg') no-repeat 50% 50%;
+    }
+  }
+}
+
+// Grid List Styles
+
+.grid-items {
+  .grid-item {
+    @include grid-item();
+  }
+
+  .grid-item-img-container {
+    @include grid-item-img-figure();
+
+    .components-drop-zone {
+      display: none;
+    }
+
+    .components-resizable-box__container {
+      height: 100% !important;
+      width: 100% !important;
+    }
+  }
+
+  .grid-item-grid-info {
+    @include grid-item-info();
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}

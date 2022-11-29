@@ -1,0 +1,21 @@
+// File block styles
+
+// General styles
+
+a.wp-block-file__button.wp-element-button {
+    background-color: var(--wp--preset--color--primary);
+    border-radius: 3px;
+    transition: box-shadow 300ms ease;
+}
+
+a.wp-block-file__button.wp-element-button:hover,
+a.wp-block-file__button.wp-element-button:focus {
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+}
+
+:where(.wp-block-file__button):is(a):active,
+:where(.wp-block-file__button):is(a):focus,
+:where(.wp-block-file__button):is(a):hover,
+:where(.wp-block-file__button):is(a):visited {
+    opacity: 1;
+}

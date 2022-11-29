@@ -1,0 +1,101 @@
+@import '../reusable';
+
+// Query loop block styles
+
+// General styles
+
+.wp-block-query {
+    .wp-block-post-title {
+        a {
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .wp-block-query-pagination {
+        margin-block-start: var(--wp--custom--spacing--baseline) !important;
+    }
+
+}
+
+.wp-block-cover {
+    .has-primary-background-color~* {
+        .wp-block-query-pagination a:where(:not(.wp-element-button)) {
+            background-color: var(--wp--preset--color--background);
+        }
+    }
+}
+
+// Query loop - CAES List
+
+.caes-fac-query-loop-one {
+
+    .caes-fac-query-loop-img-container {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    ul li.wp-block-post.sticky {
+        background: var(--wp--preset--color--background-two);
+        padding: var(--wp--custom--spacing--baseline);
+        border-radius: 3px;
+    }
+}
+
+@media (min-width:600px) {
+
+    .caes-fac-query-loop-one {
+        .caes-fac-query-loop-img-exp {
+            display: flex;
+            flex-wrap: nowrap !important;
+            align-items: flex-start !important;
+        }
+
+        .caes-fac-query-loop-img-container {
+            width: 35%;
+            flex-shrink: 0;
+            margin-right: var(--wp--custom--spacing--baseline) !important;
+        }
+
+        .wp-block-post-excerpt__excerpt {
+            margin-top: 0;
+        }
+    }
+
+}
+
+// Query loop - CAES Grid
+
+.caes-fac-query-loop-grid {
+    .caes-fac-query-loop-img-container {
+        @include grid-item-img-figure();
+    }
+
+    .caes-fac-query-loop-grid-info {
+        @include grid-item-info();
+    }
+
+    .caes-fac-query-loop-grid-item {
+        @include grid-item();
+    }
+
+}
+
+.wp-block-cover {
+    .caes-fac-query-loop-grid {
+        .caes-fac-query-loop-grid-info {
+            border: 0;
+        }
+    }
+}

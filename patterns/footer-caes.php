@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * Title: Footer with widget areas and CAES branding.
+ * Slug: uga-caes-fac-2023/footer-caes
+ * Categories: footer
+ * Block Types: core/template-part/footer
+ * Viewport Width: 1280
+ */
+?>
+
+<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull">
+    <!-- wp:group {"className":"caes-fac-footer","align":"full","backgroundColor":"background-two","layout":{"inherit":true}} -->
+    <div class="wp-block-group alignfull caes-fac-footer has-background-two-background-color has-background">
+        <!-- wp:columns {"align":"wide"} -->
+        <div class="wp-block-columns alignwide">
+            <!-- wp:column -->
+            <div class="wp-block-column"></div>
+            <!-- /wp:column -->
+
+            <!-- wp:column -->
+            <div class="wp-block-column"></div>
+            <!-- /wp:column -->
+
+            <!-- wp:column -->
+            <div class="wp-block-column">
+                <!-- wp:uga-caes/caes-fac-footer-brand {"lock":{"move":true,"remove":true}} /-->
+            </div>
+            <!-- /wp:column -->
+        </div>
+        <!-- /wp:columns -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"className":"caes-fac-sub-footer","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true}} -->
+    <div class="wp-block-group alignfull caes-fac-sub-footer has-background-color has-foreground-background-color has-text-color has-background has-link-color">
+        <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+        <div class="wp-block-group alignwide">
+            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"fontSize":"normal"} -->
+                <p class="has-normal-font-size">Administration</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:loginout /-->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:group -->
+            <div class="wp-block-group">
+                <!-- wp:uga-caes/caes-fac-footer-copyright {"lock":{"move":true,"remove":true}} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->

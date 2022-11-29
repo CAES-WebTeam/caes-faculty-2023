@@ -1,0 +1,7 @@
+// Separator block styles
+
+// General styles
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+    width: unset;
+}

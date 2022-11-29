@@ -2,7 +2,7 @@
 /**
  * Title: Official UGA footer.
  * Slug: uga-caes-fac-2023/footer-uga
- * Categories: uga-caes-fac-2023-footer
+ * Categories: footer
  * Block Types: core/template-part/footer
  * Viewport Width: 1280
  */
