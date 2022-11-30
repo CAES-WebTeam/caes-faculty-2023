@@ -143,6 +143,7 @@ textarea {
 }
 
 @media (min-width:600px) {
+
   .caes-fac-post-info,
   .caes-fac-post-cols-left,
   .caes-fac-post-cols-right {
@@ -301,6 +302,36 @@ figure.caes-fac-headshot {
       &:focus {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+// PARVUS - Parvus is a lightbox library for images.
+// Here we're importing the scss library, and adding our own overrides.
+
+@import 'parvus/src/scss/parvus';
+
+.parvus-zoom {
+
+  &__indicator {
+    background-color: var(--wp--preset--color--foreground-two);
+  }
+
+}
+
+.parvus {
+
+  font: var(--wp--preset--font-family--merriweather-sans);
+
+  &__overlay {
+    background-color: var(--wp--preset--color--background);
+  }
+
+  &__btn {
+    background-color: var(--wp--preset--color--foreground-two);
+
+    &:hover {
+      background-color: var(--wp--preset--color--primary);
     }
   }
 }

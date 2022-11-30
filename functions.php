@@ -22,19 +22,23 @@ define('UGA_CAES_FAC_2023_VERSION', wp_get_theme()->get('Version'));
 function uga_caes_fac_2023_setup()
 {
 
+	// Add theme style
 	add_editor_style('./assets/css/style-shared.min.css');
+
+	// Add theme script
+	// wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
 
 	// Add block styles.
 	add_theme_support('wp-block-styles');
 
 	// Remove core block patterns.
-	remove_theme_support( 'core-block-patterns' );
+	remove_theme_support('core-block-patterns');
 
 	/*
 	 * Load additional block styles.
 	 * See details on how to add more styles in the readme.txt.
 	 */
-	$styled_blocks = ['navigation','query','button','separator','columns','embed','image','file','comments','tag-cloud'];
+	$styled_blocks = ['navigation', 'query', 'button', 'separator', 'columns', 'embed', 'image', 'file', 'comments', 'tag-cloud'];
 	foreach ($styled_blocks as $block_name) {
 		$args = array(
 			'handle' => "uga-caes-fac-2023-$block_name",
@@ -71,7 +75,8 @@ function uga_caes_fac_2023_styles()
 		[],
 		wp_get_theme()->get('Version')
 	);
-	wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style('dashicons');
+	wp_enqueue_script('uga-caes-fac-2023-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'uga_caes_fac_2023_styles');
 
@@ -115,12 +120,13 @@ add_action('init', 'uga_caes_fac_2023_register_block_pattern_categories', 9);
 
 // Removes some default core styles with remove-block-styles.js
 
-function remove_block_style() {
-    // Register the block editor script.
-    wp_register_script( 'remove-block-style', get_theme_file_uri() . '/assets/js/remove-block-styles.js', [ 'wp-blocks', 'wp-edit-post' ] );
-    // register block editor script.
-    register_block_type( 'remove/block-style', [
-        'editor_script' => 'remove-block-style',
-    ] );
+function remove_block_style()
+{
+	// Register the block editor script.
+	wp_register_script('remove-block-style', get_theme_file_uri() . '/assets/js/remove-block-styles.js', ['wp-blocks', 'wp-edit-post']);
+	// register block editor script
+	register_block_type('remove/block-style', [
+		'editor_script' => 'remove-block-style',
+	]);
 }
-add_action( 'init', 'remove_block_style' );
+add_action('init', 'remove_block_style');
