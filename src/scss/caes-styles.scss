@@ -309,23 +309,23 @@ figure.caes-fac-headshot {
 // Tobii is a lightbox library for images, video, and inline html.
 // Here we're importing the scss library, and adding our own overrides.
 
-@import '@midzer/tobii/src/scss/tobii';
+@import 'parvus/src/scss/parvus';
 
-:root {
-  --tobii-transition-duration: 0.5s;
-  --tobii-lightbox-background: rgba(255, 255, 255, 1);
-
-  --tobii-caption-background: #fff;
-  --tobii-caption-color: #000;
-
-  --tobii-counter-color: #000;
-
-  --tobii-button-navigation-background: #fff;
-  --tobii-button-color: #000;
-
-  --tobii-loader-color: #000;
+.parvus__slide {
+  background: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--foreground);
+  font-family: var(--wp--preset--font-family--merriweather-sans);
 }
 
-.tobii__slide figure>figcaption {
-  padding: 1rem;
+.parvus__btn {
+  background-color: var(--wp--preset--color--primary);
+  &:hover {
+    background-color: var(--wp--preset--color--foreground);
+    color: var(--wp--preset--color--background);
+  }
+}
+
+.parvus-zoom__indicator {
+  background-color: var(--wp--preset--color--background);
+  color: var(--wp--preset--color--foreground);
 }
