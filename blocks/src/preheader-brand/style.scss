@@ -1,0 +1,193 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-uga-caes-caes-fac-preheader-brand {
+    max-width: var(--wp--style--global--wide-size) !important;
+    font-size: var(--wp--preset--font-size--tiny);
+    display: flex;
+    flex-direction: column;
+
+    a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .caes-fac-preheader-brand {
+        padding: var(--wp--custom--spacing--third-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+        display: flex;
+        align-items: center;
+    }
+
+    .caes-fac-preheader-uga {
+        display: block;
+        height: 8px;
+        width: 148px;
+        background-repeat: no-repeat;
+
+        span {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+    }
+
+    .caes-fac-preheader-left,
+    .caes-fac-preheader-right {
+        display: flex;
+        align-items: center;
+
+        p {
+            padding: var(--wp--custom--spacing--third-baseline) var(--wp--custom--spacing--third-baseline) var(--wp--custom--spacing--third-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+            margin: 0;
+        }
+    }
+
+}
+
+.has-foreground-background-color {
+    .wp-block-uga-caes-caes-fac-preheader-brand {
+
+        a {
+            color: var(--wp--preset--color--background);
+        }
+
+        .caes-fac-preheader-uga {
+            background-image: url('../../assets/images/GEORGIA-HW-W.svg');
+        }
+
+        .caes-fac-preheader-right {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+            p {
+                border-right: 1px solid rgba(255, 255, 255, 0.3);
+                line-height: 1rem;
+            }
+        }
+
+    }
+}
+
+.has-background-background-color {
+    .wp-block-uga-caes-caes-fac-preheader-brand {
+
+        a {
+            color: var(--wp--preset--color--foreground);
+        }
+
+        .caes-fac-preheader-uga {
+            background-image: url('../../assets/images/GEORGIA-HW-1CB.svg');
+        }
+
+        .caes-fac-preheader-right {
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+            p {
+                border-right: 1px solid rgba(0, 0, 0, 0.2);
+                line-height: 1rem;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 782px) {
+    .wp-block-uga-caes-caes-fac-preheader-brand {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 clamp(1.2rem,0.429rem + 2.286vw,var(--wp--custom--spacing--baseline))!important;
+    }
+
+    .has-background-background-color,
+    .has-foreground-background-color {
+        .wp-block-uga-caes-caes-fac-preheader-brand {
+            .caes-fac-preheader-brand {
+                padding: var(--wp--custom--spacing--third-baseline) 0;
+            }
+            .caes-fac-preheader-right {
+                border-top: 0;
+            }
+        }
+    }
+}
+
+// Preheader search
+
+#preheaderSearchToggle {
+    padding: var(--wp--custom--spacing--third-baseline) var(--wp--custom--spacing--fourth-baseline);
+    background-color: transparent;
+    border: 0;
+    font-size: var(--wp--preset--font-size--tiny);
+    cursor: pointer;
+
+    .dashicons {
+        font-size: var(--wp--preset--font-size--small);
+        width: var(--wp--preset--font-size--small);
+        height: var(--wp--preset--font-size--small);
+    }
+}
+
+.caes-fac-preheader-right {
+    position: relative;
+
+    .search-container {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        padding: var(--wp--custom--spacing--half-baseline);
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 200ms;
+
+        input {
+            padding: 0.5rem;
+            border-radius: 0;
+            border: 0;
+
+            &[type="submit"] {
+                color: var(--wp--preset--color--white);
+                background-color: var(--wp--preset--color--primary);
+            }
+        }
+
+        &[aria-hidden="true"] {
+            opacity: 0;
+            visibility: hidden;
+            transition: visibility 0s linear 200ms, opacity 200ms;
+        }
+    }
+}
+
+.caes-fac-preheader.has-foreground-background-color {
+    .search-container {
+        background-color: var(--wp--preset--color--foreground);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    #preheaderSearchToggle {
+        color: var(--wp--preset--color--background);
+    }
+}
+
+.caes-fac-preheader.has-background-background-color {
+    .search-container {
+        background-color: var(--wp--preset--color--background);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+        input[type="search"] {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    #preheaderSearchToggle {
+        color: var(--wp--preset--color--foreground);
+    }
+}

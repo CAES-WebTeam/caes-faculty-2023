@@ -1,0 +1,81 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-uga-caes-caes-fac-post-social-share {
+	.socialshare {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.socialshare a,
+	.socialshare svg {
+		display: block;
+	}
+
+	.socialshare a {
+		position: relative;
+		height: 32px;
+		width: 32px;
+	}
+
+	.socialshare svg {
+		height: 100%;
+		width: 100%;
+	}
+
+	.soc-facebook-icon:hover,
+	.soc-twitter-icon:hover,
+	.soc-linkedin-icon:hover,
+	.soc-mail-icon:hover {
+		border-radius: 5%;
+		color: #fff;
+		fill: #fff;
+		-webkit-transform: scale(1.25);
+		transform: scale(1.25);
+		transition: background-color 0.250s, -webkit-transform 0.250s ease-out;
+		transition: background-color 0.250s, transform 0.250s ease-out;
+		transition: background-color 0.250s, transform 0.250s ease-out, -webkit-transform 0.250s ease-out;
+	}
+
+	.soc-facebook-icon {
+		color: #266ed9;
+		fill: #266ed9;
+	}
+
+	.soc-facebook-icon:hover {
+		background: #266ed9;
+	}
+
+	.soc-twitter-icon {
+		color: #26b5d9;
+		fill: #26b5d9;
+	}
+
+	.soc-twitter-icon:hover {
+		background: #26b5d9;
+	}
+
+	.soc-linkedin-icon {
+		color: #2691d9;
+		fill: #2691d9;
+	}
+
+	.soc-linkedin-icon:hover {
+		background: #2691d9;
+	}
+
+	.soc-mail-icon {
+		color: #d9b526;
+		fill: #d9b526;
+	}
+
+	.soc-mail-icon:hover {
+		background: #d9b526;
+	}
+}

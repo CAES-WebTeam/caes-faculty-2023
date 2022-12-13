@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "uga-caes/caes-fac-footer-brand",
+  "version": "0.1.0",
+  "title": "UGA CAES Faculty 2023 - Footer Brand",
+  "category": "widgets",
+  "icon": "layout",
+  "description": "Footer branding block for the UGA CAES Faculty 2023 theme.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "brandEntity": {
+      "type": "string",
+      "default": "caes"
+    }
+  },
+  "textdomain": "caes-fac-footer-brand",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
