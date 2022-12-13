@@ -130,3 +130,92 @@ function remove_block_style()
 	]);
 }
 add_action('init', 'remove_block_style');
+
+
+//////////////////////// START BLOCKS FOR THEME ////////////////////////////
+
+function uga_caes_caes_fac_blocks_block_init()
+{
+	register_block_type(
+		__DIR__ . '/blocks/build/footer-brand',
+		array(
+			'render_callback' => 'uga_caes_caes_fac_footer_brand_render_callback',
+		)
+	);
+	register_block_type(
+		__DIR__ . '/blocks/build/footer-copyright',
+		array(
+			'render_callback' => 'uga_caes_caes_fac_footer_copyright_render_callback',
+		)
+	);
+	register_block_type(
+		__DIR__ . '/blocks/build/preheader-brand',
+		array(
+			'render_callback' => 'uga_caes_caes_fac_preheader_brand_render_callback',
+		)
+	);
+	register_block_type(
+		__DIR__ . '/blocks/build/uga-footer',
+		array(
+			'render_callback' => 'uga_caes_caes_fac_uga_footer_render_callback',
+		)
+	);
+	register_block_type(
+		__DIR__ . '/blocks/build/post-social-share',
+		array(
+			'render_callback' => 'uga_caes_caes_fac_post_social_share_render_callback',
+		)
+	);
+}
+add_action('init', 'uga_caes_caes_fac_blocks_block_init');
+
+/**
+ * Render callback function.
+ *
+ * @param array    $attributes The block attributes.
+ * @param string   $content    The block content.
+ * @param WP_Block $block      Block instance.
+ *
+ * @return string The rendered output.
+ */
+
+
+function uga_caes_caes_fac_footer_brand_render_callback($attributes, $content, $block)
+{
+	ob_start();
+	require get_template_directory().'/blocks/build/footer-brand/template.php';
+	return ob_get_clean();
+}
+
+function uga_caes_caes_fac_footer_copyright_render_callback($attributes, $content, $block)
+{
+	ob_start();
+	require get_template_directory().'/blocks/build/footer-copyright/template.php';
+	return ob_get_clean();
+}
+
+function uga_caes_caes_fac_preheader_brand_render_callback($attributes, $content, $block)
+{
+	//not found this file
+	//wp_enqueue_script('uga-caes-caes-fac-preheader-brand-view-script');	
+	//wp_register_script('uga-caes-caes-fac-preheader-brand-view-script', $blockpath . 'js/script.js','','1.0',true);
+	ob_start();
+	require get_template_directory().'/blocks/build/preheader-brand/template.php';
+	return ob_get_clean();
+}
+
+function uga_caes_caes_fac_uga_footer_render_callback($attributes, $content, $block)
+{
+	ob_start();
+	require get_template_directory().'/blocks/build/uga-footer/template.php';
+	return ob_get_clean();
+}
+
+function uga_caes_caes_fac_post_social_share_render_callback($attributes, $content, $block)
+{
+	ob_start();
+	require get_template_directory().'/blocks/build/post-social-share/template.php';
+	return ob_get_clean();
+}
+
+//////////////////////// END BLOCKS FOR THEME ////////////////////////////

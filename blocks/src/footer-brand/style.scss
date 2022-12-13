@@ -1,0 +1,36 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-uga-caes-caes-fac-footer-brand {
+	.wp-block-image.aligncenter {
+		display: flex;
+    	justify-content: center;
+		img {
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+		}
+	}
+	.social-link-list {
+		margin-bottom: 0;
+		list-style: none;
+		padding: 0;
+		display: flex;
+		gap: 0.8rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		.social-link-utem a {
+			display: block;
+		}
+		.social-link-item a, .social-link-item a svg {
+			color: var(--wp--preset--color--foreground-2);
+			fill: var(--wp--preset--color--foreground-2);
+			width: 1.8rem;
+			height: 1.8rem;
+		}
+	}
+}
