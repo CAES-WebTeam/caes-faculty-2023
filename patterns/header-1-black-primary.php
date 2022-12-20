@@ -29,7 +29,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:navigation {"overlayBackgroundColor":"foreground-two","overlayTextColor":"background","className":"caes-fac-navigation-one","icon":"menu","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} /-->
+            <!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"right"}} /-->
         </div>
         <!-- /wp:group -->
     </div>

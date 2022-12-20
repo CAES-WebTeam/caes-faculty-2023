@@ -3,8 +3,5 @@
 // General styles
 
 .wp-block-button .wp-block-button__link {
-    transition: box-shadow 300ms ease;
-    &:hover,&:focus {
-        box-shadow: 0 0 10px rgb(0 0 0 / 30%);
-    }
+    transition: var(--wp--custom--transition--box-hover);
 }

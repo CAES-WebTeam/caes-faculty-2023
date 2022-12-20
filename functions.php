@@ -38,7 +38,7 @@ function uga_caes_fac_2023_setup()
 	 * Load additional block styles.
 	 * See details on how to add more styles in the readme.txt.
 	 */
-	$styled_blocks = ['navigation', 'query', 'button', 'separator', 'columns', 'embed', 'image', 'file', 'comments', 'tag-cloud'];
+	$styled_blocks = ['navigation', 'query', 'button', 'separator', 'columns', 'embed', 'image', 'file', 'comments', 'tag-cloud', 'search'];
 	foreach ($styled_blocks as $block_name) {
 		$args = array(
 			'handle' => "uga-caes-fac-2023-$block_name",
@@ -75,7 +75,6 @@ function uga_caes_fac_2023_styles()
 		[],
 		wp_get_theme()->get('Version')
 	);
-	wp_enqueue_style('dashicons');
 	wp_enqueue_script('uga-caes-fac-2023-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'uga_caes_fac_2023_styles');
@@ -132,7 +131,7 @@ function remove_block_style()
 add_action('init', 'remove_block_style');
 
 
-//////////////////////// START BLOCKS FOR THEME ////////////////////////////
+/* START BLOCKS FOR THEME */
 
 function uga_caes_caes_fac_blocks_block_init()
 {
@@ -183,14 +182,14 @@ add_action('init', 'uga_caes_caes_fac_blocks_block_init');
 function uga_caes_caes_fac_footer_brand_render_callback($attributes, $content, $block)
 {
 	ob_start();
-	require get_template_directory().'/blocks/build/footer-brand/template.php';
+	require get_template_directory() . '/blocks/build/footer-brand/template.php';
 	return ob_get_clean();
 }
 
 function uga_caes_caes_fac_footer_copyright_render_callback($attributes, $content, $block)
 {
 	ob_start();
-	require get_template_directory().'/blocks/build/footer-copyright/template.php';
+	require get_template_directory() . '/blocks/build/footer-copyright/template.php';
 	return ob_get_clean();
 }
 
@@ -200,22 +199,21 @@ function uga_caes_caes_fac_preheader_brand_render_callback($attributes, $content
 	//wp_enqueue_script('uga-caes-caes-fac-preheader-brand-view-script');	
 	//wp_register_script('uga-caes-caes-fac-preheader-brand-view-script', $blockpath . 'js/script.js','','1.0',true);
 	ob_start();
-	require get_template_directory().'/blocks/build/preheader-brand/template.php';
+	require get_template_directory() . '/blocks/build/preheader-brand/template.php';
 	return ob_get_clean();
 }
 
 function uga_caes_caes_fac_uga_footer_render_callback($attributes, $content, $block)
 {
 	ob_start();
-	require get_template_directory().'/blocks/build/uga-footer/template.php';
+	require get_template_directory() . '/blocks/build/uga-footer/template.php';
 	return ob_get_clean();
 }
 
 function uga_caes_caes_fac_post_social_share_render_callback($attributes, $content, $block)
 {
 	ob_start();
-	require get_template_directory().'/blocks/build/post-social-share/template.php';
+	require get_template_directory() . '/blocks/build/post-social-share/template.php';
 	return ob_get_clean();
 }
-
-//////////////////////// END BLOCKS FOR THEME ////////////////////////////
+/* END BLOCKS FOR THEME */

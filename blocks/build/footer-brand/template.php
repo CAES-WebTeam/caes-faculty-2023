@@ -7,7 +7,7 @@
 
             <figure class="wp-block-image aligncenter is-resized size-full">
                 <a href="https://www.caes.uga.edu">
-                    <?php echo '<img loading="lazy" src="' . esc_url(plugins_url('../assets/images/CAES-H-FC.png', dirname(__FILE__))) . '" alt="UGA College of Agricultural &amp; Environmental Sciences" /> ' ?>
+                    <?php echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri().'/blocks/assets/images/CAES-H-FC.png') . '" alt="UGA College of Agricultural &amp; Environmental Sciences" /> ' ?>
                 </a>
             </figure>
             <ul class="social-link-list">
@@ -45,7 +45,7 @@
 
             <figure class="wp-block-image aligncenter is-resized size-full">
                 <a href="https://extension.uga.edu">
-                    <?php echo '<img loading="lazy" src="' . esc_url(plugins_url('../assets/images/EXTENSION.png', dirname(__FILE__))) . '" alt="University of Georgia Extension" /> ' ?>
+                    <?php echo '<img loading="lazy" src="' . esc_url(get_template_directory_uri().'/blocks/assets/images/EXTENSION.png') . '" alt="University of Georgia Extension" /> ' ?>
                 </a>
             </figure>
             <ul class="social-link-list">

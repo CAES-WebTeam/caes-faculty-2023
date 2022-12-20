@@ -4,13 +4,13 @@
 
 a.wp-block-file__button.wp-element-button {
     background-color: var(--wp--preset--color--primary);
-    border-radius: 3px;
-    transition: box-shadow 300ms ease;
+    border-radius: var(--wp--custom--radius--small-round);
+    transition: var(--wp--custom--transition--box-hover);
 }
 
 a.wp-block-file__button.wp-element-button:hover,
 a.wp-block-file__button.wp-element-button:focus {
-    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    box-shadow: var(--wp--custom--shadow--hover-large);
 }
 
 :where(.wp-block-file__button):is(a):active,

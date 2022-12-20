@@ -8,9 +8,24 @@ footer {
 }
 
 input,
-button,
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
 textarea {
   font-family: var(--wp--preset--font-family--merriweather-sans);
+  border-radius: 0;
 }
 
 // Body
@@ -61,6 +76,7 @@ textarea {
 
 .caes-fac-post-cols-left {
   margin-top: var(--wp--custom--spacing--baseline) !important;
+  max-width: var(--wp--style--global--content-size) !important;
 }
 
 .caes-fac-post-cols-left>.caes-fac-post-info {
@@ -165,20 +181,6 @@ textarea {
   padding-right: 0;
 }
 
-// Search
-
-.wp-block-search__button {
-  background-color: var(--wp--preset--color--primary);
-  padding: 0.5rem;
-  margin-left: 0.2rem;
-  transition: box-shadow 300ms ease;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
-  }
-}
-
 // Media and text
 
 .wp-block-media-text__content {
@@ -279,7 +281,7 @@ figure.caes-fac-headshot {
   }
 
   .grid-item-img-container {
-    @include grid-item-img-figure();
+    @include item-img-container-3-2();
 
     .components-drop-zone {
       display: none;
@@ -319,6 +321,7 @@ figure.caes-fac-headshot {
 
 .parvus__btn {
   background-color: var(--wp--preset--color--primary);
+
   &:hover {
     background-color: var(--wp--preset--color--foreground);
     color: var(--wp--preset--color--background);
@@ -328,4 +331,16 @@ figure.caes-fac-headshot {
 .parvus-zoom__indicator {
   background-color: var(--wp--preset--color--background);
   color: var(--wp--preset--color--foreground);
+}
+
+// Helper classes
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

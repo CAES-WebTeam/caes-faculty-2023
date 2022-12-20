@@ -1,1 +1,1 @@
-.wp-block-tag-cloud.is-style-outline a{transition:box-shadow .3s ease}.wp-block-tag-cloud.is-style-outline a:focus,.wp-block-tag-cloud.is-style-outline a:hover{box-shadow:0 0 10px rgba(0,0,0,.3)}
+.wp-block-tag-cloud.is-style-outline a{transition:var(--wp--custom--transition--box-hover)}.wp-block-tag-cloud.is-style-outline a:focus,.wp-block-tag-cloud.is-style-outline a:hover{box-shadow:var(--wp--custom--shadow--hover-large)}

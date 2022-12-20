@@ -35,21 +35,13 @@
 .caes-fac-query-loop-one {
 
     .caes-fac-query-loop-img-container {
-        width: 100%;
-        aspect-ratio: 3 / 2;
-        overflow: hidden;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        @include item-img-container-3-2();
     }
 
     ul li.wp-block-post.sticky {
         background: var(--wp--preset--color--background-two);
         padding: var(--wp--custom--spacing--baseline);
-        border-radius: 3px;
+        border-radius: var(--wp--custom--radius--small-round);
     }
 }
 
@@ -79,7 +71,7 @@
 
 .caes-fac-query-loop-grid {
     .caes-fac-query-loop-img-container {
-        @include grid-item-img-figure();
+        @include item-img-container-3-2();
     }
 
     .caes-fac-query-loop-grid-info {
@@ -96,6 +88,42 @@
     .caes-fac-query-loop-grid {
         .caes-fac-query-loop-grid-info {
             border: 0;
+        }
+    }
+}
+
+// Query loop - CAES Featured
+
+.caes-fac-query-loop-featured {
+    .caes-fac-query-loop-featured-img-container {
+        @include item-img-container-3-2();
+    }
+
+    .caes-fac-query-loop-featured-info {
+        margin-top: -3rem !important;
+        z-index: 1;
+        box-shadow: 0 0 15px rgb(0 0 0 / 5%);
+        margin-left: 1rem;
+        margin-right: 1rem;
+        order: 2;
+        a {
+            color: inherit;
+        }
+    }
+
+}
+
+@media (min-width:781px) {
+    .caes-fac-query-loop-featured {
+        .caes-fac-query-loop-featured-info {
+            margin-top: unset !important;
+            &:first-child {
+                margin-right: -15% !important;
+                order: 0;
+            }
+            &:nth-child(2) {
+                margin-left: -15% !important;
+            }
         }
     }
 }

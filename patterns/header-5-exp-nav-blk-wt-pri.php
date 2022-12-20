@@ -36,7 +36,7 @@
     <div class="wp-block-group alignfull caes-fac-navigation-two has-background-color has-primary-background-color has-text-color has-background">
         <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
         <div class="wp-block-group alignwide">
-            <!-- wp:navigation {"overlayBackgroundColor":"foreground-two","overlayTextColor":"background","className":"caes-fac-navigation-one","icon":"menu","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left"}} /-->
+            <!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"left"}} /-->
         </div>
         <!-- /wp:group -->
     </div>

@@ -24,20 +24,20 @@
 
             <!-- wp:group {"backgroundColor":"background","className":"caes-fac-query-loop-grid-info","layout":{"type":"constrained"}} -->
             <div class="wp-block-group caes-fac-query-loop-grid-info has-background-background-color has-background">
-                <!-- wp:post-title {"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground-two"}}}}} /-->
+                <!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground-two"}}}}} /-->
             </div>
             <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
         <!-- /wp:post-template -->
 
-        <!-- wp:query-pagination {"paginationArrow":"chevron","layout":{"type":"flex","justifyContent":"center"}} -->
-        <!-- wp:query-pagination-previous /-->
-
-        <!-- wp:query-pagination-numbers /-->
-
-        <!-- wp:query-pagination-next /-->
-        <!-- /wp:query-pagination -->
+        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons">
+            <!-- wp:button -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button">See All Posts</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
 
         <!-- wp:query-no-results -->
         <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when a query returns no results."} -->

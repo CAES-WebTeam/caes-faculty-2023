@@ -33,7 +33,7 @@
 	.soc-twitter-icon:hover,
 	.soc-linkedin-icon:hover,
 	.soc-mail-icon:hover {
-		border-radius: 5%;
+		border-radius: var(--wp--custom--radius--small-round);
 		color: #fff;
 		fill: #fff;
 		-webkit-transform: scale(1.25);
