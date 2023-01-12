@@ -130,6 +130,10 @@ function remove_block_style()
 }
 add_action('init', 'remove_block_style');
 
+// Adds excerpts to posts
+
+add_post_type_support('page', 'excerpt');
+
 
 /* START BLOCKS FOR THEME */
 
@@ -178,7 +182,6 @@ add_action('init', 'uga_caes_caes_fac_blocks_block_init');
  * @return string The rendered output.
  */
 
-
 function uga_caes_caes_fac_footer_brand_render_callback($attributes, $content, $block)
 {
 	ob_start();
@@ -195,9 +198,6 @@ function uga_caes_caes_fac_footer_copyright_render_callback($attributes, $conten
 
 function uga_caes_caes_fac_preheader_brand_render_callback($attributes, $content, $block)
 {
-	//not found this file
-	//wp_enqueue_script('uga-caes-caes-fac-preheader-brand-view-script');	
-	//wp_register_script('uga-caes-caes-fac-preheader-brand-view-script', $blockpath . 'js/script.js','','1.0',true);
 	ob_start();
 	require get_template_directory() . '/blocks/build/preheader-brand/template.php';
 	return ob_get_clean();
@@ -217,3 +217,153 @@ function uga_caes_caes_fac_post_social_share_render_callback($attributes, $conte
 	return ob_get_clean();
 }
 /* END BLOCKS FOR THEME */
+
+/* ADD LOG IN PAGE STYLING */
+function uga_caes_fac_2023_login_stylesheet()
+{
+	wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/assets/css/login/caes-login.min.css');
+}
+add_action('login_enqueue_scripts', 'uga_caes_fac_2023_login_stylesheet');
+/* END LOG IN PAGE STYLING */
+
+
+/* GOOGLE TAG MANAGER */
+/* GTM adds analytics tags for Siteimprove and Google Analytics. */
+
+function gtag_code()
+{
+	if (!is_user_logged_in()) {
+		$getDocRoot = strtolower($_SERVER['DOCUMENT_ROOT']);
+		if (strpos($getDocRoot, 'devcaes') !== false || strpos($getDocRoot, 'devextension') !== false) return;
+
+		if (strpos($getDocRoot, 'caes') !== false) {
+			$output = " 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BZ6L8B');</script>
+<!-- End Google Tag Manager -->
+";
+		} else {
+			$output = "
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M75RTPD');</script>
+<!-- End Google Tag Manager -->
+";
+		}
+		echo $output;
+	}
+}
+
+add_action('wp_head', 'gtag_code', 11);
+
+function gtag_afterbody_code()
+{
+	if (!is_user_logged_in()) {
+		$getDocRoot = strtolower($_SERVER['DOCUMENT_ROOT']);
+		if (strpos($getDocRoot, 'devcaes') !== false || strpos($getDocRoot, 'devextension') !== false) return;
+
+		if (strpos($getDocRoot, 'caes') !== false) {
+			$output = '
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BZ6L8B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+';
+		} else {
+			$output = '
+			<!-- Please work. -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M75RTPD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+';
+		}
+		echo $output;
+	}
+}
+
+add_action('wp_footer', 'gtag_afterbody_code', 11);
+
+/* END GOOGLE TAG MANAGER */
+
+/* Filter <title> tag's separator */
+
+function change_title_separator( $separator ) {
+    return '|';
+}
+add_filter( 'document_title_separator', 'change_title_separator' );
+
+/* END Filter <title> tag's separator */
+
+
+/* META TAGS */
+
+function add_meta_tags()
+{
+
+	global $post;
+
+	// Title tags
+	$title = strip_tags(wp_get_document_title());
+	echo '<meta property="og:title" content="'. $title .'" />' . "\n";
+	echo '<meta property="twitter:title" content="'. $title .'" />' . "\n";
+
+	// Page address
+	$canon_url = wp_get_canonical_url();
+	echo '<meta property="og:url" content="'. $canon_url .'" />' . "\n";
+
+	if (is_singular()) {
+
+		// Description tags
+		if ( has_excerpt() ) {
+			$des = strip_tags(get_the_excerpt());
+			echo '<meta name="description" content="'. $des .'" />' . "\n";
+			echo '<meta property="og:description" content="'. $des .'" />' . "\n";
+			echo '<meta property="twitter:description" content="'. $des .'" />' . "\n";
+		}
+
+		// Preview image tags
+		if ( has_post_thumbnail() )  {
+			$image = wp_get_attachment_url( get_post_thumbnail_id() );
+			echo '<meta property="og:image" content="'. esc_attr( $image ) .'" />' . "\n";
+			echo '<meta property="twitter:image" content="'. esc_attr( $image ) .'" />' . "\n";
+		}
+
+	}
+
+	// If the homepage is the default latest posts page
+	if (is_home()) {
+
+		// Description tags
+		if ( get_bloginfo( 'description' ) ) {
+			$des = strip_tags(get_bloginfo('description'));
+			echo '<meta name="description" content="'. $des .'" />' . "\n";
+			echo '<meta property="og:description" content="'. $des .'" />' . "\n";
+			echo '<meta property="twitter:description" content="'. $des .'" />' . "\n";
+		}
+
+	}
+}
+
+add_action('wp_head', 'add_meta_tags');
+
+/* FAVICON */
+
+// Remove WordPress's default rel="icon" tags
+remove_action ('wp_head', 'wp_site_icon', 99);
+
+// Add our theme's default favicon
+function caes_fac_2023_favicon()
+{
+	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/favicon.ico" type="image/x-icon" />' . "\n";
+}
+add_action('wp_head', 'caes_fac_2023_favicon');
+
+/* END FAVICON */

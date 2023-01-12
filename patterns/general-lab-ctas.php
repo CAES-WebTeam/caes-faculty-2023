@@ -22,7 +22,7 @@
             <!-- wp:group {"backgroundColor":"background","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
             <div class="wp-block-group grid-item-grid-info has-background-background-color has-background">
                 <!-- wp:heading {"textAlign":"center"} -->
-                <h2 class="has-text-align-center"><a href="#" target="_blank" rel="noreferrer noopener">About Us</a></h2>
+                <h2 class="has-text-align-center"><a href="#" rel="noreferrer noopener">About Us</a></h2>
                 <!-- /wp:heading -->
             </div>
             <!-- /wp:group -->
@@ -42,7 +42,7 @@
             <!-- wp:group {"backgroundColor":"background","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
             <div class="wp-block-group grid-item-grid-info has-background-background-color has-background">
                 <!-- wp:heading {"textAlign":"center"} -->
-                <h2 class="has-text-align-center"><a href="#" target="_blank" rel="noreferrer noopener">Research</a></h2>
+                <h2 class="has-text-align-center"><a href="#" rel="noreferrer noopener">Research</a></h2>
                 <!-- /wp:heading -->
             </div>
             <!-- /wp:group -->
@@ -62,7 +62,7 @@
             <!-- wp:group {"backgroundColor":"background","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
             <div class="wp-block-group grid-item-grid-info has-background-background-color has-background">
                 <!-- wp:heading {"textAlign":"center"} -->
-                <h2 class="has-text-align-center"><a href="#" target="_blank" rel="noreferrer noopener">Courses</a></h2>
+                <h2 class="has-text-align-center"><a href="#" rel="noreferrer noopener">Courses</a></h2>
                 <!-- /wp:heading -->
             </div>
             <!-- /wp:group -->

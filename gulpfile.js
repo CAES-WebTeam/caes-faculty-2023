@@ -12,8 +12,10 @@ gulp.task('watch', function () {
         gulp.series(
             'clean-shared',
             'clean-blocks',
+            'clean-login',
             'minify-shared',
-            'minify-blocks'
+            'minify-blocks',
+            'minify-login'
         )
     );
 });
@@ -28,6 +30,14 @@ gulp.task('clean-shared', function () {
 
 gulp.task('clean-blocks', function () {
     return gulp.src('assets/css/blocks/*.min.css', {
+        read: false,
+        allowEmpty: true,
+    })
+        .pipe(clean());
+});
+
+gulp.task('clean-login', function () {
+    return gulp.src('assets/css/login/caes-login.min.css', {
         read: false,
         allowEmpty: true,
     })
@@ -52,6 +62,16 @@ gulp.task('minify-blocks', function () {
         .pipe(gulp.dest('assets/css/blocks'));
 });
 
+gulp.task('minify-login', function () {
+    return gulp.src('src/scss/login/*.scss')
+        .pipe(sass({
+            includePaths: ['./node_modules'],
+        }).on('error', sass.logError))
+        .pipe(concatCss('caes-login.min.css'))
+        .pipe(cssnano())
+        .pipe(gulp.dest('assets/css/login'));
+});
+
 gulp.task('js-bundling', function () {
     return gulp.src('src/js/main.js')
         .pipe(webpack({
@@ -72,8 +92,10 @@ gulp.task(
     gulp.series(
         'clean-shared',
         'clean-blocks',
+        'clean-login',
         'minify-shared',
         'minify-blocks',
+        'minify-login',
         'js-bundling'
     )
 );

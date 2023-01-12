@@ -38,11 +38,13 @@
         @include item-img-container-3-2();
     }
 
-    ul li.wp-block-post.sticky {
+    ul li.wp-block-post.sticky,
+    ul li.wp-block-post.category-sticky {
         background: var(--wp--preset--color--background-two);
         padding: var(--wp--custom--spacing--baseline);
         border-radius: var(--wp--custom--radius--small-round);
     }
+    
 }
 
 @media (min-width:600px) {
