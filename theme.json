@@ -259,8 +259,8 @@
 			]
 		},
 		"layout": {
-			"contentSize": "700px",
-			"wideSize": "1000px"
+			"contentSize": "960px",
+			"wideSize": "1100px"
 		}
 	},
 	"styles": {

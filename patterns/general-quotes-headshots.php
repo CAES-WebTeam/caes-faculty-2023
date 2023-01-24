@@ -13,7 +13,7 @@
 <div class="wp-block-columns alignwide">
     <!-- wp:column -->
     <div class="wp-block-column">
-        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+        <!-- wp:group {"layout":{"type":"constrained"}} -->
         <div class="wp-block-group">
             <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded caes-fac-headshot"} -->
             <figure class="wp-block-image size-full is-resized is-style-rounded caes-fac-headshot"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/person1.png' ?>" alt="Person's Name" /></figure>
@@ -34,7 +34,7 @@
 
     <!-- wp:column -->
     <div class="wp-block-column">
-        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+        <!-- wp:group {"layout":{"type":"constrained"}} -->
         <div class="wp-block-group">
             <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded caes-fac-headshot"} -->
             <figure class="wp-block-image size-full is-resized is-style-rounded caes-fac-headshot"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/person2.png' ?>" alt="Person's Name" /></figure>
@@ -54,7 +54,7 @@
 
     <!-- wp:column -->
     <div class="wp-block-column">
-        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+        <!-- wp:group {"layout":{"type":"constrained"}} -->
         <div class="wp-block-group">
             <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded caes-fac-headshot"} -->
             <figure class="wp-block-image size-full is-resized is-style-rounded caes-fac-headshot"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/person3.png' ?>" alt="Person's Name" /></figure>

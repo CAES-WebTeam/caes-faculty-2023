@@ -7,13 +7,16 @@ footer {
   margin-block-start: 0 !important;
 }
 
+// Form styles
+
 input,
 select,
 textarea {
   font-family: var(--wp--preset--font-family--merriweather-sans);
-  border-radius: 0;
+  border-radius: var(--wp--custom--radius--small-round);
   font-size: var(--wp--preset--font-size--normal);
   padding: 0.5rem;
+  max-width: 100%;
 }
 
 input[type=color],
@@ -31,11 +34,11 @@ input[type=time],
 input[type=url],
 input[type=week],
 textarea {
-  width: 100%;
   display: block;
   box-sizing: border-box;
-  width: 100%;
   border: 1px solid #a7a3a3;
+  border-radius: var(--wp--custom--radius--small-round);
+  width: 100%;
 }
 
 input[type=submit] {
@@ -43,7 +46,13 @@ input[type=submit] {
   border: 0;
   color: #fff;
   padding: var(--wp--custom--spacing--third-baseline);
-  border-radius: 0.2rem;
+  border-radius: var(--wp--custom--radius--small-round);
+}
+
+// Iframe
+
+iframe {
+  border: 0;
 }
 
 // Body
@@ -308,7 +317,7 @@ figure.caes-fac-headshot {
   .grid-item-grid-info {
     @include grid-item-info();
 
-    a {
+    a:not(.wp-block-button__link) {
       color: inherit;
       text-decoration: none;
 
@@ -317,6 +326,14 @@ figure.caes-fac-headshot {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.wp-block-cover {
+  .grid-items {
+      .grid-item-grid-info {
+          border: 0;
+      }
   }
 }
 

@@ -13,9 +13,9 @@
 <!-- wp:cover {"overlayColor":"secondary","align":"full"} -->
 <div class="wp-block-cover alignfull"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim-100 has-background-dim"></span>
     <div class="wp-block-cover__inner-container">
-        <!-- wp:query {"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]},"align":"wide","className":"caes-fac-query-loop-featured","layout":{"type":"constrained"}} -->
-        <div class="wp-block-query alignwide caes-fac-query-loop-featured">
-            <!-- wp:post-template {"align":"wide"} -->
+        <!-- wp:query {"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]},"className":"caes-fac-query-loop-featured","layout":{"type":"constrained"}} -->
+        <div class="wp-block-query caes-fac-query-loop-featured">
+            <!-- wp:post-template -->
             <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
             <div class="wp-block-columns are-vertically-aligned-center" style="margin-top:0;margin-bottom:0">
                 <!-- wp:column {"verticalAlignment":"center","width":"60%"} -->

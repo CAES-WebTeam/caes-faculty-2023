@@ -9,7 +9,7 @@
  */
 ?>
 
-<!-- wp:media-text {"mediaType":"image","backgroundColor":"primary","textColor":"background"} -->
+<!-- wp:media-text {"align":"wide","mediaType":"image","backgroundColor":"primary","textColor":"background"} -->
 <div class="wp-block-media-text alignwide is-stacked-on-mobile has-background-color has-primary-background-color has-text-color has-background">
     <figure class="wp-block-media-text__media"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/person2.png' ?>" alt="Person's Name" /></figure>
     <div class="wp-block-media-text__content">

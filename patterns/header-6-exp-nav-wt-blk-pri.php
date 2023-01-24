@@ -19,8 +19,8 @@
 
     <!-- wp:group {"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background","className":"has-background-background-color caes-fac-header","layout":{"inherit":true}} -->
     <div class="wp-block-group alignfull has-background-background-color caes-fac-header has-background-color has-foreground-background-color has-text-color has-background has-link-color">
-        <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-group alignwide">
+        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+        <div class="wp-block-group">
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
             <div class="wp-block-group">
                 <!-- wp:site-logo {"width":40} /-->
@@ -35,8 +35,8 @@
 
     <!-- wp:group {"align":"full","backgroundColor":"primary","textColor":"background","className":"caes-fac-navigation-two","layout":{"inherit":true,"type":"constrained"}} -->
     <div class="wp-block-group alignfull caes-fac-navigation-two has-background-color has-primary-background-color has-text-color has-background">
-        <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-group alignwide">
+        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+        <div class="wp-block-group">
             <!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"left"}} /-->
         </div>
         <!-- /wp:group -->

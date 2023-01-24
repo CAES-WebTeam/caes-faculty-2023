@@ -13,8 +13,8 @@
 <div class="wp-block-group alignfull">
     <!-- wp:group {"className":"caes-fac-footer","align":"full","backgroundColor":"background-two","layout":{"inherit":true}} -->
     <div class="wp-block-group alignfull caes-fac-footer has-background-two-background-color has-background">
-        <!-- wp:columns {"align":"wide"} -->
-        <div class="wp-block-columns alignwide">
+        <!-- wp:columns -->
+        <div class="wp-block-columns">
             <!-- wp:column -->
             <div class="wp-block-column"></div>
             <!-- /wp:column -->
@@ -35,8 +35,8 @@
 
     <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"className":"caes-fac-sub-footer","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true}} -->
     <div class="wp-block-group alignfull caes-fac-sub-footer has-background-color has-foreground-background-color has-text-color has-background has-link-color">
-        <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
-        <div class="wp-block-group alignwide">
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+        <div class="wp-block-group">
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
             <div class="wp-block-group">
                 <!-- wp:paragraph {"fontSize":"normal"} -->

@@ -13,10 +13,10 @@
 <h2 class="has-text-align-center">Latest Posts</h2>
 <!-- /wp:heading -->
 
-<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide">
-    <!-- wp:query {"query":{"perPage":"6","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"flex","columns":3},"align":"wide","className":"caes-fac-query-loop-grid"} -->
-    <div class="wp-block-query alignwide caes-fac-query-loop-grid">
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group">
+    <!-- wp:query {"query":{"perPage":"6","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"flex","columns":3},"className":"caes-fac-query-loop-grid"} -->
+    <div class="wp-block-query caes-fac-query-loop-grid">
         <!-- wp:post-template -->
         <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"className":"caes-fac-query-loop-grid-item","layout":{"type":"constrained"}} -->
         <div class="wp-block-group caes-fac-query-loop-grid-item">

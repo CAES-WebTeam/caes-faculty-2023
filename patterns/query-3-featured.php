@@ -9,8 +9,8 @@
  */
 ?>
 
-<!-- wp:query {"className":"caes-fac-query-loop-featured","align":"wide","query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
-<div class="wp-block-query alignwide caes-fac-query-loop-featured">
+<!-- wp:query {"className":"caes-fac-query-loop-featured","query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+<div class="wp-block-query caes-fac-query-loop-featured">
     <!-- wp:post-template -->
     <!-- wp:columns {"verticalAlignment":"center"} -->
     <div class="wp-block-columns are-vertically-aligned-center">

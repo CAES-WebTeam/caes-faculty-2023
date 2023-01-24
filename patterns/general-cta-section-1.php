@@ -14,8 +14,8 @@
     <div class="wp-block-cover__inner-container">
         <!-- wp:group {"layout":{"type":"constrained"}} -->
         <div class="wp-block-group">
-            <!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
-            <div class="wp-block-columns alignwide are-vertically-aligned-center">
+            <!-- wp:columns {"verticalAlignment":"center"} -->
+            <div class="wp-block-columns are-vertically-aligned-center">
                 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
                     <!-- wp:image {"id":261,"sizeSlug":"large","linkDestination":"none"} -->

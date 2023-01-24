@@ -6,7 +6,6 @@
  */
 
 .wp-block-uga-caes-caes-fac-preheader-brand {
-    max-width: var(--wp--style--global--wide-size) !important;
     font-size: var(--wp--preset--font-size--tiny);
     display: flex;
     flex-direction: column;
@@ -142,14 +141,25 @@
         opacity: 1;
         transition: visibility 0s linear 0s, opacity 200ms;
 
+        form {
+            display: flex;
+        }
+
         input {
             padding: 0.5rem;
-            border-radius: 0;
             border: 0;
+            font-size: var(--wp--preset--font-size--tiny);
+
+            &.search-field {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }    
 
             &[type="submit"] {
                 color: var(--wp--preset--color--white);
                 background-color: var(--wp--preset--color--primary);
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
             }
         }
 

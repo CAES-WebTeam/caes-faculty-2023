@@ -9,8 +9,8 @@
  */
 ?>
 
-<!-- wp:columns {"align":"wide","className":"grid-items"} -->
-<div class="wp-block-columns alignwide grid-items">
+<!-- wp:columns {"className":"grid-items"} -->
+<div class="wp-block-columns grid-items">
     <!-- wp:column -->
     <div class="wp-block-column">
         <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"className":"grid-item","layout":{"type":"constrained"}} -->
