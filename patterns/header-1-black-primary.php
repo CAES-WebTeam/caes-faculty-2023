@@ -17,7 +17,7 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"align":"full","backgroundColor":"primary","textColor":"background","layout":{"inherit":true},"className":"caes-fac-header"} -->
+    <!-- wp:group {"align":"full","backgroundColor":"primary","textColor":"background","layout":{"inherit":true},"className":"caes-fac-header","templateLock":"all","lock":{"move":true,"remove":true}} -->
     <div class="wp-block-group alignfull has-background-color has-primary-background-color has-text-color has-background caes-fac-header">
         <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
         <div class="wp-block-group">

@@ -33,7 +33,7 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"align":"full","backgroundColor":"primary","textColor":"background","className":"caes-fac-navigation-two","layout":{"inherit":true,"type":"constrained"}} -->
+    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","backgroundColor":"primary","textColor":"background","className":"caes-fac-navigation-two","layout":{"inherit":true,"type":"constrained"}} -->
     <div class="wp-block-group alignfull caes-fac-navigation-two has-background-color has-primary-background-color has-text-color has-background">
         <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
         <div class="wp-block-group">

@@ -15,8 +15,10 @@
             </div>
         <?php break;
         case "extension": ?>
-            <div class="caes-fac-preheader-left">
-                <p>A website from <a href="https://extension.uga.edu">UGA Cooperative Extension</a></p>
+            <div class="caes-fac-preheader-brand">
+                <span>A website from <a href="https://extension.uga.edu">UGA Cooperative Extension</a></span>
+            </div>
+            <div class="caes-fac-preheader-right">
                 <button aria-controls="preheaderSearchContainer" aria-expanded="false" aria-label="Reveal search bar" id="preheaderSearchToggle"><span aria-hidden="true">Search</span></button>
                 <div class="search-container" id="preheaderSearchContainer" aria-hidden="true">
                     <?php get_search_form(); ?>
