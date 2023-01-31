@@ -9,13 +9,10 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull">
-    <!-- wp:group {"className":"caes-fac-footer","align":"full","backgroundColor":"base-two","layout":{"inherit":true},"lock":{"move":true,"remove":true}} -->
-    <div class="wp-block-group alignfull caes-fac-footer has-base-two-background-color has-background">
-        <!-- wp:columns -->
-        <div class="wp-block-columns">
-            <!-- wp:column -->
+<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull"><!-- wp:group {"lock":{"move":true,"remove":true},"align":"full","backgroundColor":"base-two","className":"caes-fac-footer","layout":{"inherit":true,"type":"constrained"}} -->
+    <div class="wp-block-group alignfull caes-fac-footer has-base-two-background-color has-background"><!-- wp:columns -->
+        <div class="wp-block-columns"><!-- wp:column -->
             <div class="wp-block-column"></div>
             <!-- /wp:column -->
 
@@ -24,22 +21,17 @@
             <!-- /wp:column -->
 
             <!-- wp:column -->
-            <div class="wp-block-column">
-                <!-- wp:uga-caes/caes-fac-footer-brand {"lock":{"move":true,"remove":true}} /-->
-            </div>
+            <div class="wp-block-column"><!-- wp:uga-caes/caes-fac-footer-brand {"lock":{"move":true,"remove":true}} /--></div>
             <!-- /wp:column -->
         </div>
         <!-- /wp:columns -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"className":"caes-fac-sub-footer","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","layout":{"inherit":true}} -->
-    <div class="wp-block-group alignfull caes-fac-sub-footer has-base-color has-contrast-background-color has-text-color has-background has-link-color">
-        <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
-        <div class="wp-block-group">
-            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
-            <div class="wp-block-group">
-                <!-- wp:paragraph {"fontSize":"normal"} -->
+    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","className":"caes-fac-sub-footer","layout":{"inherit":true,"type":"constrained"}} -->
+    <div class="wp-block-group alignfull caes-fac-sub-footer has-base-color has-contrast-background-color has-text-color has-background has-link-color"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+        <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
+            <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"normal"} -->
                 <p class="has-normal-font-size">Administration</p>
                 <!-- /wp:paragraph -->
 
@@ -48,9 +40,7 @@
             <!-- /wp:group -->
 
             <!-- wp:group -->
-            <div class="wp-block-group">
-                <!-- wp:uga-caes/caes-fac-footer-copyright {"lock":{"move":true,"remove":true}} /-->
-            </div>
+            <div class="wp-block-group"><!-- wp:uga-caes/caes-fac-footer-copyright {"lock":{"move":true,"remove":true}} /--></div>
             <!-- /wp:group -->
         </div>
         <!-- /wp:group -->

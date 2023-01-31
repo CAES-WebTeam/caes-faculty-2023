@@ -8,21 +8,15 @@
  * Viewport Width: 1280
  */
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull">
-    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","backgroundColor":"contrast","textColor":"background","layout":{"inherit":true},"className":"caes-fac-preheader"} -->
-    <div class="wp-block-group alignfull has-base-color has-contrast-background-color has-text-color has-background caes-fac-preheader">
-        <!-- wp:uga-caes/caes-fac-preheader-brand /-->
-    </div>
+<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull"><!-- wp:group {"lock":{"move":true,"remove":true},"align":"full","backgroundColor":"contrast","className":"has-base-color has-text-color caes-fac-preheader","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-base-color has-text-color caes-fac-preheader has-contrast-background-color has-background"><!-- wp:uga-caes/caes-fac-preheader-brand /--></div>
     <!-- /wp:group -->
 
     <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"backgroundColor":"base","textColor":"contrast","className":"caes-fac-header","layout":{"inherit":true,"type":"constrained"}} -->
-    <div class="wp-block-group alignfull caes-fac-header has-contrast-color has-base-background-color has-text-color has-background has-link-color">
-        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-group">
-            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
-            <div class="wp-block-group">
-                <!-- wp:site-logo {"width":40} /-->
+    <div class="wp-block-group alignfull caes-fac-header has-contrast-color has-base-background-color has-text-color has-background has-link-color"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+        <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
+            <div class="wp-block-group"><!-- wp:site-logo {"width":40} /-->
 
                 <!-- wp:site-title {"level":0,"className":"caes-fac-site-title"} /-->
             </div>
@@ -33,6 +27,5 @@
         <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
-
 </div>
 <!-- /wp:group -->

@@ -9,21 +9,15 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull">
-    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","backgroundColor":"base","textColor":"contrast","layout":{"inherit":true},"className":"caes-fac-preheader"} -->
-    <div class="wp-block-group alignfull has-contrast-color has-base-background-color has-text-color has-background caes-fac-preheader">
-        <!-- wp:uga-caes/caes-fac-preheader-brand /-->
-    </div>
+<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull"><!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","backgroundColor":"base","textColor":"contrast","className":"caes-fac-preheader","layout":{"inherit":true,"type":"constrained"}} -->
+    <div class="wp-block-group alignfull caes-fac-preheader has-contrast-color has-base-background-color has-text-color has-background"><!-- wp:uga-caes/caes-fac-preheader-brand /--></div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"background","className":"has-base-background-color caes-fac-header","layout":{"inherit":true}} -->
-    <div class="wp-block-group alignfull has-base-background-color caes-fac-header has-base-color has-contrast-background-color has-text-color has-background has-link-color">
-        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-group">
-            <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
-            <div class="wp-block-group">
-                <!-- wp:site-logo {"width":40} /-->
+    <!-- wp:group {"lock":{"move":true,"remove":true},"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","className":"has-base-background-color caes-fac-header has-base-color has-text-color has-link-color","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-base-background-color caes-fac-header has-base-color has-text-color has-link-color has-contrast-background-color has-background"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+        <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
+            <div class="wp-block-group"><!-- wp:site-logo {"width":40} /-->
 
                 <!-- wp:site-title {"level":0,"className":"caes-fac-site-title"} /-->
             </div>
@@ -33,12 +27,9 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","backgroundColor":"primary","textColor":"background","className":"caes-fac-navigation-two","layout":{"inherit":true,"type":"constrained"}} -->
-    <div class="wp-block-group alignfull caes-fac-navigation-two has-base-color has-primary-background-color has-text-color has-background">
-        <!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-group">
-            <!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"left"}} /-->
-        </div>
+    <!-- wp:group {"lock":{"move":true,"remove":true},"align":"full","backgroundColor":"primary","className":"caes-fac-navigation-two has-base-color has-text-color","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull caes-fac-navigation-two has-base-color has-text-color has-primary-background-color has-background"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+        <div class="wp-block-group"><!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"left"}} /--></div>
         <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
