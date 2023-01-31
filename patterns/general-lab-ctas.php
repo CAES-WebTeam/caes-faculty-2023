@@ -19,8 +19,8 @@
             <figure class="wp-block-image size-large grid-item-img-container"><a href="#"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/photo-placeholder.jpg' ?>" alt="" /></a></figure>
             <!-- /wp:image -->
 
-            <!-- wp:group {"backgroundColor":"background","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group grid-item-grid-info has-background-background-color has-background">
+            <!-- wp:group {"backgroundColor":"base","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group grid-item-grid-info has-base-background-color has-background">
                 <!-- wp:heading {"textAlign":"center"} -->
                 <h2 class="has-text-align-center"><a href="#" rel="noreferrer noopener">About Us</a></h2>
                 <!-- /wp:heading -->
@@ -39,8 +39,8 @@
             <figure class="wp-block-image size-large grid-item-img-container"><a href="#"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/photo-placeholder.jpg' ?>" alt="" /></a></figure>
             <!-- /wp:image -->
 
-            <!-- wp:group {"backgroundColor":"background","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group grid-item-grid-info has-background-background-color has-background">
+            <!-- wp:group {"backgroundColor":"base","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group grid-item-grid-info has-base-background-color has-background">
                 <!-- wp:heading {"textAlign":"center"} -->
                 <h2 class="has-text-align-center"><a href="#" rel="noreferrer noopener">Research</a></h2>
                 <!-- /wp:heading -->
@@ -59,8 +59,8 @@
             <figure class="wp-block-image size-large grid-item-img-container"><a href="#"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/photo-placeholder.jpg' ?>" alt="" /></a></figure>
             <!-- /wp:image -->
 
-            <!-- wp:group {"backgroundColor":"background","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group grid-item-grid-info has-background-background-color has-background">
+            <!-- wp:group {"backgroundColor":"base","className":"grid-item-grid-info","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group grid-item-grid-info has-base-background-color has-background">
                 <!-- wp:heading {"textAlign":"center"} -->
                 <h2 class="has-text-align-center"><a href="#" rel="noreferrer noopener">Courses</a></h2>
                 <!-- /wp:heading -->

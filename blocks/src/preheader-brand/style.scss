@@ -51,11 +51,11 @@
 
 }
 
-.has-foreground-background-color {
+.has-contrast-background-color {
     .wp-block-uga-caes-caes-fac-preheader-brand {
 
         a {
-            color: var(--wp--preset--color--background);
+            color: var(--wp--preset--color--base);
         }
 
         .caes-fac-preheader-uga {
@@ -74,11 +74,11 @@
     }
 }
 
-.has-background-background-color {
+.has-base-background-color {
     .wp-block-uga-caes-caes-fac-preheader-brand {
 
         a {
-            color: var(--wp--preset--color--foreground);
+            color: var(--wp--preset--color--contrast);
         }
 
         .caes-fac-preheader-uga {
@@ -104,8 +104,8 @@
         padding: 0 clamp(1.2rem,0.429rem + 2.286vw,var(--wp--custom--spacing--baseline))!important;
     }
 
-    .has-background-background-color,
-    .has-foreground-background-color {
+    .has-base-background-color,
+    .has-contrast-background-color {
         .wp-block-uga-caes-caes-fac-preheader-brand {
             .caes-fac-preheader-brand {
                 padding: var(--wp--custom--spacing--third-baseline) 0;
@@ -171,20 +171,20 @@
     }
 }
 
-.caes-fac-preheader.has-foreground-background-color {
+.caes-fac-preheader.has-contrast-background-color {
     .search-container {
-        background-color: var(--wp--preset--color--foreground);
+        background-color: var(--wp--preset--color--contrast);
         border-top: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     #preheaderSearchToggle {
-        color: var(--wp--preset--color--background);
+        color: var(--wp--preset--color--base);
     }
 }
 
-.caes-fac-preheader.has-background-background-color {
+.caes-fac-preheader.has-base-background-color {
     .search-container {
-        background-color: var(--wp--preset--color--background);
+        background-color: var(--wp--preset--color--base);
         border-top: 1px solid rgba(0, 0, 0, 0.2);
 
         input[type="search"] {
@@ -193,6 +193,6 @@
     }
 
     #preheaderSearchToggle {
-        color: var(--wp--preset--color--foreground);
+        color: var(--wp--preset--color--contrast);
     }
 }

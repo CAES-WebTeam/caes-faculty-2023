@@ -22,9 +22,9 @@
         <div class="wp-block-group caes-fac-query-loop-grid-item">
             <!-- wp:post-featured-image {"isLink":true,"className":"caes-fac-query-loop-img-container"} /-->
 
-            <!-- wp:group {"backgroundColor":"background","className":"caes-fac-query-loop-grid-info","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group caes-fac-query-loop-grid-info has-background-background-color has-background">
-                <!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground-two"}}}}} /-->
+            <!-- wp:group {"backgroundColor":"base","className":"caes-fac-query-loop-grid-info","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group caes-fac-query-loop-grid-info has-base-background-color has-background">
+                <!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast-two"}}}}} /-->
             </div>
             <!-- /wp:group -->
         </div>

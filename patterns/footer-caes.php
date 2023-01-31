@@ -11,8 +11,8 @@
 
 <!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull">
-    <!-- wp:group {"className":"caes-fac-footer","align":"full","backgroundColor":"background-two","layout":{"inherit":true}} -->
-    <div class="wp-block-group alignfull caes-fac-footer has-background-two-background-color has-background">
+    <!-- wp:group {"className":"caes-fac-footer","align":"full","backgroundColor":"base-two","layout":{"inherit":true},"lock":{"move":true,"remove":true}} -->
+    <div class="wp-block-group alignfull caes-fac-footer has-base-two-background-color has-background">
         <!-- wp:columns -->
         <div class="wp-block-columns">
             <!-- wp:column -->
@@ -33,8 +33,8 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"className":"caes-fac-sub-footer","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true}} -->
-    <div class="wp-block-group alignfull caes-fac-sub-footer has-background-color has-foreground-background-color has-text-color has-background has-link-color">
+    <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"className":"caes-fac-sub-footer","align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","layout":{"inherit":true}} -->
+    <div class="wp-block-group alignfull caes-fac-sub-footer has-base-color has-contrast-background-color has-text-color has-background has-link-color">
         <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
         <div class="wp-block-group">
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->

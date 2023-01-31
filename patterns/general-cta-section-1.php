@@ -28,7 +28,7 @@
                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
                     <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
                     <div class="wp-block-group">
-                        <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} -->
+                        <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} -->
                         <h2 class="has-link-color" id="protecting-our-food-crops">Title goes here</h2>
                         <!-- /wp:heading -->
 
@@ -38,8 +38,8 @@
 
                         <!-- wp:buttons -->
                         <div class="wp-block-buttons">
-                            <!-- wp:button {"backgroundColor":"background","textColor":"foreground"} -->
-                            <div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background wp-element-button" href="" target="_blank" rel="noreferrer noopener">Call to action</a></div>
+                            <!-- wp:button {"backgroundColor":"base","textColor":"contrast"} -->
+                            <div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button" href="" target="_blank" rel="noreferrer noopener">Call to action</a></div>                           
                             <!-- /wp:button -->
                         </div>
                         <!-- /wp:buttons -->

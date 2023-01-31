@@ -24,15 +24,15 @@
                 </div>
                 <!-- /wp:column -->
 
-                <!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"background","textColor":"primary","className":"caes-fac-query-loop-featured-info"} -->
-                <div class="wp-block-column is-vertically-aligned-center caes-fac-query-loop-featured-info has-primary-color has-background-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)">
+                <!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","right":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"base","textColor":"primary","className":"caes-fac-query-loop-featured-info"} -->
+                <div class="wp-block-column is-vertically-aligned-center caes-fac-query-loop-featured-info has-primary-color has-base-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)">
                     <!-- wp:post-title {"isLink":true} /-->
 
                     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
                     <div class="wp-block-group">
-                        <!-- wp:post-author {"showAvatar":false,"byline":"Written by","textColor":"foreground-two"} /-->
+                        <!-- wp:post-author {"showAvatar":false,"byline":"Written by","textColor":"contrast-two"} /-->
 
-                        <!-- wp:post-date {"textColor":"foreground-two"} /-->
+                        <!-- wp:post-date {"textColor":"contrast-two"} /-->
                     </div>
                     <!-- /wp:group -->
                 </div>

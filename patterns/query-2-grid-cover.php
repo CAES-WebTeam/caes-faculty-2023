@@ -25,9 +25,9 @@
                 <div class="wp-block-group caes-fac-query-loop-grid-item">
                     <!-- wp:post-featured-image {"isLink":true,"className":"caes-fac-query-loop-img-container"} /-->
 
-                    <!-- wp:group {"backgroundColor":"background","className":"caes-fac-query-loop-grid-info","layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group caes-fac-query-loop-grid-info has-background-background-color has-background">
-                        <!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground-two"}}}}} /-->
+                    <!-- wp:group {"backgroundColor":"base","className":"caes-fac-query-loop-grid-info","layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group caes-fac-query-loop-grid-info has-base-background-color has-background">
+                        <!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast-two"}}}}} /-->
                     </div>
                     <!-- /wp:group -->
                 </div>
@@ -36,8 +36,8 @@
 
                 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
                 <div class="wp-block-buttons">
-                    <!-- wp:button {"backgroundColor":"background","textColor":"foreground"} -->
-                    <div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background wp-element-button">See All Posts</a></div>
+                    <!-- wp:button {"backgroundColor":"base","textColor":"contrast"} -->
+                    <div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button">See All Posts</a></div>
                     <!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->

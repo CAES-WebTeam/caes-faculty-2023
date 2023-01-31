@@ -10,7 +10,7 @@
 ?>
 
 <!-- wp:media-text {"align":"wide","mediaType":"image","backgroundColor":"primary","textColor":"background"} -->
-<div class="wp-block-media-text alignwide is-stacked-on-mobile has-background-color has-primary-background-color has-text-color has-background">
+<div class="wp-block-media-text alignwide is-stacked-on-mobile has-base-color has-primary-background-color has-text-color has-background">
     <figure class="wp-block-media-text__media"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/images/person2.png' ?>" alt="Person's Name" /></figure>
     <div class="wp-block-media-text__content">
         <!-- wp:group {"layout":{"type":"constrained"}} -->
@@ -29,8 +29,8 @@
 
             <!-- wp:buttons -->
             <div class="wp-block-buttons">
-                <!-- wp:button {"backgroundColor":"background","textColor":"foreground"} -->
-                <div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background wp-element-button" href="#">Call to action</a></div>
+                <!-- wp:button {"backgroundColor":"base","textColor":"contrast"} -->
+                <div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button" href="#">Call to action</a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->

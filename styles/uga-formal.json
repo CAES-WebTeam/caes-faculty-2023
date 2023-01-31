@@ -1,0 +1,45 @@
+{
+    "version": 2,
+    "title": "UGA Formal",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "primary",
+                    "color": "#ba0c2f",
+                    "name": "Primary"
+                },
+                {
+                    "slug": "secondary",
+                    "color": "#004E60",
+                    "name": "Secondary"
+                },
+                {
+                    "slug": "tertiary",
+                    "color": "#D6D2C4",
+                    "name": "Tertiary"
+                },
+                {
+                    "slug": "base",
+                    "color": "#ffffff",
+                    "name": "Base"
+                },
+                {
+                    "slug": "base-two",
+                    "color": "#eaeaea",
+                    "name": "Base 2"
+                },
+                {
+                    "slug": "contrast",
+                    "color": "#000000",
+                    "name": "Contrast"
+                },
+                {
+                    "slug": "contrast-two",
+                    "color": "#333333",
+                    "name": "Contrast 2"
+                }
+            ]
+        }
+    }
+}

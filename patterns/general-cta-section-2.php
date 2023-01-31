@@ -9,8 +9,8 @@
  */
 ?>
 
-<!-- wp:cover {"overlayColor":"background","minHeight":450,"isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light" style="min-height:450px"><span aria-hidden="true" class="wp-block-cover__background has-background-background-color has-background-dim-100 has-background-dim"></span>
+<!-- wp:cover {"overlayColor":"base","minHeight":450,"isDark":false,"align":"full"} -->
+<div class="wp-block-cover alignfull is-light" style="min-height:450px"><span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim-100 has-background-dim"></span>
     <div class="wp-block-cover__inner-container">
         <!-- wp:group {"layout":{"type":"constrained"}} -->
         <div class="wp-block-group">
@@ -20,7 +20,7 @@
                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
                     <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
                     <div class="wp-block-group">
-                        <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} -->
+                        <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} -->
                         <h2 class="has-link-color" id="protecting-our-food-crops">Title goes here</h2>
                         <!-- /wp:heading -->
 
@@ -30,8 +30,8 @@
 
                         <!-- wp:buttons -->
                         <div class="wp-block-buttons">
-                            <!-- wp:button {"backgroundColor":"primary","textColor":"background"} -->
-                            <div class="wp-block-button"><a class="wp-block-button__link has-background-color has-primary-background-color has-text-color has-background wp-element-button" href="" target="_blank" rel="noreferrer noopener">Call to action</a></div>
+                            <!-- wp:button {"backgroundColor":"primary","textColor":"base"} -->
+                            <div class="wp-block-button"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" href="" target="_blank" rel="noreferrer noopener">Call to action</a></div>
                             <!-- /wp:button -->
                         </div>
                         <!-- /wp:buttons -->

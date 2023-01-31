@@ -25,7 +25,7 @@
 .wp-block-cover {
     .has-primary-background-color~* {
         .wp-block-query-pagination a:where(:not(.wp-element-button)) {
-            background-color: var(--wp--preset--color--background);
+            background-color: var(--wp--preset--color--base);
         }
     }
 }
@@ -40,7 +40,7 @@
 
     ul li.wp-block-post.sticky,
     ul li.wp-block-post.category-sticky {
-        background: var(--wp--preset--color--background-two);
+        background: var(--wp--preset--color--base-two);
         padding: var(--wp--custom--spacing--baseline);
         border-radius: var(--wp--custom--radius--small-round);
     }

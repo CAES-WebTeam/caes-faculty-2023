@@ -1,5 +1,6 @@
 {
 	"version": 2,
+	"title": "UGA Bold",
 	"customTemplates": [
 		{
 			"name": "single-no-sidebar",
@@ -86,24 +87,24 @@
 					"name": "Tertiary"
 				},
 				{
-					"slug": "background",
+					"slug": "base",
 					"color": "#ffffff",
-					"name": "Background"
+					"name": "Base"
 				},
 				{
-					"slug": "background-two",
+					"slug": "base-two",
 					"color": "#eaeaea",
-					"name": "Background 2"
+					"name": "Base 2"
 				},
 				{
-					"slug": "foreground",
+					"slug": "contrast",
 					"color": "#000000",
-					"name": "Foreground"
+					"name": "Contrast"
 				},
 				{
-					"slug": "foreground-two",
+					"slug": "contrast-two",
 					"color": "#333333",
-					"name": "Foreground 2"
+					"name": "Contrast 2"
 				}
 			]
 		},
@@ -113,16 +114,6 @@
 			"dropCap": false,
 			"customFontSize": false,
 			"fontFamilies": [
-				{
-					"name": "System",
-					"slug": "system",
-					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"
-				},
-				{
-					"name": "Monospace",
-					"slug": "monospace",
-					"fontFamily": "Consolas,Menlo,Monaco,\"SF Mono\",\"DejaVu Sans Mono\",\"Roboto Mono\",\"Courier New\",Courier,monospace"
-				},
 				{
 					"fontFamily": "\"Merriweather Sans\",Georgia,Helvetica, Arial, Sans-Serif",
 					"name": "\"Merriweather Sans\"",
@@ -265,7 +256,7 @@
 	},
 	"styles": {
 		"color": {
-			"text": "var(--wp--preset--color--foreground-two)"
+			"text": "var(--wp--preset--color--contrast-two)"
 		},
 		"elements": {
 			"link": {
@@ -366,8 +357,8 @@
 			},
 			"core/separator": {
 				"color": {
-					"text": "var(--wp--preset--color--background-two)",
-					"background": "var(--wp--preset--color--background-two)"
+					"text": "var(--wp--preset--color--base-two)",
+					"background": "var(--wp--preset--color--base-two)"
 				}
 			},
 			"core/site-title": {
@@ -391,7 +382,7 @@
 							"radius": "var(--wp--custom--radius--small-round)"
 						},
 						"color": {
-							"background": "var(--wp--preset--color--background-two)"
+							"background": "var(--wp--preset--color--base-two)"
 						},
 						"spacing": {
 							"padding": {
@@ -412,7 +403,7 @@
 				"elements": {
 					"link": {
 						"color": {
-							"text":"var(--wp--preset--color--background)",
+							"text":"var(--wp--preset--color--base)",
 							"background": "var(--wp--preset--color--primary)"
 						},
 						"border": {
