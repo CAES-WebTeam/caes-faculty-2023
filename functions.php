@@ -38,7 +38,7 @@ function uga_caes_fac_2023_setup()
 	 * Load additional block styles.
 	 * See details on how to add more styles in the readme.txt.
 	 */
-	$styled_blocks = ['navigation', 'query', 'button', 'separator', 'columns', 'embed', 'image', 'file', 'comments', 'tag-cloud', 'search'];
+	$styled_blocks = ['navigation', 'query', 'separator', 'columns', 'embed', 'image', 'file', 'comments', 'tag-cloud', 'search'];
 	foreach ($styled_blocks as $block_name) {
 		$args = array(
 			'handle' => "uga-caes-fac-2023-$block_name",
@@ -353,6 +353,9 @@ function add_meta_tags()
 }
 
 add_action('wp_head', 'add_meta_tags');
+
+// Include the required files
+require_once('job_manager/wpj-functions.php');
 
 /* FAVICON */
 

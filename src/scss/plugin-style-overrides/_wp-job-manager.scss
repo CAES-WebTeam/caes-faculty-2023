@@ -1,0 +1,104 @@
+// WP Job Manager Plugin Style Overrides
+// https://wordpress.org/plugins/wp-job-manager/
+
+.rp4wp-related-job_listing>ul li.job_listing a .meta,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a .meta,
+ul.job_listings li.job_listing a .meta,
+ul.job_listings li.no_job_listings_found a .meta,
+.rp4wp-related-job_listing>ul li.job_listing a div.location,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.location,
+ul.job_listings li.job_listing a div.location,
+ul.job_listings li.no_job_listings_found a div.location,
+.rp4wp-related-job_listing>ul li.job_listing a div.position .company,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.position .company,
+ul.job_listings li.job_listing a div.position .company,
+ul.job_listings li.no_job_listings_found a div.position .company,
+.single_job_listing .company .tagline,
+.single_job_listing .meta li {
+    color: var(--wp--preset--color--contrast);
+}
+
+.rp4wp-related-job_listing>ul li.job_listing a div.position h3,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.position h3,
+ul.job_listings li.job_listing a div.position h3,
+ul.job_listings li.no_job_listings_found a div.position h3 {
+    font-size: var(--wp--preset--font-size--large);
+    line-height: var(--wp--preset--font-size--huge);
+}
+
+.rp4wp-related-job_listing>ul li.job_listing a div.position .company .tagline,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.position .company .tagline,
+ul.job_listings li.job_listing a div.position .company .tagline,
+ul.job_listings li.no_job_listings_found a div.position .company .tagline {
+    display: block;
+    margin: 0;
+}
+
+.rp4wp-related-job_listing>ul li.job_listing a,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a,
+ul.job_listings li.job_listing a,
+ul.job_listings li.no_job_listings_found a {
+    padding: 2rem;
+}
+
+.single_job_listing .application .application_button,
+.job-manager-application-wrapper .application .application_button {
+    @include primary-button(1rem 1.5rem);
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+    margin-top: 11px;
+}
+
+.single_job_listing .application .application_button,
+.job-manager-application-wrapper .application .application_button {
+    margin: 1rem;
+}
+
+.job-manager .full-time, .job_listing .full-time, .job-types .full-time {
+    color: #3F7E49;
+}
+
+.single_job_listing .meta .full-time {
+    background-color: #3F7E49;
+}
+
+.job-manager .volunteering, .job_listing .volunteering, .job-types .volunteering {
+    color: #657109;
+}
+
+.single_job_listing .meta .volunteering{
+    background-color: #657109
+}
+
+.job-manager .part-time, .job_listing .part-time, .job-types .part-time {
+    color: #b65d14;
+}
+
+.single_job_listing .meta .part-time {
+    background-color: #b65d14;
+}
+
+.job-manager .temporary, .job_listing .temporary, .job-types .temporary {
+    color: #a72758;
+}
+
+.single_job_listing .meta .temporary {
+    background-color: #a72758;
+}
+
+.job-manager .internship, .job_listing .internship, .job-types .internship {
+    color: #6033cc;
+}
+
+.single_job_listing .meta .internship {
+    background-color: #6033cc;
+}
+
+.job-manager .freelance, .job_listing .freelance, .job-types .freelance {
+    color: #27749B;
+}
+
+.single_job_listing .meta .freelance {
+    background-color: #27749B;
+}

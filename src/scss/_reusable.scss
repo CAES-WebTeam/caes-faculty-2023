@@ -48,3 +48,17 @@
         border-top: 1px solid #e5e5e5;
     }
 }
+
+@mixin primary-button ($padding) {
+    background-color: var(--wp--preset--color--primary);
+    border: 0;
+    color: var(--wp--preset--color--base);
+    padding: $padding;
+    border-radius: var(--wp--custom--radius--small-round);
+    cursor: pointer;
+    transition: var(--wp--custom--transition--box-hover);
+
+    &:hover {
+        box-shadow: var(--wp--custom--shadow--hover-large);
+    }
+}

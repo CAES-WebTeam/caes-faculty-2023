@@ -42,11 +42,13 @@ textarea {
 }
 
 input[type=submit] {
-  background-color: var(--wp--preset--color--primary);
-  border: 0;
-  color: #fff;
-  padding: var(--wp--custom--spacing--third-baseline);
-  border-radius: var(--wp--custom--radius--small-round);
+  @include primary-button(var(--wp--custom--spacing--third-baseline));
+}
+
+// Buttons, button blocks
+
+.wp-block-button .wp-block-button__link {
+  transition: var(--wp--custom--transition--box-hover);
 }
 
 // Iframe
@@ -317,13 +319,15 @@ figure.caes-fac-headshot {
   .grid-item-grid-info {
     @include grid-item-info();
 
-    a:not(.wp-block-button__link) {
-      color: inherit;
-      text-decoration: none;
+    h1,h2,h3,h4,h5,h6 {
+      a:not(.wp-block-button__link) {
+        color: inherit;
+        text-decoration: none;
 
-      &:hover,
-      &:focus {
-        text-decoration: underline;
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -387,3 +391,7 @@ figure.caes-fac-headshot {
 .height-100 {
   height: 100%;
 }
+
+// Non-CAES Plugins
+
+@import 'plugin-style-overrides/wp-job-manager';
