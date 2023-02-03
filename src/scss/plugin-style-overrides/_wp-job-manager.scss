@@ -1,6 +1,13 @@
 // WP Job Manager Plugin Style Overrides
 // https://wordpress.org/plugins/wp-job-manager/
 
+.rp4wp-related-job_listing>ul li.job_listing a,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a,
+ul.job_listings li.job_listing a,
+ul.job_listings li.no_job_listings_found a {
+    display: flex;
+}
+
 .rp4wp-related-job_listing>ul li.job_listing a .meta,
 .rp4wp-related-job_listing>ul li.no_job_listings_found a .meta,
 ul.job_listings li.job_listing a .meta,
@@ -14,9 +21,39 @@ ul.job_listings li.no_job_listings_found a div.location,
 ul.job_listings li.job_listing a div.position .company,
 ul.job_listings li.no_job_listings_found a div.position .company,
 .single_job_listing .company .tagline,
+.rp4wp-related-job_listing>ul li.job_listing a div.categories,
+.rp4wp-related-job_listing>ul li.job_listing a div.categories,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.categories,
+ul.job_listings li.job_listing a div.categories,
+ul.job_listings li.no_job_listings_found a div.categories .single_job_listing .meta li,
 .single_job_listing .meta li {
     color: var(--wp--preset--color--contrast);
+    font-size: 0.85rem;
 }
+
+.rp4wp-related-job_listing>ul li.job_listing a div.position,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.position,
+ul.job_listings li.job_listing a div.position,
+ul.job_listings li.no_job_listings_found a div.position {
+    padding: 0 2% 0 42px;
+}
+
+.rp4wp-related-job_listing>ul li.job_listing a div.categories,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.categories,
+ul.job_listings li.job_listing a div.categories,
+ul.job_listings li.no_job_listings_found a div.categories .single_job_listing .meta li,
+.rp4wp-related-job_listing>ul li.job_listing a div.location,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.location,
+ul.job_listings li.job_listing a div.location,
+ul.job_listings li.no_job_listings_found a div.location {
+    width: 20%;
+    float: left;
+}
+
+ul.job_listings li.job_listing a div.categories {
+    padding: 0 0 0 1em;
+}
+
 
 .rp4wp-related-job_listing>ul li.job_listing a div.position h3,
 .rp4wp-related-job_listing>ul li.no_job_listings_found a div.position h3,
@@ -34,11 +71,26 @@ ul.job_listings li.no_job_listings_found a div.position .company .tagline {
     margin: 0;
 }
 
+.rp4wp-related-job_listing>ul li.job_listing a div.position,
+.rp4wp-related-job_listing>ul li.no_job_listings_found a div.position,
+ul.job_listings li.job_listing a div.position,
+ul.job_listings li.no_job_listings_found a div.position {
+    width: 40%;
+}
+
 .rp4wp-related-job_listing>ul li.job_listing a,
 .rp4wp-related-job_listing>ul li.no_job_listings_found a,
 ul.job_listings li.job_listing a,
 ul.job_listings li.no_job_listings_found a {
     padding: 2rem;
+}
+
+.rp4wp-related-job_listing>ul li.job_listing a div.categories {
+    float: left;
+    text-align: left;
+    width: 25%;
+    padding: 0 0 0 1em;
+    line-height: 1.5em;
 }
 
 .single_job_listing .application .application_button,
@@ -55,7 +107,23 @@ ul.job_listings li.no_job_listings_found a {
     margin: 1rem;
 }
 
-.job-manager .full-time, .job_listing .full-time, .job-types .full-time {
+.single_job_listing .meta {
+    font-size: 0.9rem;
+}
+
+.single_job_listing .company .tagline {
+    font-size: 1rem;
+}
+
+.single_job_listing .company .name a {
+    clear: both;
+}
+
+// Label colors
+
+.job-manager .full-time,
+.job_listing .full-time,
+.job-types .full-time {
     color: #3F7E49;
 }
 
@@ -63,15 +131,19 @@ ul.job_listings li.no_job_listings_found a {
     background-color: #3F7E49;
 }
 
-.job-manager .volunteering, .job_listing .volunteering, .job-types .volunteering {
+.job-manager .volunteering,
+.job_listing .volunteering,
+.job-types .volunteering {
     color: #657109;
 }
 
-.single_job_listing .meta .volunteering{
+.single_job_listing .meta .volunteering {
     background-color: #657109
 }
 
-.job-manager .part-time, .job_listing .part-time, .job-types .part-time {
+.job-manager .part-time,
+.job_listing .part-time,
+.job-types .part-time {
     color: #b65d14;
 }
 
@@ -79,7 +151,9 @@ ul.job_listings li.no_job_listings_found a {
     background-color: #b65d14;
 }
 
-.job-manager .temporary, .job_listing .temporary, .job-types .temporary {
+.job-manager .temporary,
+.job_listing .temporary,
+.job-types .temporary {
     color: #a72758;
 }
 
@@ -87,7 +161,9 @@ ul.job_listings li.no_job_listings_found a {
     background-color: #a72758;
 }
 
-.job-manager .internship, .job_listing .internship, .job-types .internship {
+.job-manager .internship,
+.job_listing .internship,
+.job-types .internship {
     color: #6033cc;
 }
 
@@ -95,10 +171,62 @@ ul.job_listings li.no_job_listings_found a {
     background-color: #6033cc;
 }
 
-.job-manager .freelance, .job_listing .freelance, .job-types .freelance {
+.job-manager .freelance,
+.job_listing .freelance,
+.job-types .freelance {
     color: #27749B;
 }
 
 .single_job_listing .meta .freelance {
     background-color: #27749B;
+}
+
+// Mobile styles
+
+@media (max-width:767px) {
+
+    .rp4wp-related-job_listing>ul li.job_listing a,
+    .rp4wp-related-job_listing>ul li.no_job_listings_found a,
+    ul.job_listings li.job_listing a,
+    ul.job_listings li.no_job_listings_found a {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .rp4wp-related-job_listing>ul li.job_listing a div.position,
+    .rp4wp-related-job_listing>ul li.no_job_listings_found a div.position,
+    ul.job_listings li.job_listing a div.position,
+    ul.job_listings li.no_job_listings_found a div.position {
+        width: 100%;
+        padding: 0;
+    }
+
+    ul.job_listings li.job_listing a .meta, ul.job_listings li.no_job_listings_found a .meta {
+        text-align: left;
+        padding: 1rem 0 0 0;
+    }
+
+    .rp4wp-related-job_listing>ul li.job_listing a div.categories,
+    .rp4wp-related-job_listing>ul li.job_listing a div.location,
+    .rp4wp-related-job_listing>ul li.no_job_listings_found a div.categories,
+    .rp4wp-related-job_listing>ul li.no_job_listings_found a div.location,
+    ul.job_listings li.job_listing a div.categories,
+    ul.job_listings li.job_listing a div.location,
+    ul.job_listings li.no_job_listings_found a div.categories .single_job_listing .meta li,
+    ul.job_listings li.no_job_listings_found a div.location {
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin: 0.5rem 0 0;
+    }
+
+    .single_job_listing .company .name {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .single_job_listing .company .name a {
+        margin: 0rem 0;
+        font-size: 0.75rem;
+    }
 }
