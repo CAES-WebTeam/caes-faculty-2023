@@ -1,7 +1,479 @@
 <?php
-////////////// START WP JOB MANAGER CUSTOM ///////////////////////
+/**
+ * CAES WP Job Manager Functions
+ *
+ * since 1.0.1
+ * update: 2023-02-02
+ */
 
-// change required
+ /////////////////////    START: Admin Job Notification   ////////////////////
+
+    // Admin New Job Notification
+    function jobmanageremail_new( $email ) {
+      $caes_option = get_option('caes_options');
+      $caes_jobemailnew = $caes_option['caes_jobemailnew'] ?? null;
+
+      $getEmailArray = explode(",",$caes_jobemailnew);
+      return $getEmailArray;
+  }
+  add_filter( 'job_manager_email_admin_new_job_to', 'jobmanageremail_new');
+
+  // Admin Updated Job Notification
+  function jobmanageremail_updated( $email ) {
+      $caes_option = get_option('caes_options');
+      $caes_jobemailupdated = $caes_option['caes_jobemailupdated'] ?? null;
+      
+      $getEmailArray = explode(",",$caes_jobemailupdated);
+      return $getEmailArray;
+  }
+  add_filter( 'job_manager_email_admin_updated_job_to', 'jobmanageremail_updated');
+  
+  // Admin Expiring Job Notification
+  function jobmanageremail_expired( $email ) {
+      $caes_option = get_option('caes_options');
+      $caes_jobemailexpired = $caes_option['caes_jobemailexpired'] ?? null;
+      
+      $getEmailArray = explode(",",$caes_jobemailexpired);
+      return $getEmailArray;
+  }
+  add_filter( 'job_manager_email_admin_expiring_job_to', 'jobmanageremail_expired');
+
+/////////////////////    END: Admin Job Notification   ////////////////////
+
+
+///////////////////////////  START: WPJM MENU AND OPTION     ///////////////////////////
+// Define Constants
+define('caeswpjm_SHORTNAME', 'caes_');
+
+// Include the required files
+require_once('wpjm-options.php');
+
+add_action( 'admin_menu', 'caes_wpjm_add_menu' );
+add_action( 'admin_init', 'caes_wpjm_register_settings' );
+
+function caes_wpjm_create_settings_field( $args = array() ) {
+	// default array to overwrite when calling the function
+	$defaults = array(
+		'id'      => 'default_field', 					// the ID of the setting in our options array, and the ID of the HTML form element
+		'title'   => 'Default Field', 					// the label for the HTML form element
+		'desc'    => 'This is a default description.', 	// the description displayed under the HTML form element
+		'std'     => '', 								// the default value for this setting
+		'type'    => 'text', 							// the HTML form element to use
+		'section' => 'main_section', 					// the section this setting belongs to � must match the array key of a section in ar_options_page_sections()
+		'choices' => array(), 							// (optional): the values in radio buttons or a drop-down menu
+		'class'   => '' 								// the HTML form element class. Is used for validation purposes and may be also use for styling if needed.
+	);
+	
+	// "extract" to be able to use the array keys as variables in our function output below
+	extract( wp_parse_args( $args, $defaults ) );
+	
+	// additional arguments for use in form field output in the function _form_field!
+	$field_args = array(
+		'type'      => $type,
+		'id'        => $id,
+		'desc'      => $desc,
+		'std'       => $std,
+		'choices'   => $choices,
+		'label_for' => $id,
+		'class'     => $class
+	);
+
+	add_settings_field( $id, $title, 'caes_wpjm_form_field_callback', 'caes_wpjm_page', $section, $field_args );
+  add_settings_section( $id, $title, 'caes_wpjm_section', 'caes_wpjm_page');
+
+}
+
+function get_caes_wpjm_settings() {
+	
+	$output = array();
+	
+	// put together the output array 
+	$output['caes_wpjm_option_name'] 		= 'caes_options'; // the option name as used in the get_option() call.
+	//$output['caes_wpjm_page_title'] 		= __( 'CAES Settings','caes_textdomain'); // the settings page title
+	$output['caes_wpjm_page_sections'] 	= caes_wpjm_options_settings(); // the setting section
+	$output['caes_wpjm_page_fields'] 		= caes_wpjm_options_page_fields(); // the setting fields
+	
+	return $output;
+}
+
+// Register our setting, settings sections and settings fields
+function caes_wpjm_register_settings(){
+	
+  
+  $settings_output 	= get_caes_wpjm_settings();
+	
+	//setting
+	register_setting('caes_wpjm_options', 'caes_options', 'caeswpjm_validate_options' );
+	
+	//sections
+	if(!empty($settings_output['caes_wpjm_page_sections'])){
+		// call the "add_settings_section" for each!
+		foreach ( $settings_output['caes_wpjm_page_sections'] as $id => $title ) {
+			add_settings_section( $id, $title, 'caes_wpjm_section', 'caes_wpjm_page');
+		}
+	}
+	
+	//fields
+	if(!empty($settings_output['caes_wpjm_page_fields'])){
+		// call the "add_settings_field" for each!
+		foreach ($settings_output['caes_wpjm_page_fields'] as $option) {
+			caes_wpjm_create_settings_field($option);
+		}
+	}
+}
+
+//Group scripts (js & css)
+/*
+function caes_wpjm_settings_scripts(){
+	wp_enqueue_style('caes_wpjm_theme_settings_css', get_stylesheet_directory_uri() . '/lib/css/caes_wpjm_theme_settings.css');
+	wp_enqueue_script( 'caes_wpjm_theme_settings_js', get_stylesheet_directory_uri() . '/lib/js/caes_wpjm_theme_settings.js', array('jquery'));
+	wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'wp-color-picker' );
+    wp_enqueue_script( 'wp-color-picker-settings', get_stylesheet_directory_uri() . '/lib/js/caes_wpjm_theme_settings.js' );
+}
+*/
+
+function caes_wpjm_add_menu(){
+  //add_menu_page($page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position);
+  //add_submenu_page($parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function);
+  add_submenu_page(
+    'edit.php?post_type=job_listing',
+    'UGA CAES WP Job Manager Settings',
+    'CAES Settings',
+    'manage_options',
+    'caeswpjm-menu',
+    'caeswpjm_menu_callback'
+  );
+  // css & js
+  //add_action( 'load-'. $caes_wpjm_settings_page, 'caes_wpjm_settings_scripts' );	
+}
+
+
+// Section HTML, displayed before the first option
+
+function  caes_wpjm_section($desc) {
+ echo "<p>" . __('Settings for this section','caes_textdomain') . "</p>";
+}
+
+
+function caes_wpjm_form_field_callback($args = array()) {
+	
+	extract( $args );
+	
+	$caes_wpjm_option_name = 'caes_options';
+	$options = get_option($caes_wpjm_option_name);
+	
+	// pass the standard value if the option is not yet set in the database
+	if (!isset( $type )) $type = null;
+	if ( !isset( $options[$id] ) && $type != 'checkbox' ) {
+		$options[$id] = $std ?? null;
+	}
+	
+	// additional field class. output only if the class is defined in the create_setting arguments
+	if (!isset( $class )) $class = null;
+	$field_class = ($class != '') ? ' ' . $class : '';
+	
+	// switch html display based on the setting type.	
+	switch ( $type ) {
+		case 'text':
+			$options[$id] = stripslashes($options[$id]);
+			$options[$id] = esc_attr( $options[$id]);
+			echo "<input class='regulcaes-text$field_class' type='text' id='$id' name='" . $caes_wpjm_option_name . "[$id]' value='$options[$id]' />";
+			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
+		break;
+		
+		case 'textarea':
+			$options[$id] = stripslashes($options[$id]);
+			$options[$id] = esc_html( $options[$id]);
+			echo "<textarea class='textarea$field_class' type='text' id='$id' name='" . $caes_wpjm_option_name . "[$id]' rows='5' cols='30'>$options[$id]</textarea>";
+			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : ""; 		
+		break;
+		
+		case 'select':
+			echo "<select id='$id' class='select$field_class' name='" . $caes_wpjm_option_name . "[$id]'>";
+				foreach($choices as $item) {
+					$value 	= esc_attr($item, 'caes_textdomain');
+					$item 	= esc_html($item, 'caes_textdomain');
+					
+					$selected = ($options[$id]==$value) ? 'selected="selected"' : '';
+					echo "<option value='$value' $selected>$item</option>";
+				}
+			echo "</select>";
+			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : ""; 
+		break;
+		
+		case 'option':
+			echo "<select id='$id' class='select$field_class' name='" . $caes_wpjm_option_name . "[$id]'>";
+			foreach($choices as $val => $key) {
+				$selected = ($options[$id]==$val) ? 'selected="selected"' : '';
+				echo "<option value='$val' $selected>$key</option>";
+			}
+			echo "</select>";
+			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
+		break;
+		
+		case 'checkbox':
+			echo "<input class='checkbox$field_class' type='checkbox' id='$id' name='" . $caes_wpjm_option_name . "[$id]' value='1' " . checked( $options[$id], 1, false ) . " />";
+			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
+		break;
+	}
+}
+
+//Admin Settings Page HTML
+
+function caeswpjm_menu_callback () {
+	?>
+	<div class="wrap">
+	<div id="icon-themes" class="icon32"></div>  
+        <h2>CAES WP Job Manager Settings</h2>  
+        <?php settings_errors(); ?>   
+          
+		<form action="options.php" method="post">
+			<?php 
+				settings_fields( 'caes_wpjm_options' );
+				do_settings_sections( 'caes_wpjm_page' ); 
+      ?>
+
+			<?php submit_button(); ?>
+			
+		</form>
+	</div><!-- wrap -->
+<?php }
+
+/**
+ * Validate input
+ * 
+ * @return array
+ */
+function caeswpjm_validate_options($input) {
+	// for enhanced security, create a new empty array
+	$valid_input = array();
+	
+	// collect only the values we expect and fill the new $valid_input array i.e. whitelist our option IDs
+	$options = caes_wpjm_options_page_fields(); //$settings_output['caes_wpjm_page_fields'];
+		// run a foreach and switch on option type
+	foreach ($options as $option) {
+    $getOptionStd = $option['std'] ?? null;
+    $getOptionClass = $option['class'] ?? 'default';
+    $getOptionId = $option['id'] ?? null;
+
+			switch ( $option['type'] ) {
+				case 'text':
+					//switch validation based on the class!
+          switch ( $getOptionClass ) {
+            //for numeric 
+            case 'numeric':
+              //accept the input only when numeric!
+              $input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+              $valid_input[$getOptionId] = (is_numeric($input[$getOptionId])) ? $input[$getOptionId] : 'Expecting a Numeric value!';
+              
+              // register error
+              if(is_numeric($input[$getOptionId]) == FALSE) {
+                add_settings_error(
+                  $getOptionId, // setting title
+                  caes_SHORTNAME . 'txt_numeric_error', // error ID
+                  __('Expecting a Numeric value! Please fix.','caes_textdomain'), // error message
+                  'error' // type of message
+                );
+              }
+            break;
+            
+            //for multi-numeric values (separated by a comma)
+            case 'multinumeric':
+              //accept the input only when the numeric values are comma separated
+              $input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+              
+              if($input[$getOptionId] !=''){
+                // /^-?\d+(?:,\s?-?\d+)*$/ matches: -1 | 1 | -12,-23 | 12,23 | -123, -234 | 123, 234  | etc.
+                $valid_input[$getOptionId] = (preg_match('/^-?\d+(?:,\s?-?\d+)*$/', $input[$getOptionId]) == 1) ? $input[$getOptionId] : __('Expecting comma separated numeric values','caes_textdomain');
+              }else{
+                $valid_input[$getOptionId] = $input[$getOptionId];
+              }
+              
+              // register error
+              if($input[$getOptionId] !='' && preg_match('/^-?\d+(?:,\s?-?\d+)*$/', $input[$getOptionId]) != 1) {
+                add_settings_error(
+                  $getOptionId, // setting title
+                  caes_SHORTNAME . 'txt_multinumeric_error', // error ID
+                  __('Expecting comma separated numeric values! Please fix.','caes_textdomain'), // error message
+                  'error' // type of message
+                );
+              }
+            break;
+            
+            //for no html
+            case 'nohtml':
+              //accept the input only after stripping out all html, extra white space etc!
+              $input[$getOptionId] 		= sanitize_text_field($input[$getOptionId]); // need to add slashes still before sending to the database
+              
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = addslashes($input[$getOptionId]);
+            break;
+            
+            //for url
+            case 'url':
+              //accept the input only when the url has been sanited for database usage with esc_url_raw()
+              $input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+              
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = esc_url_raw($input[$getOptionId]);
+            break;
+            
+            //for email
+            case 'email':
+              //accept the input only after the email has been validated
+              $input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+              if($input[$getOptionId] != ''){
+                $valid_input[$getOptionId] = (is_email($input[$getOptionId])!== FALSE) ? $input[$getOptionId] : __('Invalid email! Please re-enter!','caes_textdomain');
+              }elseif($input[$getOptionId] == ''){
+                $valid_input[$getOptionId] = __('This setting field cannot be empty! Please enter a valid email address.','caes_textdomain');
+              }
+              
+              // register error
+              if(is_email($input[$getOptionId])== FALSE || $input[$getOptionId] == '') {
+                add_settings_error(
+                  $getOptionId, // setting title
+                  caes_SHORTNAME . 'txt_email_error', // error ID
+                  __('Please enter a valid email address.','caes_textdomain'), // error message
+                  'error' // type of message
+                );
+              }
+            break;
+            
+            // a "cover-all" fall-back when the class argument is not set
+            default:
+              // accept only a few inline html elements
+              $allowed_html = array(
+                'a' => array('href' => array (),'title' => array ()),
+                'b' => array(),
+                'em' => array (), 
+                'i' => array (),
+                'strong' => array()
+              );
+              $setoptid = $input[$getOptionId];
+              $setoptid = trim($setoptid); // trim whitespace
+              $setoptid = force_balance_tags($setoptid); // find incorrectly nested or missing closing tags and fix markup
+              $setoptid = wp_kses( $setoptid, $allowed_html); // need to add slashes still before sending to the database
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = addslashes($setoptid); 
+            break;
+          }
+				break;
+				
+				case 'textarea':
+					//switch validation based on the class!
+					switch ( $option['class'] ) {
+						//for only inline html
+						case 'inlinehtml':
+							// accept only inline html
+							$input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+							$input[$getOptionId] 		= force_balance_tags($input[$getOptionId]); // find incorrectly nested or missing closing tags and fix markup
+							$input[$getOptionId] 		= addslashes($input[$getOptionId]); //wp_filter_kses expects content to be escaped!
+							
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = wp_filter_kses($input[$getOptionId]); //calls stripslashes then addslashes
+						break;
+						
+						//for no html
+						case 'nohtml':
+							//accept the input only after stripping out all html, extra white space etc!
+							$input[$getOptionId] 		= sanitize_text_field($input[$getOptionId]); // need to add slashes still before sending to the database
+							
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = addslashes($input[$getOptionId]);
+						break;
+						
+						//for allowlinebreaks
+						case 'allowlinebreaks':
+							//accept the input only after stripping out all html, extra white space etc!
+							$input[$getOptionId] 		= wp_strip_all_tags($input[$getOptionId]); // need to add slashes still before sending to the database
+							
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = addslashes($input[$getOptionId]);
+						break;
+						
+						case 'html':
+							$input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+							//$input[$getOptionId] 		= force_balance_tags($input[$getOptionId]); // find incorrectly nested or missing closing tags and fix markup
+							//$input[$getOptionId] 		= wp_kses( $input[$getOptionId], $allowed_html); // need to add slashes still before sending to the database
+							
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = addslashes($input[$getOptionId]);
+						break;
+						
+						// a "cover-all" fall-back when the class argument is not set
+						default:
+							// accept only limited html
+							//my allowed html
+							$allowed_html = array(
+								'a' 			=> array('href' => array (),'title' => array ()),
+								'b' 			=> array(),
+								'blockquote' 	=> array('cite' => array ()),
+								'br' 			=> array(),
+								'dd' 			=> array(),
+								'dl' 			=> array(),
+								'dt' 			=> array(),
+								'em' 			=> array (), 
+								'i' 			=> array (),
+								'li' 			=> array(),
+								'ol' 			=> array(),
+								'p' 			=> array(),
+								'q' 			=> array('cite' => array ()),
+								'strong' 		=> array(),
+								'ul' 			=> array(),
+								'h1' 			=> array('align' => array (),'class' => array (),'id' => array (), 'style' => array ()),
+								'h2' 			=> array('align' => array (),'class' => array (),'id' => array (), 'style' => array ()),
+								'h3' 			=> array('align' => array (),'class' => array (),'id' => array (), 'style' => array ()),
+								'h4' 			=> array('align' => array (),'class' => array (),'id' => array (), 'style' => array ()),
+								'h5' 			=> array('align' => array (),'class' => array (),'id' => array (), 'style' => array ()),
+								'h6' 			=> array('align' => array (),'class' => array (),'id' => array (), 'style' => array ())
+							);
+							
+							$input[$getOptionId] 		= trim($input[$getOptionId]); // trim whitespace
+							$input[$getOptionId] 		= force_balance_tags($input[$getOptionId]); // find incorrectly nested or missing closing tags and fix markup
+							$input[$getOptionId] 		= wp_kses( $input[$getOptionId], $allowed_html); // need to add slashes still before sending to the database
+							
+              if($input[$getOptionId] == '' ) $input[$getOptionId] = null;
+              else $valid_input[$getOptionId] = addslashes($input[$getOptionId]);						
+						break;
+					}
+				break;
+				
+				case 'option':
+					// process $select_values
+						$select_values = array();
+						foreach ($option['choices'] as $val => $key) {
+							$select_values[] = $val;
+						}
+					// check to see if selected value is in our approved array of values!
+          if( $input[$getOptionId] == $getOptionStd ) $input[$getOptionId] = null;
+					else $valid_input[$getOptionId] = (in_array( $input[$getOptionId], $select_values) ? $input[$getOptionId] : '' );
+				break;
+				
+				case 'checkbox':
+					// if it's not set, default to null!
+					if (!isset($input[$getOptionId])) {
+						$input[$getOptionId] = null;
+					}
+					// Our checkbox value is either 0 or 1
+					
+          if( $input[$getOptionId] == $getOptionStd ) $input[$getOptionId] = null;
+					else $valid_input[$getOptionId] = ( $input[$getOptionId] == 1 ? 1 : 0 );
+				break;
+				
+				
+			}
+  }
+return $valid_input; // return validated input
+}
+
+
+
+
+///////////////////////////  END: WPJM MENU AND OPTION     ///////////////////////////
+
+
+///////////////////////////  START: CUSTOM WPJM FUNCTIONS     ///////////////////////////
 
 
 
