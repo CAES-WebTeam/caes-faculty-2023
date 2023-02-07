@@ -355,7 +355,8 @@ function add_meta_tags()
 add_action('wp_head', 'add_meta_tags');
 
 // Include the required files
-require_once('job_manager/wpj-functions.php');
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+  if(is_super_admin() && is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
 
 /* FAVICON */
 
