@@ -14,7 +14,8 @@
     <!-- /wp:group -->
 
     <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true},"align":"full","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"backgroundColor":"base","textColor":"contrast","className":"caes-fac-header","layout":{"inherit":true,"type":"constrained"}} -->
-    <div class="wp-block-group alignfull caes-fac-header has-contrast-color has-base-background-color has-text-color has-background has-link-color"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+    <div class="wp-block-group alignfull caes-fac-header has-contrast-color has-base-background-color has-text-color has-background has-link-color">
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
         <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
             <div class="wp-block-group"><!-- wp:site-logo {"width":40} /-->
 

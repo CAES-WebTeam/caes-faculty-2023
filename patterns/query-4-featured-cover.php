@@ -20,7 +20,7 @@
             <div class="wp-block-columns are-vertically-aligned-center" style="margin-top:0;margin-bottom:0">
                 <!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
-                    <!-- wp:post-featured-image {"isLink":true,"className":"caes-fac-query-loop-featured-img-container"} /-->
+                    <!-- wp:post-featured-image {"className":"caes-fac-query-loop-featured-img-container"} /-->
                 </div>
                 <!-- /wp:column -->
 
