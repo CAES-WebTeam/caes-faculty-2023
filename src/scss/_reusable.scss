@@ -1,32 +1,31 @@
 /* REUSABLE MIXINS */
 
-@mixin grid-item () {
+@mixin grid-item ($direction) {
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: $direction;
     box-shadow: 0 0 15px rgb(0 0 0 / 5%);
+    position: relative;
 }
 
-@mixin item-img-container-3-2 () {
-    width: 100%;
+@mixin grid-item-hover() {
+    &:hover,
+    &:focus-within {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+@mixin item-img-container ($aspectratio,$width) {
+    width: $width;
     flex-shrink: 0;
-    aspect-ratio: 3/2;
+    aspect-ratio: $aspectratio;
     overflow: hidden;
 
     &:focus-within {
         outline: 3px solid Highlight;
         outline: 3px solid -webkit-focus-ring-color;
-    }
-
-    a {
-        height: 100%;
-
-        &:hover,
-        &:focus {
-            img {
-                transform: scale(1.1);
-            }
-        }
     }
 
     img {
@@ -37,15 +36,25 @@
     }
 }
 
-@mixin grid-item-info () {
+@mixin grid-item-info ($direction-no-border) {
     width: 100%;
     flex: 1;
-    border-right: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-    border-left: 1px solid #e5e5e5;
+    border: 1px solid #e5e5e5;
+    border-#{$direction-no-border}: 0px;
 
     &:first-child {
-        border-top: 1px solid #e5e5e5;
+        border-#{$direction-no-border}: 1px solid #e5e5e5;
+    }
+}
+
+@mixin grid-item-link() {
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
     }
 }
 
