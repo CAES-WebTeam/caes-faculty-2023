@@ -24,6 +24,7 @@ function uga_caes_fac_2023_setup()
 
 	// Add theme style
 	add_editor_style('./assets/css/style-shared.min.css');
+	add_editor_style('./assets/css/editor-only/editor-only.min.css');
 
 	// Add theme script
 	// wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );

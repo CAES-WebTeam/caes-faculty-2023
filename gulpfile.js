@@ -11,17 +11,27 @@ gulp.task('watch', function () {
         'change',
         gulp.series(
             'clean-shared',
+            'clean-editor-only',
             'clean-blocks',
             'clean-login',
             'minify-shared',
+            'minify-editor-only',
             'minify-blocks',
-            'minify-login'
+            'minify-login',
         )
     );
 });
 
 gulp.task('clean-shared', function () {
     return gulp.src('assets/css/style-shared.min.css', {
+        read: false,
+        allowEmpty: true,
+    })
+        .pipe(clean());
+});
+
+gulp.task('clean-editor-only', function () {
+    return gulp.src('assets/css/editor-only.min.css', {
         read: false,
         allowEmpty: true,
     })
@@ -52,6 +62,16 @@ gulp.task('minify-shared', function () {
         .pipe(concatCss('style-shared.min.css'))
         .pipe(cssnano())
         .pipe(gulp.dest('assets/css/'));
+});
+
+gulp.task('minify-editor-only', function () {
+    return gulp.src('src/scss/editor-only/*.scss')
+        .pipe(sass({
+            includePaths: ['./node_modules'],
+        }).on('error', sass.logError))
+        .pipe(concatCss('editor-only.min.css'))
+        .pipe(cssnano())
+        .pipe(gulp.dest('assets/css/editor-only'));
 });
 
 gulp.task('minify-blocks', function () {
@@ -91,9 +111,11 @@ gulp.task(
     'default',
     gulp.series(
         'clean-shared',
+        'clean-editor-only',
         'clean-blocks',
         'clean-login',
         'minify-shared',
+        'minify-editor-only',
         'minify-blocks',
         'minify-login',
         'js-bundling'

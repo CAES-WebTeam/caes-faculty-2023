@@ -300,11 +300,11 @@ figure.caes-fac-headshot {
 
 .grid-items {
   .grid-item {
-    @include grid-item();
+    @include grid-item(column);
   }
 
   .grid-item-img-container {
-    @include item-img-container-3-2();
+    @include item-img-container(3/2,100%);
 
     .components-drop-zone {
       display: none;
@@ -317,12 +317,12 @@ figure.caes-fac-headshot {
   }
 
   .grid-item-grid-info {
-    @include grid-item-info();
+    @include grid-item-info(top);
 
     h1,h2,h3,h4,h5,h6 {
       a:not(.wp-block-button__link) {
-        color: inherit;
-        text-decoration: none;
+        // color: inherit;
+        // text-decoration: none;
 
         &:hover,
         &:focus {
@@ -331,6 +331,16 @@ figure.caes-fac-headshot {
       }
     }
   }
+
+  &.personnel {
+    .grid-item-img-container {
+      @include item-img-container(1,100%);
+      img {
+        object-position: top;
+      }
+    }
+  }
+
 }
 
 .wp-block-cover {
@@ -338,6 +348,29 @@ figure.caes-fac-headshot {
       .grid-item-grid-info {
           border: 0;
       }
+  }
+
+}
+
+@media (min-width:600px) {
+  .grid-items.personnel {
+    .grid-item {
+      @include grid-item(row);
+      // max-width: calc((var(--wp--style--global--content-size)/2) - (var(--wp--custom--spacing--baseline)/2));
+    }
+    .grid-item-img-container {
+      @include item-img-container(3/4,35%);
+      height: 100%;
+      img {
+        object-position: center;
+      }
+    }
+    .grid-item-grid-info {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      @include grid-item-info(left);
+    }
   }
 }
 
@@ -390,6 +423,95 @@ figure.caes-fac-headshot {
 // Class mainly used to set group blocks to 100% height of their parent column
 .height-100 {
   height: 100%;
+}
+
+// JS Scroll Animations
+
+.js-scroll {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+
+.scrolled.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+.scrolled.fade-in-bottom {
+  animation: fade-in-bottom 1s ease-in-out both;
+}
+
+.scrolled.slide-left {
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-right {
+  animation: slide-in-right 1s ease-in-out both;
+}
+
+@keyframes slide-in-left {
+  0% {
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+
+  100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+      opacity: 0;
+  }
+
+  100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fade-in-bottom {
+  0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+  }
+
+  100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .js-scroll {
+      opacity: 1;
+  }
+
+  .scrolled {
+      animation: none !important;
+  }
 }
 
 // Non-CAES Plugins
