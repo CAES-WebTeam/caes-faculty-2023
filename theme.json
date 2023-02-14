@@ -49,26 +49,11 @@
 		}
 	],
 	"settings": {
-		"custom": {
-			"spacing": {
-				"baseline": "2rem",
-				"two-thirds-baseline": "1.3rem",
-				"four-fifths-baseline": "1.6rem",
-				"half-baseline": "1rem",
-				"third-baseline": "0.66rem",
-				"fourth-baseline": "0.5rem",
-				"double-baseline": "4rem"
-			},
-			"shadow": {
-				"hover-small": "0 0 3px rgb(0 0 0 / 30%)",
-				"hover-large": "0 0 10px rgb(0 0 0 / 30%)"
-			},
-			"transition": {
-				"box-hover": "box-shadow 200ms ease"
-			},
-			"radius": {
-				"small-round": "3px"
-			}
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "960px",
+			"wideSize": "1100px"
 		},
 		"color": {
 			"custom": false,
@@ -117,7 +102,6 @@
 				}
 			]
 		},
-		"appearanceTools": true,
 		"typography": {
 			"fluid": true,
 			"dropCap": false,
@@ -262,9 +246,17 @@
 				}
 			]
 		},
-		"layout": {
-			"contentSize": "960px",
-			"wideSize": "1100px"
+		"custom": {
+			"shadow": {
+				"hover-small": "0 0 3px rgb(0 0 0 / 30%)",
+				"hover-large": "0 0 10px rgb(0 0 0 / 30%)"
+			},
+			"transition": {
+				"box-hover": "box-shadow 200ms ease"
+			},
+			"radius": {
+				"small-round": "3px"
+			}
 		}
 	},
 	"styles": {
@@ -339,12 +331,19 @@
 			"fontStyle": "normal"
 		},
 		"spacing": {
-			"blockGap": "var(--wp--custom--spacing--baseline)"
+			"blockGap": "var(--wp--preset--spacing--50)",
+			"customSpacingSize": false,
+			"padding": {
+				"top": "0",
+				"right": "1rem",
+				"bottom": "0",
+				"left": "1rem"
+			}
 		},
 		"blocks": {
 			"core/buttons": {
 				"spacing": {
-					"blockGap": "var(--wp--custom--spacing--third-baseline)"
+					"blockGap": "var(--wp--preset--spacing--30)"
 				}
 			},
 			"core/button": {
@@ -356,16 +355,16 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "var(--wp--custom--spacing--third-baseline)",
-						"right": "var(--wp--custom--spacing--two-thirds-baseline)",
-						"bottom": "var(--wp--custom--spacing--third-baseline)",
-						"left": "var(--wp--custom--spacing--two-thirds-baseline)"
+						"top": "var(--wp--preset--spacing--30)",
+						"right": "var(--wp--preset--spacing--40)",
+						"bottom": "var(--wp--preset--spacing--30)",
+						"left": "var(--wp--preset--spacing--40)"
 					}
 				}
 			},
 			"core/cover": {
 				"spacing": {
-					"padding": "var(--wp--custom--spacing--baseline)"
+					"padding": "var(--wp--preset--spacing--50)"
 				}
 			},
 			"core/separator": {
@@ -399,14 +398,14 @@
 						},
 						"spacing": {
 							"padding": {
-								"top": "var(--wp--custom--spacing--third-baseline)",
-								"bottom": "var(--wp--custom--spacing--third-baseline)",
-								"left": "var(--wp--custom--spacing--third-baseline)",
-								"right": "var(--wp--custom--spacing--third-baseline)"
+								"top": "var(--wp--preset--spacing--30)",
+								"bottom": "var(--wp--preset--spacing--30)",
+								"left": "var(--wp--preset--spacing--30)",
+								"right": "var(--wp--preset--spacing--30)"
 							},
 							"margin": {
-								"left": "var(--wp--custom--spacing--third-baseline)",
-								"right": "var(--wp--custom--spacing--third-baseline)"
+								"left": "var(--wp--preset--spacing--30)",
+								"right": "var(--wp--preset--spacing--30)"
 							}
 						}
 					}
@@ -424,10 +423,10 @@
 						},
 						"spacing": {
 							"padding": {
-								"top": "var(--wp--custom--spacing--third-baseline)",
-								"right": "var(--wp--custom--spacing--third-baseline)",
-								"bottom": "var(--wp--custom--spacing--third-baseline)",
-								"left": "var(--wp--custom--spacing--third-baseline)"
+								"top": "var(--wp--preset--spacing--30)",
+								"right": "var(--wp--preset--spacing--30)",
+								"bottom": "var(--wp--preset--spacing--30)",
+								"left": "var(--wp--preset--spacing--30)"
 							}
 						},
 						"typography": {
@@ -442,10 +441,10 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "var(--wp--custom--spacing--third-baseline)",
-						"right": "var(--wp--custom--spacing--two-thirds-baseline)",
-						"bottom": "var(--wp--custom--spacing--third-baseline)",
-						"left": "var(--wp--custom--spacing--two-thirds-baseline)"
+						"top": "var(--wp--preset--spacing--30)",
+						"right": "var(--wp--preset--spacing--40)",
+						"bottom": "var(--wp--preset--spacing--30)",
+						"left": "var(--wp--preset--spacing--40)"
 					}
 				}
 			}
