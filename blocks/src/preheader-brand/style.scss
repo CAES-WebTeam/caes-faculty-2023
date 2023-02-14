@@ -16,7 +16,7 @@
     }
 
     .caes-fac-preheader-brand {
-        padding: var(--wp--custom--spacing--third-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+        padding: var(--wp--preset--spacing--30) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50));
         display: flex;
         align-items: center;
     }
@@ -44,7 +44,7 @@
         align-items: center;
 
         p {
-            padding: var(--wp--custom--spacing--third-baseline) var(--wp--custom--spacing--third-baseline) var(--wp--custom--spacing--third-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline));
+            padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--30) var(--wp--preset--spacing--30) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50));
             margin: 0;
         }
     }
@@ -101,14 +101,14 @@
     .wp-block-uga-caes-caes-fac-preheader-brand {
         flex-direction: row;
         justify-content: space-between;
-        padding: 0 clamp(1.2rem,0.429rem + 2.286vw,var(--wp--custom--spacing--baseline))!important;
+        padding: 0 clamp(1.2rem,0.429rem + 2.286vw,var(--wp--preset--spacing--50))!important;
     }
 
     .has-base-background-color,
     .has-contrast-background-color {
         .wp-block-uga-caes-caes-fac-preheader-brand {
             .caes-fac-preheader-brand {
-                padding: var(--wp--custom--spacing--third-baseline) 0;
+                padding: var(--wp--preset--spacing--30) 0;
             }
             .caes-fac-preheader-right {
                 border-top: 0;
@@ -120,7 +120,7 @@
 // Preheader search
 
 #preheaderSearchToggle {
-    padding: var(--wp--custom--spacing--third-baseline) var(--wp--custom--spacing--fourth-baseline);
+    padding: var(--wp--preset--spacing--30);
     background-color: transparent;
     border: 0;
     font-size: var(--wp--preset--font-size--tiny);
@@ -135,7 +135,7 @@
         position: absolute;
         right: 0;
         top: 100%;
-        padding: var(--wp--custom--spacing--half-baseline);
+        padding: var(--wp--preset--spacing--40);
         z-index: 1;
         visibility: visible;
         opacity: 1;
