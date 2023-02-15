@@ -601,7 +601,7 @@ function frontend_add_duties_field( $fields ) {
   $caes_option = get_option('caeswpjm_options');
   $setreq = true;
   $caes_jobreq_duties = $caes_option['caeswpjm_jobreq_duties'] ?? null;
-  if($caes_jobreq_duties == 'hide') return $fields;
+  if($caes_jobreq_duties != 'hide') {
   if($caes_jobreq_duties == 'opt') $setreq = false;
   $fields['job']['job_duties'] = array(
     'label'       => __( 'Job Duties', 'job_manager' ),
@@ -610,6 +610,7 @@ function frontend_add_duties_field( $fields ) {
     'placeholder' => 'Type here',
     'priority'    => 5.6
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_duties_field' );
@@ -619,7 +620,7 @@ function admin_add_duties_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_duties = $caes_option['caeswpjm_jobreq_duties'] ?? null;
-  if($caes_jobreq_duties == 'hide') return $fields;
+  if($caes_jobreq_duties != 'hide') {
   //if($caes_option['caeswpjm_jobreq_duties'] == 'hide') return;
   //if(!isset($fields['_job_duties'])) return;
   $fields['_job_duties'] = array(
@@ -629,6 +630,7 @@ function admin_add_duties_field( $fields ) {
     'description' => '',
     'priority'    => 5.6
   );
+}
   return $fields;
 }
 
@@ -663,7 +665,7 @@ function frontend_add_qualifications_field( $fields ) {
   $caes_option = get_option('caeswpjm_options');
   $setreq = true;
   $caes_jobreq_qual = $caes_option['caeswpjm_jobreq_qual'] ?? null;
-  if($caes_jobreq_qual == 'hide') return $fields;
+  if($caes_jobreq_qual != 'hide') {
   if($caes_jobreq_qual == 'opt') $setreq = false;
   $fields['job']['job_qualifications'] = array(
     'label'       => __( 'Job Qualifications', 'job_manager' ),
@@ -672,6 +674,7 @@ function frontend_add_qualifications_field( $fields ) {
     'placeholder' => 'Type here',
     'priority'    => 5.7
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_qualifications_field' );
@@ -681,7 +684,7 @@ function admin_add_qualifications_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_qual = $caes_option['caeswpjm_jobreq_qual'] ?? null;
-  if($caes_jobreq_qual == 'hide') return $fields;
+  if($caes_jobreq_qual != 'hide') {
   //if($caes_option['caeswpjm_jobreq_qual'] == 'hide') return;
   $fields['_job_qualifications'] = array(
     'label'       => __( 'Job Qualifications', 'job_manager' ),
@@ -690,6 +693,7 @@ function admin_add_qualifications_field( $fields ) {
     'description' => '',
     'priority'    => 5.7
   );
+}
   return $fields;
 }
 
@@ -720,7 +724,7 @@ function frontend_add_benefits_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_benefits = $caes_option['caeswpjm_jobreq_benefits'] ?? null;
-  if($caes_jobreq_benefits == 'hide') return $fields;
+  if($caes_jobreq_benefits != 'hide') {
   $setreq = true;
   if($caes_jobreq_benefits == 'opt') $setreq = false;
   $fields['job']['job_benefits'] = array(
@@ -730,6 +734,7 @@ function frontend_add_benefits_field( $fields ) {
     'placeholder' => 'Type here',
     'priority'    => 5.8
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_benefits_field' );
@@ -739,7 +744,7 @@ function admin_add_benefits_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_benefits = $caes_option['caeswpjm_jobreq_benefits'] ?? null;
-  if($caes_jobreq_benefits == 'hide') return $fields;
+  if($caes_jobreq_benefits != 'hide') {
   //if($caes_option['caeswpjm_jobreq_benefits'] == 'hide') return;
   $fields['_job_benefits'] = array(
     'label'       => __( 'Benefits', 'job_manager' ),
@@ -748,6 +753,7 @@ function admin_add_benefits_field( $fields ) {
     'description' => '',
     'priority'    => 5.8
   );
+}
   return $fields;
 }
 
@@ -778,7 +784,7 @@ function frontend_add_compensation_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_comp = $caes_option['caeswpjm_jobreq_comp'] ?? null;
-  if($caes_jobreq_comp == 'hide') return $fields;
+  if($caes_jobreq_comp != 'hide') {
   $setreq = true;
   if($caes_jobreq_comp == 'opt') $setreq = false;
   $fields['job']['job_compensation'] = array(
@@ -788,6 +794,7 @@ function frontend_add_compensation_field( $fields ) {
     'placeholder' => 'e.g. $20 hr or $10,0000 salary',
     'priority'    => 5.9
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_compensation_field' );
@@ -797,7 +804,7 @@ function admin_add_compensation_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_comp = $caes_option['caeswpjm_jobreq_comp'] ?? null;
-  if($caes_jobreq_comp == 'hide') return $fields;
+  if($caes_jobreq_comp != 'hide') {
   //if($caes_option['caeswpjm_jobreq_comp'] == 'hide') return;
   $fields['_job_compensation'] = array(
     'label'       => __( 'Compensation', 'job_manager' ),
@@ -806,6 +813,7 @@ function admin_add_compensation_field( $fields ) {
     'description' => '',
     'priority'    => 5.9
   );
+}
   return $fields;
 }
 
@@ -833,7 +841,7 @@ function frontend_add_contact_name_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactname = $caes_option['caeswpjm_jobreq_contactname'] ?? null;
-  if($caes_jobreq_contactname == 'hide') return $fields;
+  if($caes_jobreq_contactname != 'hide') {
   $setreq = true;
   if($caes_jobreq_contactname == 'opt') $setreq = false;
   $fields['job']['job_contact_name'] = array(
@@ -843,6 +851,7 @@ function frontend_add_contact_name_field( $fields ) {
     'placeholder' => '(required)',
     'priority'    => 108
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_contact_name_field' );
@@ -852,7 +861,7 @@ function admin_add_contact_name_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactname = $caes_option['caeswpjm_jobreq_contactname'] ?? null;
-  if($caes_jobreq_contactname == 'hide') return $fields;
+  if($caes_jobreq_contactname != 'hide') {
   //if($caes_option['caeswpjm_jobreq_contactname'] == 'hide') return;
   $fields['_job_contact_name'] = array(
     'label'       => __( 'Contact name', 'job_manager' ),
@@ -861,6 +870,7 @@ function admin_add_contact_name_field( $fields ) {
     'description' => '',
     'priority'    => 108
   );
+}
   return $fields;
 }
 
@@ -889,7 +899,7 @@ function frontend_add_contact_position_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactpos = $caes_option['scaes_jobreq_contactposet'] ?? null;
-  if($caes_jobreq_contactpos == 'hide') return $fields;
+  if($caes_jobreq_contactpos != 'hide') {
   $setreq = true;
   if($caes_jobreq_contactpos == 'opt') $setreq = false;
   $fields['job']['job_contact_position'] = array(
@@ -899,6 +909,7 @@ function frontend_add_contact_position_field( $fields ) {
     'placeholder' => '(required)',
     'priority'    => 108
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_contact_position_field' );
@@ -908,7 +919,7 @@ function admin_add_contact_position_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactpos = $caes_option['caeswpjm_jobreq_contactpos'] ?? null;
-  if($caes_jobreq_contactpos == 'hide') return $fields;
+  if($caes_jobreq_contactpos != 'hide') {
   //if($caes_option['caeswpjm_jobreq_contactpos'] == 'hide') return;
   $fields['_job_contact_position'] = array(
     'label'       => __( 'Contact position', 'job_manager' ),
@@ -917,6 +928,7 @@ function admin_add_contact_position_field( $fields ) {
     'description' => '',
     'priority'    => 108
   );
+}
   return $fields;
 }
 
@@ -944,7 +956,7 @@ function frontend_add_contact_email_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactemail = $caes_option['caeswpjm_jobreq_contactemail'] ?? null;
-  if($caes_jobreq_contactemail == 'hide') return $fields;
+  if($caes_jobreq_contactemail != 'hide') {
   $setreq = true;
   if($caes_jobreq_contactemail == 'opt') $setreq = false;
   $fields['job']['job_contact_email'] = array(
@@ -954,6 +966,7 @@ function frontend_add_contact_email_field( $fields ) {
     'placeholder' => '(required)',
     'priority'    => 108
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_contact_email_field' );
@@ -963,7 +976,7 @@ function admin_add_contact_email_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactemail = $caes_option['caeswpjm_jobreq_contactemail'] ?? null;
-  if($caes_jobreq_contactemail == 'hide') return $fields;
+  if($caes_jobreq_contactemail != 'hide') {
   //if($caes_option['caeswpjm_jobreq_contactemail'] == 'hide') return;
   $fields['_job_contact_email'] = array(
     'label'       => __( 'Contact email address', 'job_manager' ),
@@ -972,6 +985,7 @@ function admin_add_contact_email_field( $fields ) {
     'description' => '',
     'priority'    => 108
   );
+}
   return $fields;
 }
 
@@ -999,7 +1013,7 @@ function frontend_add_contact_phnbr_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactph = $caes_option['caeswpjm_jobreq_contactph'] ?? null;
-  if($caes_jobreq_contactph == 'hide') return $fields;
+  if($caes_jobreq_contactph != 'hide') {
   $setreq = true;
   if($caes_jobreq_contactph == 'opt') $setreq = false;
   $fields['job']['job_contact_phnbr'] = array(
@@ -1009,6 +1023,7 @@ function frontend_add_contact_phnbr_field( $fields ) {
     'placeholder' => '(required)',
     'priority'    => 108
   );
+}
   return $fields;
 }
 add_filter( 'submit_job_form_fields', 'frontend_add_contact_phnbr_field' );
@@ -1018,7 +1033,7 @@ function admin_add_contact_phnbr_field( $fields ) {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactph = $caes_option['caeswpjm_jobreq_contactph'] ?? null;
-  if($caes_jobreq_contactph == 'hide') return $fields;
+  if($caes_jobreq_contactph != 'hide') {
  //if($caes_option['caeswpjm_jobreq_contactph'] == 'hide') return;
   $fields['_job_contact_phnbr'] = array(
     'label'       => __( 'Contact phone number', 'job_manager' ),
@@ -1027,6 +1042,7 @@ function admin_add_contact_phnbr_field( $fields ) {
     'description' => '',
     'priority'    => 108
   );
+}
   return $fields;
 }
 
@@ -1037,12 +1053,13 @@ function display_job_contact_phnbr_data() {
   //$caes_option = caes_get_global_options();
   $caes_option = get_option('caeswpjm_options');
   $caes_jobreq_contactph = $caes_option['caeswpjm_jobreq_contactph'] ?? null;
-  if($caes_jobreq_contactph == 'hide') return;
+  if($caes_jobreq_contactph != 'hide') {
   global $post;
   $contact_phnbr = get_post_meta( $post->ID, '_job_contact_phnbr', true );
   if ( $contact_phnbr ) {
     echo '<li class="contact_phnbr">' . __( 'Contact phone number:' ) . '' . esc_html( $contact_phnbr ) . '</li>';
   }
+}
 }
 //add_action( 'single_job_listing_meta_end', 'display_job_contact_phnbr_data' );
 
