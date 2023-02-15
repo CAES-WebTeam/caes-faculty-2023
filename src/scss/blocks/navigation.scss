@@ -39,7 +39,7 @@
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
-    gap: var(--wp--custom--spacing--half-baseline);
+    gap: var(--wp--preset--spacing--40);
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
@@ -53,7 +53,14 @@
 }
 
 .caes-fac-navigation-two {
-    padding: var(--wp--custom--spacing--half-baseline) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--custom--spacing--baseline)) !important;
+    padding: var(--wp--preset--spacing--40) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50)) !important;
+}
+
+@media print {
+    nav.wp-block-navigation,
+    .wp-block-navigation {
+        display: none !important;
+    }
 }
 
 // // ADDED TO TEST IF I CAN MAKE MOBILE MENUS COLLAPSE

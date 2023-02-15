@@ -79,3 +79,9 @@
 		background: #d9b526;
 	}
 }
+
+@media print {
+	.wp-block-uga-caes-caes-fac-post-social-share {
+		display: none;
+	}
+}
