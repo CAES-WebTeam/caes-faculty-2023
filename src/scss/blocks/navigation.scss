@@ -56,6 +56,13 @@
     padding: var(--wp--preset--spacing--40) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50)) !important;
 }
 
+@media print {
+    nav.wp-block-navigation,
+    .wp-block-navigation {
+        display: none !important;
+    }
+}
+
 // // ADDED TO TEST IF I CAN MAKE MOBILE MENUS COLLAPSE
 
 // // Keep, add own styles for this

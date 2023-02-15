@@ -101,7 +101,7 @@
     .wp-block-uga-caes-caes-fac-preheader-brand {
         flex-direction: row;
         justify-content: space-between;
-        padding: 0 clamp(1.2rem,0.429rem + 2.286vw,var(--wp--preset--spacing--50))!important;
+        padding: 0 clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50)) !important;
     }
 
     .has-base-background-color,
@@ -110,6 +110,7 @@
             .caes-fac-preheader-brand {
                 padding: var(--wp--preset--spacing--30) 0;
             }
+
             .caes-fac-preheader-right {
                 border-top: 0;
             }
@@ -153,7 +154,7 @@
             &.search-field {
                 border-bottom-right-radius: 0;
                 border-top-right-radius: 0;
-            }    
+            }
 
             &[type="submit"] {
                 color: var(--wp--preset--color--white);
@@ -194,5 +195,13 @@
 
     #preheaderSearchToggle {
         color: var(--wp--preset--color--contrast);
+    }
+}
+
+// Print
+
+@media print {
+    .wp-block-uga-caes-caes-fac-preheader-brand {
+        display: none;
     }
 }

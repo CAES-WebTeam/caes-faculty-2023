@@ -316,6 +316,7 @@
 		text-decoration: none;
 		-webkit-transition: color 100ms ease-in;
 		transition: color 100ms ease-in;
+
 		svg {
 			height: 1.5rem;
 			width: 1.8rem;
@@ -327,5 +328,22 @@
 	.ugafooter__social-link:hover {
 		color: #FFFFFF;
 		text-decoration: none;
+	}
+}
+
+@media print {
+	.wp-block-uga-caes-caes-fac-uga-footer .ugafooter {
+		border: 0;
+
+		.ugafooter__links,
+		.ugafooter__social,
+		.ugafooter__logo {
+			display: none;
+		}
+
+		.ugafooter__address {
+			color: var(--wp--preset--color--contrast);
+			text-align: left;
+		}
 	}
 }
