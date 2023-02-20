@@ -1,0 +1,78 @@
+// CAES Admin - Tabbed Sites List Shortcode
+
+.caes-tabs {
+    *[role="tablist"] {
+        display: flex;
+        flex-wrap: wrap;
+
+        [role="tab"] {
+            padding: var(--wp--preset--spacing--40);
+            line-height: 1;
+            border: 0;
+            background: var(--wp--preset--color--base);
+            color: var(--wp--preset--color--primary);
+            font-family: var(--wp--preset--font-family--merriweather-sans);
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        [role="tab"][aria-selected="true"] {
+            background: var(--wp--preset--color--contrast-two);
+            color: var(--wp--preset--color--base);
+            text-decoration: underline;
+        }
+
+    }
+
+    *[role="tabpanel"] {
+        border: 1px solid var(--wp--preset--color--base-two);
+        padding: var(--wp--preset--spacing--50);
+    }
+
+    ul.twocolumn-sitelist {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: var(--wp--preset--spacing--50);
+        li {
+            margin: 0 0 var(--wp--preset--spacing--50);
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            border-bottom: 1px solid var(--wp--preset--color--base-two);
+            padding-bottom: var(--wp--preset--spacing--50);
+        }
+    }
+
+}
+
+@media (min-width:600px) {
+    .caes-tabs {
+        *[role="tabpanel"] {
+            padding: var(--wp--preset--spacing--60);
+        }
+
+        ul.twocolumn-sitelist {
+            column-count: 2;
+            -moz-column-fill: balance;
+            column-fill: balance;
+            gap: var(--wp--preset--spacing--60);
+        }
+    }
+}
+
+@media print {
+    .caes-tabs {
+        ul.twocolumn-sitelist {
+            column-count: 2;
+        }
+        *[role="tabpanel"] {
+            border: 0;
+            padding: 0;
+        }
+    }
+}

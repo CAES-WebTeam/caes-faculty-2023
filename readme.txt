@@ -1,4 +1,4 @@
-=== UGA CAES FACULTY 2023 ===
+=== CAES FACULTY 2023 ===
 Contributors: OIT Web Team
 Tested up to: 6.0
 Requires at least: 5.8

@@ -1,0 +1,94 @@
+.caes-people {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wp--preset--spacing--20);
+
+    .caes-people-card {
+        width: calc(100% - var(--wp--preset--spacing--60));
+
+        .caes-people-rounded {
+            .caes-people-portrait {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .caes-people-portrait {
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        max-width: 246px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+    }
+
+    .caes-people-name {
+        font-size: var(--wp--preset--font-size--x-large);
+        font-family: var(--wp--preset--font-family--oswald);
+        margin: 1rem 0;
+        line-height: 1;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .caes-people-left {
+        .caes-people-portrait {
+            float: left;
+            margin-right: 1rem;
+            width: 25%;
+        }
+    }
+
+    .caes-people-centered {
+        text-align: center;
+    }
+
+}
+
+@media (min-width:600px) {
+    .caes-people {
+        gap: var(--wp--preset--spacing--70);
+
+        .caes-people-card {
+            width: calc(33% - var(--wp--preset--spacing--70));
+        }
+
+        &.listing {
+            .caes-people-card {
+                width: 100%;
+            }
+        }
+
+        &.grid-2 {
+            .caes-people-card {
+                width: calc(50% - var(--wp--preset--spacing--70));
+            }
+        }
+
+        &.grid-3 {
+            .caes-people-card {
+                width: calc(33% - var(--wp--preset--spacing--70));
+            }
+        }
+
+        &.grid-4 {
+            .caes-people-card {
+                width: calc(25% - var(--wp--preset--spacing--70));
+            }
+        }
+    }
+
+}

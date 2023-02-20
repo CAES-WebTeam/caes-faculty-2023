@@ -29,6 +29,13 @@
 			"postTypes": [
 				"job_listing"
 			]
+		},
+		{
+			"name": "single-person",
+			"title": "Person",
+			"postTypes": [
+				"person"
+			]
 		}
 	],
 	"templateParts": [
@@ -331,7 +338,7 @@
 			"fontStyle": "normal"
 		},
 		"spacing": {
-			"blockGap": "var(--wp--preset--spacing--50)",
+			"blockGap": "var(--wp--preset--spacing--60)",
 			"customSpacingSize": false,
 			"padding": {
 				"top": "0",

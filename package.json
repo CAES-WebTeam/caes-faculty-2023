@@ -1,8 +1,8 @@
 {
   "name": "uga-caes-faculty-2023",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "2023 block theme for UGA CAES and Extension.",
-  "author": "OIT Web Team",
+  "author": "CAES OIT Web Team",
   "homepage": "https://oit.caes.uga.edu",
   "license": "GPL-2.0-or-later",
   "scripts": {
