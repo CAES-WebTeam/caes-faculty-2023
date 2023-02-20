@@ -38,7 +38,6 @@ textarea {
   box-sizing: border-box;
   border: 1px solid #a7a3a3;
   border-radius: var(--wp--custom--radius--small-round);
-  // width: 100%;
 }
 
 input[type=submit] {
@@ -79,12 +78,6 @@ iframe {
   display: flex;
   align-items: center;
 }
-
-// Header
-
-// .caes-fac-header {
-//   padding: var(--wp--preset--spacing--40) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50)) !important;
-// }
 
 // Sub Footer
 
@@ -143,13 +136,6 @@ iframe {
 }
 
 // Spacing helpers
-
-// .wp-block-post-content>.alignfull,
-// .block-editor-block-list__layout.is-root-container>.wp-block[data-align=full] {
-//   margin-left: calc(-1 * clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50))) !important;
-//   margin-right: calc(-1 * clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50))) !important;
-//   width: calc(100% + clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50)) + clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50))) !important;
-// }
 
 .wp-block-group.has-background:not([style*="padding"]) {
   padding: clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50));
@@ -326,31 +312,6 @@ figure.caes-fac-headshot {
 
 }
 
-@media (min-width:600px) {
-  .grid-items.personnel {
-    .grid-item {
-      @include grid-item(row);
-      // max-width: calc((var(--wp--style--global--content-size)/2) - (var(--wp--preset--spacing--50)/2));
-    }
-
-    .grid-item-img-container {
-      @include item-img-container(3/4, 35%);
-      height: 100%;
-
-      img {
-        object-position: center;
-      }
-    }
-
-    .grid-item-grid-info {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      @include grid-item-info(left);
-    }
-  }
-}
-
 // Parvus is a lightbox library for images.
 // Here we're importing the scss library, and adding our own overrides.
 
@@ -483,17 +444,13 @@ figure.caes-fac-headshot {
 
 @media print, (prefers-reduced-motion) {
   .js-scroll {
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   .scrolled {
     animation: none !important;
   }
 }
-
-// Non-CAES Plugins
-
-@import 'plugin-style-overrides/wp-job-manager';
 
 // PRINT STYLES
 
@@ -576,8 +533,11 @@ figure.caes-fac-headshot {
     margin: auto;
   }
 
-  .wp-block-uga-caes-content-lightbox {
-    display: block;
-  }
-
 }
+
+// Non-CAES Plugins
+
+@import 'plugin-style-overrides/wp-job-manager';
+@import 'plugin-style-overrides/caes-personnel-directory';
+@import 'plugin-style-overrides/caes-people';
+@import 'plugin-style-overrides/caes-tabs-site-shortcode';

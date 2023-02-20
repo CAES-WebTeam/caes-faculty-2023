@@ -1,0 +1,39 @@
+// CAES Personnel Directory Styles
+
+.grid-items {
+    &.personnel {
+        .grid-item-img-container {
+            @include item-img-container(1, 100%);
+
+            img {
+                object-position: top;
+            }
+        }
+    }
+
+}
+
+@media (min-width:600px) {
+    .grid-items.personnel {
+        .grid-item {
+            @include grid-item(row);
+            // max-width: calc((var(--wp--style--global--content-size)/2) - (var(--wp--preset--spacing--50)/2));
+        }
+
+        .grid-item-img-container {
+            @include item-img-container(3/4, 35%);
+            height: 100%;
+
+            img {
+                object-position: center;
+            }
+        }
+
+        .grid-item-grid-info {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            @include grid-item-info(left);
+        }
+    }
+}
