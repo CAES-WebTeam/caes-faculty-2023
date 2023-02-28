@@ -312,6 +312,14 @@ figure.caes-fac-headshot {
 
 }
 
+// List block
+
+
+ul.is-style-caes-fac-list-none {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
 // Parvus is a lightbox library for images.
 // Here we're importing the scss library, and adding our own overrides.
 
@@ -442,7 +450,8 @@ figure.caes-fac-headshot {
   }
 }
 
-@media print, (prefers-reduced-motion) {
+@media print,
+(prefers-reduced-motion) {
   .js-scroll {
     opacity: 1 !important;
   }
