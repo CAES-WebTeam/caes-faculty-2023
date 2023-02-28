@@ -1,4 +1,4 @@
-// wp.blocks.registerBlockStyle( 'core/navigation', {
-//     name: 'caes-fac-vertical-nav',
-//     label: 'Vertical Navigation'
-// } );
+wp.blocks.registerBlockStyle( 'core/list', {
+    name: 'caes-fac-list-none',
+    label: 'List Style: None'
+} );
