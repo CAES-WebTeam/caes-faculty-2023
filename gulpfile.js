@@ -99,6 +99,7 @@ gulp.task('js-bundling', function () {
             entry: {
                 main: './src/js/main.js',
                 "remove-block-styles": './src/js/remove-block-styles.js',
+                "add-block-styles": './src/js/add-block-styles.js'
             },
             output: {
                 filename: '[name].js',

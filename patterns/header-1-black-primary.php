@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/header-1-black-primary
  * Categories: header
  * Block Types: core/template-part/header
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 

@@ -6,12 +6,12 @@
             "palette": [
                 {
                     "slug": "primary",
-                    "color": "#008844",
+                    "color": "#28774F",
                     "name": "Primary"
                 },
                 {
                     "slug": "secondary",
-                    "color": "#BA0C2F",
+                    "color": "#687782",
                     "name": "Secondary"
                 },
                 {

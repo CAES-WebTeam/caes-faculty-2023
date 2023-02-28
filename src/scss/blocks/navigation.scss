@@ -22,6 +22,111 @@
     }
 }
 
+// For horizontal navigation (same bar as site title)
+
+.caes-fac-navigation-one .wp-block-navigation__container>.wp-block-navigation-item {
+
+    &>a:hover,
+    &>a:focus {
+        text-decoration: underline;
+    }
+}
+
+// For vertical (sidebar) navigation (expanded)
+
+.is-style-caes-fac-vertical-nav {
+
+    a {
+        padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);
+        display: block !important;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .current-menu-item {
+        &>a {
+            background-color: var(--wp--preset--color--contrast-two) !important;
+            color: var(--wp--preset--color--base) !important;
+            border-left: 2px solid var(--wp--preset--color--contrast-two) !important;
+        }
+    }
+
+    // Override to remove border
+
+    &:not(.has-background) {
+        .wp-block-navigation__submenu-container {
+            border: 0;
+        }
+    }
+
+    // Every wp-block-navigation-item list item
+    .wp-block-navigation-item {
+        display: block;
+    }
+
+    // Overall wrapper
+
+    .wp-block-navigation__container {
+        width: 100%;
+        display: block;
+
+        &>.wp-block-navigation-item>a {
+            border-bottom: 2px solid var(--wp--preset--color--base-two);
+
+            &:last-child {
+                border: 0;
+            }
+        }
+
+        &>.wp-block-navigation-item.current-menu-item>a {
+            border-bottom: 2px solid var(--wp--preset--color--contrast-two);
+        }
+    }
+
+    // Subcontainers do not display by default, hide from screen readers using display none
+
+    .has-child .wp-block-navigation__submenu-container,
+    .wp-block-navigation__submenu-container {
+        display: none;
+    }
+
+    // Subcontainers display when top item or child item is current
+
+    .wp-block-navigation__container>.current-menu-item>.wp-block-navigation__submenu-container,
+    .wp-block-navigation__submenu-container .current-menu-item>.wp-block-navigation__submenu-container,
+    .wp-block-navigation__submenu-container:has(.current-menu-item) {
+        display: block !important;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        width: 95%;
+        margin-left: auto;
+        margin-top: var(--wp--preset--spacing--40);
+
+        a {
+            border-left: 2px solid var(--wp--preset--color--base-two);
+        }
+    }
+
+    // Important for ensuring 100% width of subcontainers
+
+    .has-child:not(.open-on-click):not(.open-on-hover-click):focus-within>.wp-block-navigation__submenu-container,
+    .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container {
+        min-width: auto;
+        width: 95%;
+    }
+
+    .wp-block-navigation__submenu-container .wp-block-navigation-item:hover {
+        background-color: unset !important;
+        color: var(--wp--preset--color--contrast) !important;
+    }
+
+}
+
 // Mobile menu
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item,
@@ -57,6 +162,7 @@
 }
 
 @media print {
+
     nav.wp-block-navigation,
     .wp-block-navigation {
         display: none !important;

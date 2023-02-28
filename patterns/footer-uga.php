@@ -4,7 +4,7 @@
  * Slug: uga-caes-fac-2023/footer-uga
  * Categories: footer
  * Block Types: core/template-part/footer
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 
