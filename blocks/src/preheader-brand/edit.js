@@ -55,7 +55,8 @@ const Edit = ({ attributes, setAttributes }) => {
 							label={__("Select brand", "gutenberg-multi")}
 							options={[
 								{ label: 'UGA CAES', value: 'caes' },
-								{ label: 'UGA Extension', value: 'extension' }
+								{ label: 'UGA Extension', value: 'extension' },
+								{ label: 'UGA only', value: 'uga' }
 							]}
 							value={attributes.brandEntity}
 							onChange={(val) => setAttributes({ brandEntity: val })}

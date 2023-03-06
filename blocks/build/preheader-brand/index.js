@@ -73,6 +73,9 @@ const Edit = _ref => {
     }, {
       label: 'UGA Extension',
       value: 'extension'
+    }, {
+      label: 'UGA only',
+      value: 'uga'
     }],
     value: attributes.brandEntity,
     onChange: val => setAttributes({
