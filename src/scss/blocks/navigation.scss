@@ -138,6 +138,7 @@
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-page-list {
     align-items: baseline;
     width: 100%;
+    font-size: var(--wp--preset--font-size--normal) !important;
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item {
@@ -203,7 +204,7 @@
                         position: absolute;
                         top: -1px;
                         right: 0;
-                        height: calc(100% + 1px);
+                        height: calc(var(--wp--preset--spacing--30) * 2 + 1.75rem + 2px);
                         width: calc(var(--wp--preset--spacing--30) * 2 + 1.75rem + 1.8px);
                         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                         margin: 0;
