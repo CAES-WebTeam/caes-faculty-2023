@@ -136,7 +136,7 @@ add_action('init', 'remove_block_style');
 add_post_type_support('page', 'excerpt');
 
 
-/* START BLOCKS FOR THEME */
+////////////////// START BLOCKS FOR THEME //////////////////
 
 function uga_caes_caes_fac_blocks_block_init()
 {
@@ -217,18 +217,18 @@ function uga_caes_caes_fac_post_social_share_render_callback($attributes, $conte
 	require get_template_directory() . '/blocks/build/post-social-share/template.php';
 	return ob_get_clean();
 }
-/* END BLOCKS FOR THEME */
+////////////////// END BLOCKS FOR THEME //////////////////
 
-/* ADD LOG IN PAGE STYLING */
+////////////////// ADD LOG IN PAGE STYLING //////////////////
 function uga_caes_fac_2023_login_stylesheet()
 {
 	wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/assets/css/login/caes-login.min.css');
 }
 add_action('login_enqueue_scripts', 'uga_caes_fac_2023_login_stylesheet');
-/* END LOG IN PAGE STYLING */
+////////////////// END LOG IN PAGE STYLING //////////////////
 
 
-/* GOOGLE TAG MANAGER */
+////////////////// GOOGLE TAG MANAGER //////////////////
 /* GTM adds analytics tags for Siteimprove and Google Analytics. */
 
 function gtag_code()
@@ -292,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 add_action('wp_footer', 'gtag_afterbody_code', 11);
 
-/* END GOOGLE TAG MANAGER */
+////////////////// END GOOGLE TAG MANAGER //////////////////
 
 /* Filter <title> tag's separator */
 
@@ -359,7 +359,7 @@ add_action('wp_head', 'add_meta_tags');
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
   if(is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
 
-/* FAVICON */
+////////////////// FAVICON //////////////////
 
 // Remove WordPress's default rel="icon" tags
 remove_action ('wp_head', 'wp_site_icon', 99);
@@ -371,15 +371,15 @@ function caes_fac_2023_favicon()
 }
 add_action('wp_head', 'caes_fac_2023_favicon');
 
-/* END FAVICON */
+////////////////// END FAVICON //////////////////
 
-/* START GUEST AUTHOR NAME */
+////////////////// START GUEST AUTHOR NAME //////////////////
 // Filter the_author to guestname if existed
 function update_the_author( $display_name ) {
 	if(get_post_meta(get_the_ID(), 'guestauthorname', true) != '')
 		 return get_post_meta(get_the_ID(), 'guestauthorname', true);
 	else
-		return $display_name.':mikeytest';
+		return $display_name;
 }
 //add_filter( 'the_author', 'update_the_author', PHP_INT_MAX, 1 );
 add_filter('the_author', 'update_the_author', 12);
@@ -387,4 +387,29 @@ add_filter('get_the_author_display_name', 'update_the_author', 12);
 add_filter('get_the_author_user_nicename', 'update_the_author', 12);
 add_filter('get_the_author_nickname','update_the_author', 12);
 
-/* END GUEST AUTHOR NAME */
+////////////////// END GUEST AUTHOR NAME //////////////////
+
+////////////////// START SEARCH GLOBAL //////////////////
+//<input type="hidden" name="search-type" value="global" />
+//if(is_main_site()) { $wSearch = 'global'; $searchText = 'Search all sites'; }
+
+function searchfilter($query) {
+	if(is_main_site()) {
+		if ($query->is_search) {
+			//$query->set('post_type', array( 'your-custom-post-type-name' ) );
+			echo 'mikeytest';
+
+
+
+
+
+
+
+		}
+	}
+    return $query;
+}
+add_filter('pre_get_posts','searchfilter');
+
+
+////////////////// END SEARCH GLOBAL //////////////////
