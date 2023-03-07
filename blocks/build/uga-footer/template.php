@@ -28,13 +28,19 @@
 						<li class="ugafooter__links-list-item">
 							<a class="ugafooter__links-list-link" href="https://www.caes.uga.edu/accessibility.html">CAES Accessibility Policy</a>
 						</li>
-						<li class="ugafooter__links-list-item">
-							<?php if (is_user_logged_in()) : ?>
-								<a class="ugafooter__links-list-link" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out of site</a>
-							<?php else : ?>
-								<a class="ugafooter__links-list-link" href="<?php echo wp_login_url(get_permalink()); ?>">Log in to site</a>
-							<?php endif; ?>
-						</li>
+						<?php
+						$login = $attributes['login'];
+							switch ($login) {
+							case "true": ?>
+								<?php if (is_user_logged_in()) : ?>
+									<li class="ugafooter__links-list-item"><a class="ugafooter__links-list-link" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out of site</a></li>
+								<?php else : ?>
+									<li class="ugafooter__links-list-item"><a class="ugafooter__links-list-link" href="<?php echo wp_login_url(get_permalink()); ?>">Log in to site</a></li>
+								<?php endif; ?>
+							<?php break;
+        					case "false": ?>
+							<?php break; ?>
+   						 <?php } ?>
 					</ul>
 				</nav>
 			</div>

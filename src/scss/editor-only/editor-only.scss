@@ -2,3 +2,25 @@
 .js-scroll {
   opacity: 1 !important;
 }
+
+// NAVIGATION BLOCK
+
+.is-style-caes-fac-vertical-nav .has-child .wp-block-navigation__submenu-container,
+.is-style-caes-fac-vertical-nav .wp-block-navigation__submenu-container {
+
+  display: block;
+  width: auto;
+  height: auto;
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  width: 95%;
+  margin-top: 1rem;
+  margin-left: auto;
+
+  a {
+    border-left: 2px solid var(--wp--preset--color--base-two);
+
+  }
+
+}

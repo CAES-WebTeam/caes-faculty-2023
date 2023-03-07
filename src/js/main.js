@@ -1,6 +1,35 @@
-// /** Navigation block - make collapsable on mobile **/
+// /** Add class to submenu containers that have the current child in the navigation **/
 
-// Coming soon...
+var getParents = function (elem, selector) {
+
+	// Set up a parent array
+	var parents = [];
+
+	// Push each parent element to the array
+	for ( ; elem && elem !== document; elem = elem.parentNode ) {
+		if (selector) {
+			if (elem.matches(selector)) {
+				parents.push(elem);
+			}
+			continue;
+		}
+		parents.push(elem);
+	}
+
+	// Return our parent array
+	return parents;
+};
+
+// Get subNavs
+var currentSubNavs;
+currentSubNavs = document.querySelectorAll(".is-style-caes-fac-vertical-nav .current-menu-item");
+
+var elem = document.querySelector(".is-style-caes-fac-vertical-nav .current-menu-item");
+var parents = getParents(elem, ".wp-block-navigation__submenu-container");
+
+parents.forEach(function (item) {
+  item.classList.add('caes-fac-subnav-currparent')
+});
 
 // /** Animations on scroll **/
 

@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/header-3-black-white
  * Categories:header
  * Block Types: core/template-part/header
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->

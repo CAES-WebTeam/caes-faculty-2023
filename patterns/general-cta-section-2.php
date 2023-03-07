@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/general-cta-section-2
  * Categories: uga-caes-fac-2023-general
  * Block Types: core/template-part/cover
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 

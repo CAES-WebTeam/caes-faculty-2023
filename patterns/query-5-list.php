@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/query-list
  * Categories: uga-caes-fac-2023-query
  * Block Types: core/template-part/query
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 
@@ -23,7 +23,7 @@
 
         <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"},"fontSize":"small"} -->
         <div class="wp-block-group has-small-font-size">
-            <!-- wp:post-author {"showAvatar":false} /-->
+            <!-- wp:post-author {"showAvatar":false,"isLink":true} /-->
 
             <!-- wp:post-date /-->
         </div>

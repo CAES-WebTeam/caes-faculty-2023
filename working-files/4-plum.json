@@ -1,0 +1,45 @@
+{
+    "version": 2,
+    "title": "Plum",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "primary",
+                    "color": "#66435A",
+                    "name": "Primary"
+                },
+                {
+                    "slug": "secondary",
+                    "color": "#9A586A",
+                    "name": "Secondary"
+                },
+                {
+                    "slug": "tertiary",
+                    "color": "#FAE1CA",
+                    "name": "Tertiary"
+                },
+                {
+                    "slug": "base",
+                    "color": "#ffffff",
+                    "name": "Base"
+                },
+                {
+                    "slug": "base-two",
+                    "color": "#eaeaea",
+                    "name": "Base 2"
+                },
+                {
+                    "slug": "contrast",
+                    "color": "#000000",
+                    "name": "Contrast"
+                },
+                {
+                    "slug": "contrast-two",
+                    "color": "#333333",
+                    "name": "Contrast 2"
+                }
+            ]
+        }
+    }
+}

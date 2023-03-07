@@ -96,19 +96,23 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 	$block_pattern_categories = array(
 		'uga-caes-fac-2023-general'  => array(
 			'label'         => __('General', 'uga-caes-fac-2023'),
-			'categoryTypes' => array('uga-caes-fac-2023'),
+			'categoryTypes' => array('uga-caes-fac-2023')
 		),
 		'uga-caes-fac-2023-query'  => array(
 			'label'         => __('Post List', 'uga-caes-fac-2023'),
-			'categoryTypes' => array('uga-caes-fac-2023'),
+			'categoryTypes' => array('uga-caes-fac-2023')
+		),
+		'uga-caes-fac-2023-sidebar' => array(
+			'label'         => __('Sidebar', 'uga-caes-fac-2023'),
+			'categoryTypes' => array('uga-caes-fac-2023')
 		),
 		'header'  => array(
 			'label'         => __('Site Header', 'uga-caes-fac-2023'),
-			'categoryTypes' => array('uga-caes-fac-2023'),
+			'categoryTypes' => array('uga-caes-fac-2023')
 		),
 		'footer'  => array(
 			'label'         => __('Site Footer', 'uga-caes-fac-2023'),
-			'categoryTypes' => array('uga-caes-fac-2023'),
+			'categoryTypes' => array('uga-caes-fac-2023')
 		)
 	);
 
@@ -130,6 +134,19 @@ function remove_block_style()
 	]);
 }
 add_action('init', 'remove_block_style');
+
+// Adds some custom style choices to core blocks with add-block-styles.js
+
+function add_block_style()
+{
+	wp_enqueue_script(
+		'add-block-style',
+		get_theme_file_uri() . '/assets/js/add-block-styles.js',
+		array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'),
+		// filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/add-block-styles.js' )
+	);
+}
+add_action('enqueue_block_editor_assets', 'add_block_style');
 
 // Adds excerpts to posts
 
@@ -296,10 +313,11 @@ add_action('wp_footer', 'gtag_afterbody_code', 11);
 
 /* Filter <title> tag's separator */
 
-function change_title_separator( $separator ) {
-    return '|';
+function change_title_separator($separator)
+{
+	return '|';
 }
-add_filter( 'document_title_separator', 'change_title_separator' );
+add_filter('document_title_separator', 'change_title_separator');
 
 /* END Filter <title> tag's separator */
 
@@ -313,56 +331,54 @@ function add_meta_tags()
 
 	// Title tags
 	$title = strip_tags(wp_get_document_title());
-	echo '<meta property="og:title" content="'. $title .'" />' . "\n";
-	echo '<meta property="twitter:title" content="'. $title .'" />' . "\n";
+	echo '<meta property="og:title" content="' . $title . '" />' . "\n";
+	echo '<meta property="twitter:title" content="' . $title . '" />' . "\n";
 
 	// Page address
 	$canon_url = wp_get_canonical_url();
-	echo '<meta property="og:url" content="'. $canon_url .'" />' . "\n";
+	echo '<meta property="og:url" content="' . $canon_url . '" />' . "\n";
 
 	if (is_singular()) {
 
 		// Description tags
-		if ( has_excerpt() ) {
+		if (has_excerpt()) {
 			$des = strip_tags(get_the_excerpt());
-			echo '<meta name="description" content="'. $des .'" />' . "\n";
-			echo '<meta property="og:description" content="'. $des .'" />' . "\n";
-			echo '<meta property="twitter:description" content="'. $des .'" />' . "\n";
+			echo '<meta name="description" content="' . $des . '" />' . "\n";
+			echo '<meta property="og:description" content="' . $des . '" />' . "\n";
+			echo '<meta property="twitter:description" content="' . $des . '" />' . "\n";
 		}
 
 		// Preview image tags
-		if ( has_post_thumbnail() )  {
-			$image = wp_get_attachment_url( get_post_thumbnail_id() );
-			echo '<meta property="og:image" content="'. esc_attr( $image ) .'" />' . "\n";
-			echo '<meta property="twitter:image" content="'. esc_attr( $image ) .'" />' . "\n";
+		if (has_post_thumbnail()) {
+			$image = wp_get_attachment_url(get_post_thumbnail_id());
+			echo '<meta property="og:image" content="' . esc_attr($image) . '" />' . "\n";
+			echo '<meta property="twitter:image" content="' . esc_attr($image) . '" />' . "\n";
 		}
-
 	}
 
 	// If the homepage is the default latest posts page
 	if (is_home()) {
 
 		// Description tags
-		if ( get_bloginfo( 'description' ) ) {
+		if (get_bloginfo('description')) {
 			$des = strip_tags(get_bloginfo('description'));
-			echo '<meta name="description" content="'. $des .'" />' . "\n";
-			echo '<meta property="og:description" content="'. $des .'" />' . "\n";
-			echo '<meta property="twitter:description" content="'. $des .'" />' . "\n";
+			echo '<meta name="description" content="' . $des . '" />' . "\n";
+			echo '<meta property="og:description" content="' . $des . '" />' . "\n";
+			echo '<meta property="twitter:description" content="' . $des . '" />' . "\n";
 		}
-
 	}
 }
 
 add_action('wp_head', 'add_meta_tags');
 
 // Include the required files
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-  if(is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
+include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+if (is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
 
 ////////////////// FAVICON //////////////////
 
 // Remove WordPress's default rel="icon" tags
-remove_action ('wp_head', 'wp_site_icon', 99);
+remove_action('wp_head', 'wp_site_icon', 99);
 
 // Add our theme's default favicon
 function caes_fac_2023_favicon()
@@ -375,9 +391,10 @@ add_action('wp_head', 'caes_fac_2023_favicon');
 
 ////////////////// START GUEST AUTHOR NAME //////////////////
 // Filter the_author to guestname if existed
-function update_the_author( $display_name ) {
-	if(get_post_meta(get_the_ID(), 'guestauthorname', true) != '')
-		 return get_post_meta(get_the_ID(), 'guestauthorname', true);
+function update_the_author($display_name)
+{
+	if (get_post_meta(get_the_ID(), 'guestauthorname', true) != '')
+		return get_post_meta(get_the_ID(), 'guestauthorname', true);
 	else
 		return $display_name;
 }
@@ -385,7 +402,7 @@ function update_the_author( $display_name ) {
 add_filter('the_author', 'update_the_author', 12);
 add_filter('get_the_author_display_name', 'update_the_author', 12);
 add_filter('get_the_author_user_nicename', 'update_the_author', 12);
-add_filter('get_the_author_nickname','update_the_author', 12);
+add_filter('get_the_author_nickname', 'update_the_author', 12);
 
 ////////////////// END GUEST AUTHOR NAME //////////////////
 

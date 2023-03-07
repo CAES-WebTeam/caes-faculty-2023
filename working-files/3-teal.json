@@ -1,22 +1,22 @@
 {
     "version": 2,
-    "title": "4-H",
+    "title": "Teal",
     "settings": {
         "color": {
             "palette": [
                 {
                     "slug": "primary",
-                    "color": "#008844",
+                    "color": "#004E60",
                     "name": "Primary"
                 },
                 {
                     "slug": "secondary",
-                    "color": "#BA0C2F",
+                    "color": "#00838F",
                     "name": "Secondary"
                 },
                 {
                     "slug": "tertiary",
-                    "color": "#CAE3E9",
+                    "color": "#D7ECDE",
                     "name": "Tertiary"
                 },
                 {

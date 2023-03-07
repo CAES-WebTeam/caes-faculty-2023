@@ -79,7 +79,7 @@
 				},
 				{
 					"slug": "secondary",
-					"color": "#00a3ad",
+					"color": "#00838F",
 					"name": "Secondary"
 				},
 				{
@@ -327,6 +327,11 @@
 					"fontSize": "var(--wp--preset--font-size--normal)",
 					"fontWeight": "400",
 					"lineHeight": "1.2"
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--oswald)"
 				}
 			}
 		},

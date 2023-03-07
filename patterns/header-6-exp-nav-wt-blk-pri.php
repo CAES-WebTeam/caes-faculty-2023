@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/header-6-exp-nav-wt-blk-pri
  * Categories: header
  * Block Types: core/template-part/header
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 

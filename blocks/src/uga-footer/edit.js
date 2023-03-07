@@ -11,7 +11,15 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	InspectorControls
+} from '@wordpress/block-editor';
+import {
+	Panel,
+	PanelBody,
+	SelectControl
+} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -35,13 +43,34 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+
+const Edit = ({ attributes, setAttributes }) => {
+
 	return (
-		<div {...useBlockProps()}>
-			{<ServerSideRender
-				block="uga-caes/caes-fac-uga-footer"
-			/>
-			}
-		</div>
-	);
+		<>
+			<InspectorControls>
+				<Panel>
+					<PanelBody>
+						<SelectControl
+							label={__("Login", "gutenberg-multi")}
+							options={[
+								{ label: 'Enabled', value: 'true' },
+								{ label: 'Disabled', value: 'false' }
+							]}
+							value={attributes.login}
+							onChange={(val) => setAttributes({ login: val })}
+						/>
+					</PanelBody>
+				</Panel>
+			</InspectorControls>
+			<div {...useBlockProps()}>
+				<ServerSideRender
+					block="uga-caes/caes-fac-uga-footer"
+					attributes={attributes}
+				/>
+			</div>
+		</>
+	)
 }
+
+export default Edit

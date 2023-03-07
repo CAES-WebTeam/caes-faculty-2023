@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/general-quote-featured
  * Categories: uga-caes-fac-2023-general
  * Block Types: core/template-part/text
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 

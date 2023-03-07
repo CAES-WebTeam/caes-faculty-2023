@@ -5,7 +5,7 @@
  * Slug: uga-caes-fac-2023/query-grid
  * Categories: uga-caes-fac-2023-query
  * Block Types: core/template-part/query
- * Viewport Width: 1280
+ * Viewport Width: 1100
  */
 ?>
 
