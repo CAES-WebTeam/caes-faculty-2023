@@ -46,7 +46,7 @@
 	.ugafooter {
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-		padding: 48px 0;
+		padding: var(--wp--style--block-gap) 0;
 		border-width: 4px 0 0;
 		border-style: solid;
 		border-color: #BA0C2F;
@@ -86,15 +86,15 @@
 
 	@media (min-width: 768px) {
 		.ugafooter__container {
-			max-width: 720px;
+			max-width: var(--wp--style--global--content-size);
 		}
 	}
 
-	@media (min-width: 992px) {
-		.ugafooter__container {
-			max-width: 960px;
-		}
-	}
+	// @media (min-width: 992px) {
+	// 	.ugafooter__container {
+	// 		max-width: var(--wp--style--global--content-size);
+	// 	}
+	// }
 
 	// @media (min-width: 1200px) {
 	// 	.ugafooter__container {

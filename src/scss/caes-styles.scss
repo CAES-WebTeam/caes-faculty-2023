@@ -461,6 +461,15 @@ ul.is-style-caes-fac-list-none {
   }
 }
 
+// Sticky class - use for sticking content on screen as user scrolls, relative to its parent container's height
+@media (min-width:782px) {
+  .sticky,
+  .stick {
+    position: sticky;
+    top: 3rem;
+  }
+}
+
 // PRINT STYLES
 
 @media print {
