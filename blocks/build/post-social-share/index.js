@@ -195,7 +195,7 @@ module.exports = window["wp"]["serverSideRender"];
   \******************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"uga-caes/caes-fac-post-social-share","version":"0.1.0","title":"UGA CAES Faculty 2023 - Post Social Share","category":"widgets","icon":"layout","description":"Adds social sharing buttons to posts for the UGA CAES Faculty 2023 theme.","supports":{"html":false},"textdomain":"caes-fac-post-social-share","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"uga-caes/caes-fac-post-social-share","version":"1.0.0","title":"CAES Faculty 2023 - Post Social Share","category":"widgets","icon":"layout","description":"Adds social sharing buttons to posts for the UGA CAES Faculty 2023 theme.","supports":{"html":false},"textdomain":"caes-fac-post-social-share","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

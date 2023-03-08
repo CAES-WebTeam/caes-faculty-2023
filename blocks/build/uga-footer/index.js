@@ -225,7 +225,7 @@ module.exports = window["wp"]["serverSideRender"];
   \***********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"uga-caes/caes-fac-uga-footer","version":"0.1.0","title":"UGA CAES Faculty 2023 - UGA Footer","category":"widgets","icon":"layout","description":"UGA footer option for the UGA CAES Faculty 2023 theme.","supports":{"html":false},"attributes":{"login":{"type":"string","default":"true"}},"textdomain":"caes-fac-uga-footer","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"uga-caes/caes-fac-uga-footer","version":"1.0.0","title":"CAES Faculty 2023 - UGA Footer","category":"widgets","icon":"layout","description":"UGA footer option for the UGA CAES Faculty 2023 theme.","supports":{"html":false},"attributes":{"login":{"type":"string","default":"true"}},"textdomain":"caes-fac-uga-footer","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
