@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name:       UGA CAES Faculty 2023 - Blocks
+ * Plugin Name:       CAES Faculty 2023 - Blocks
  * Plugin URI:        https://oit.caes.uga.edu
  * Description:       Blocks made for the UGA CAES Faculty 2023 theme.
  * Requires at least: 5.9
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           1.0.0
  * Author:            CAES OIT Web Team
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
