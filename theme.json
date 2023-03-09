@@ -31,10 +31,10 @@
 			]
 		},
 		{
-			"name": "single-person",
+			"name": "single-caes-people",
 			"title": "Person",
 			"postTypes": [
-				"person"
+				"caes-people"
 			]
 		}
 	],
