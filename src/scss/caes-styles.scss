@@ -292,6 +292,11 @@ figure.caes-fac-headshot {
   }
 
   &.personnel {
+
+    .grid-item {
+      width: 100%;
+    }
+
     .grid-item-img-container {
       @include item-img-container(1, 100%);
 
