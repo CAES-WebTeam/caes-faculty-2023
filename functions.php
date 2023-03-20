@@ -106,6 +106,10 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 			'label'         => __('Sidebar', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')
 		),
+		'uga-caes-fac-2023-people' => array(
+			'label'         => __('People Profiles', 'uga-caes-fac-2023'),
+			'categoryTypes' => array('uga-caes-fac-2023')
+		),
 		'header'  => array(
 			'label'         => __('Site Header', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')

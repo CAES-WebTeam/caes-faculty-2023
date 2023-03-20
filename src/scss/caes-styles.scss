@@ -68,6 +68,10 @@ iframe {
   padding: 0 !important;
 }
 
+.caes-fac-preheader-brand {
+  line-height: 1;
+}
+
 .caes-fac-preheader .wp-block-group {
   gap: var(--wp--preset--spacing--30) !important;
 }
@@ -292,6 +296,11 @@ figure.caes-fac-headshot {
   }
 
   &.personnel {
+
+    .grid-item {
+      width: 100%;
+    }
+
     .grid-item-img-container {
       @include item-img-container(1, 100%);
 

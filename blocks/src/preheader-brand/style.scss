@@ -10,10 +10,10 @@
     display: flex;
     flex-direction: column;
 
-    a {
-        font-weight: bold;
-        text-decoration: none;
-    }
+    // a {
+    //     font-weight: bold;
+    //     text-decoration: none;
+    // }
 
     .caes-fac-preheader-brand {
         padding: var(--wp--preset--spacing--30) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50));
@@ -44,7 +44,7 @@
         align-items: center;
 
         p {
-            padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--30) var(--wp--preset--spacing--30) clamp(1.2rem, 0.429rem + 2.286vw, var(--wp--preset--spacing--50));
+            padding: var(--wp--preset--spacing--30);
             margin: 0;
         }
     }
@@ -124,9 +124,15 @@
     padding: var(--wp--preset--spacing--30);
     background-color: transparent;
     border: 0;
+    font-family: var(--wp--preset--font-family--merriweather-sans);
     font-size: var(--wp--preset--font-size--tiny);
     cursor: pointer;
-
+    display: flex;
+    svg {
+        height: 15px;
+        width: 15px;
+        margin-left: 3px;
+    }
 }
 
 .caes-fac-preheader-right {
@@ -150,6 +156,7 @@
             padding: 0.5rem;
             border: 0;
             font-size: var(--wp--preset--font-size--tiny);
+            font-family: var(--wp--preset--font-family--merriweather-sans);
 
             &.search-field {
                 border-bottom-right-radius: 0;
@@ -180,6 +187,10 @@
 
     #preheaderSearchToggle {
         color: var(--wp--preset--color--base);
+
+        svg {
+            fill: var(--wp--preset--color--base);
+        }
     }
 }
 
@@ -195,6 +206,10 @@
 
     #preheaderSearchToggle {
         color: var(--wp--preset--color--contrast);
+
+        svg {
+            fill: var(--wp--preset--color--contrast);
+        }
     }
 }
 

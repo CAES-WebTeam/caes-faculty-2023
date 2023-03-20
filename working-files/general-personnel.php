@@ -24,7 +24,11 @@
                         <!-- /wp:heading -->
 
                         <!-- wp:paragraph {"fontSize":"normal"} -->
-                        <p class="has-normal-font-size"><strong>Web Developer</strong></p>
+                        <p class="has-normal-font-size"><strong>Web Developer</strong> </p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph {"fontSize":"small"} -->
+                        <p class="has-small-font-size">Agriculture and Natural Resources</p>
                         <!-- /wp:paragraph -->
                     </div>
                     <!-- /wp:group -->
@@ -67,6 +71,10 @@
 
                         <!-- wp:paragraph {"fontSize":"normal"} -->
                         <p class="has-normal-font-size"><strong>Web Developer</strong></p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph {"fontSize":"small"} -->
+                        <p class="has-small-font-size">4-H Youth, Family and Consumer Sciences</p>
                         <!-- /wp:paragraph -->
                     </div>
                     <!-- /wp:group -->
