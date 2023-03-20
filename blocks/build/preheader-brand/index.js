@@ -37,6 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -80,6 +81,13 @@ const Edit = _ref => {
     value: attributes.brandEntity,
     onChange: val => setAttributes({
       brandEntity: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: "Commodities Link",
+    checked: attributes.commodityLink,
+    help: attributes.commodityLink ? 'Show commodities link.' : 'Hide commodities link.',
+    onChange: val => setAttributes({
+      commodityLink: val
     })
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_5___default()), {
     block: "uga-caes/caes-fac-preheader-brand",
@@ -228,7 +236,7 @@ module.exports = window["wp"]["serverSideRender"];
   \****************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"uga-caes/caes-fac-preheader-brand","version":"1.0.0","title":"CAES Faculty 2023 - Preheader Brand","category":"widgets","icon":"layout","description":"Blocks made for the UGA CAES Faculty 2023 theme.","supports":{"html":false},"attributes":{"brandEntity":{"type":"string","default":"caes"}},"textdomain":"caes-fac-preheader-brand","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"uga-caes/caes-fac-preheader-brand","version":"1.0.0","title":"CAES Faculty 2023 - Preheader Brand","category":"widgets","icon":"layout","description":"Blocks made for the UGA CAES Faculty 2023 theme.","supports":{"html":false},"attributes":{"brandEntity":{"type":"string","default":"caes"},"commodityLink":{"type":"boolean","default":false}},"textdomain":"caes-fac-preheader-brand","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

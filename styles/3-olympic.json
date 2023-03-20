@@ -1,22 +1,22 @@
 {
     "version": 2,
-    "title": "Plum",
+    "title": "Olympic",
     "settings": {
         "color": {
             "palette": [
                 {
                     "slug": "primary",
-                    "color": "#66435A",
+                    "color": "#004E60",
                     "name": "Primary"
                 },
                 {
                     "slug": "secondary",
-                    "color": "#9A586A",
+                    "color": "#00838F",
                     "name": "Secondary"
                 },
                 {
                     "slug": "tertiary",
-                    "color": "#FAE1CA",
+                    "color": "#D7ECDE",
                     "name": "Tertiary"
                 },
                 {

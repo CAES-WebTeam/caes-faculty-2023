@@ -18,8 +18,12 @@ import {
 import {
 	Panel,
 	PanelBody,
-	SelectControl
+	SelectControl,
+	ToggleControl
 } from '@wordpress/components';
+import {
+	useState
+} from '@wordpress/element';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -61,6 +65,18 @@ const Edit = ({ attributes, setAttributes }) => {
 							value={attributes.brandEntity}
 							onChange={(val) => setAttributes({ brandEntity: val })}
 						/>
+
+						<ToggleControl
+							label="Commodities Link"
+							checked={attributes.commodityLink}
+							help={
+								attributes.commodityLink
+									? 'Show commodities link.'
+									: 'Hide commodities link.'
+							}
+							onChange={(val) => setAttributes({ commodityLink: val })}
+						/>
+
 					</PanelBody>
 				</Panel>
 			</InspectorControls>
