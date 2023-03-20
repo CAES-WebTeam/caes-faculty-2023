@@ -375,6 +375,29 @@ function add_meta_tags()
 
 add_action('wp_head', 'add_meta_tags');
 
+// ADD RSS IMAGE FROM CONTENT
+function add_feed_content($content) {
+	if(is_feed()) {
+		global $post;
+		$imgsize = 'medium';
+		if(isset($_GET['imgsize'])) {
+      if($_GET['imgsize'] == 'lg') $imgsize = 'large';
+    }
+		$output = '';
+		$thumbnail_ID = get_post_thumbnail_id( $post->ID );
+		if($thumbnail_ID != '') {
+			$thumbnail = wp_get_attachment_image_src($thumbnail_ID, $imgsize);
+      $thumbnail0 = $thumbnail[0] ?? null;
+      $thumbnail1 = $thumbnail[1] ?? null;
+      $thumbnail2 = $thumbnail[2] ?? null;
+			if($thumbnail0 != null || $thumbnail1 != null || $thumbnail2 != null) $output .= '<media:content xmlns:media="http://search.yahoo.com/mrss" url="'. $thumbnail0 .'" medium="image" width="'. $thumbnail1 .'" height="'. $thumbnail2 .'" />';
+		}
+		if($output != '') echo $output;
+	}
+	return $content;
+}
+add_filter('rss2_item', 'add_feed_content');
+
 // Include the required files
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
