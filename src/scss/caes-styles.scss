@@ -54,6 +54,7 @@ input[type=submit] {
 
 iframe {
   border: 0;
+  max-width: 100% !important;
 }
 
 // Body
@@ -472,6 +473,7 @@ ul.is-style-caes-fac-list-none {
 
 // Sticky class - use for sticking content on screen as user scrolls, relative to its parent container's height
 @media (min-width:782px) {
+
   .sticky,
   .stick {
     position: sticky;
