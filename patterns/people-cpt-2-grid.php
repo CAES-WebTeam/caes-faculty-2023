@@ -9,8 +9,8 @@
  */
 ?>
 
-<!-- wp:query {"query":{"perPage":"6","pages":0,"offset":0,"postType":"caes-people","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"firstorlast":"asc"},"displayLayout":{"type":"flex","columns":3},"namespace":"caes-people-list","className":"caes-people-profiles"} -->
-<div class="wp-block-query caes-people-profiles"><!-- wp:post-template -->
+<!-- wp:query {"query":{"perPage":"6","pages":0,"offset":0,"postType":"caes-people","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"firstorlast":"asc","lastname_az":"asc"},"displayLayout":{"type":"flex","columns":3},"namespace":"caes-people-list","className":"caes-people-profiles grid"} -->
+<div class="wp-block-query caes-people-profiles grid"><!-- wp:post-template -->
     <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group"><!-- wp:post-featured-image {"width":"250px","height":"250px","style":{"border":{"radius":"20rem"}},"className":"caes-people-profiles-img-container"} /-->
 
