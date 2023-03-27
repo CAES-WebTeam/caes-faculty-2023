@@ -17,9 +17,7 @@
         <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
         <div class="wp-block-group"><!-- wp:post-title {"textAlign":"center","isLink":true,"fontSize":"x-large"} /-->
 
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">Position Title</p>
-            <!-- /wp:paragraph -->
+            <!-- wp:caes-people/position-title /-->
         </div>
         <!-- /wp:group -->
     </div>

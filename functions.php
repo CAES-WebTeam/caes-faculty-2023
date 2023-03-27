@@ -126,6 +126,15 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 }
 add_action('init', 'uga_caes_fac_2023_register_block_pattern_categories', 9);
 
+// Unregister people block patterns if plugin is not installed
+add_action( 'init', function() {
+    if ( ! function_exists( 'create_block_caes_people_block_init' ) ) {
+        unregister_block_pattern( 'uga-caes-fac-2023/people-cpt-1-cards' );
+		unregister_block_pattern( 'uga-caes-fac-2023/people-cpt-2-grid' );
+		unregister_block_pattern( 'uga-caes-fac-2023/people-cpt-3-list' );
+    }
+} );
+
 // Removes some default core styles with remove-block-styles.js
 
 function remove_block_style()

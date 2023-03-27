@@ -9,7 +9,7 @@
  */
 ?>
 
-<!-- wp:query {"queryId":9,"query":{"perPage":"6","pages":0,"offset":0,"postType":"caes-people","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"firstorlast":"asc"},"displayLayout":{"type":"flex","columns":2},"namespace":"caes-people-list","className":"grid-items personnel"} -->
+<!-- wp:query {"query":{"perPage":"6","pages":0,"offset":0,"postType":"caes-people","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"firstorlast":"asc"},"displayLayout":{"type":"flex","columns":2},"namespace":"caes-people-list","className":"grid-items personnel"} -->
 <div class="wp-block-query grid-items personnel"><!-- wp:post-template -->
     <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"className":"grid-item","layout":{"type":"flex","flexWrap":"nowrap"}} -->
     <div class="wp-block-group grid-item"><!-- wp:post-featured-image {"className":"grid-item-img-container"} /-->
@@ -19,9 +19,7 @@
             <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                 <div class="wp-block-group"><!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
 
-                    <!-- wp:paragraph -->
-                    <p><strong>Position Title</strong></p>
-                    <!-- /wp:paragraph -->
+                    <!-- wp:caes-people/position-title {"align":"left"} /-->
                 </div>
                 <!-- /wp:group -->
             </div>

@@ -8,21 +8,24 @@
  * Viewport Width: 1100
  */
 ?>
-<!-- wp:query {"query":{"perPage":"6","pages":0,"offset":0,"postType":"caes-people","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"firstorlast":"asc"},"displayLayout":{"type":"flex","columns":2},"namespace":"caes-people-list","className":"caes-people-profiles"} -->
-<div class="wp-block-query caes-people-profiles"><!-- wp:post-template -->
-    <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-    <div class="wp-block-group"><!-- wp:post-featured-image {"width":"150px","height":"150px","style":{"border":{"radius":"20rem"}},"className":"caes-people-profiles-img-container"} /-->
+<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"caes-people","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"lastname_az":"asc"},"displayLayout":{"type":"flex","columns":2},"namespace":"caes-people-profiles-list","className":"caes-people-list"} -->
+<div class="wp-block-query caes-people-list"><!-- wp:post-template -->
+    <!-- wp:columns -->
+    <div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
+        <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:post-featured-image {"width":"150px","height":"150px","style":{"border":{"radius":"100px"}}} /--></div>
+        <!-- /wp:column -->
 
-        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-        <div class="wp-block-group"><!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
+        <!-- wp:column {"verticalAlignment":"center","width":"66.66%"} -->
+        <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+            <div class="wp-block-group"><!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
 
-            <!-- wp:paragraph -->
-            <p>Position Title</p>
-            <!-- /wp:paragraph -->
+                <!-- wp:caes-people/position-title {"align":"left"} /-->
+            </div>
+            <!-- /wp:group -->
         </div>
-        <!-- /wp:group -->
+        <!-- /wp:column -->
     </div>
-    <!-- /wp:group -->
+    <!-- /wp:columns -->
     <!-- /wp:post-template -->
 </div>
 <!-- /wp:query -->
