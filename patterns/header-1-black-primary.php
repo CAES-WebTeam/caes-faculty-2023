@@ -19,7 +19,13 @@
         <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex"}} -->
             <div class="wp-block-group"><!-- wp:site-logo /-->
 
-                <!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"background","className":"caes-fac-site-title"} /-->
+                <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+                <div class="wp-block-group">
+                    <!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"background","className":"caes-fac-site-title"} /-->
+
+                    <!-- wp:site-tagline /-->
+                </div>
+                <!-- /wp:group -->
             </div>
             <!-- /wp:group -->
 

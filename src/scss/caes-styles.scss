@@ -130,6 +130,11 @@ iframe {
 
 // Post information
 
+.wp-block-avatar__image,
+.wp-block-post-author__avatar img {
+  height: auto !important;
+}
+
 .wp-block-post-author__byline {
   font-size: var(--wp--preset--font-size--small);
 }
