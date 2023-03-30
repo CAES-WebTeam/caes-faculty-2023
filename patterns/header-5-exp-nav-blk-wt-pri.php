@@ -33,7 +33,7 @@
 
     <!-- wp:group {"lock":{"move":true,"remove":true},"align":"full","backgroundColor":"primary","className":"caes-fac-navigation-two has-base-color has-text-color","layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignfull caes-fac-navigation-two has-base-color has-text-color has-primary-background-color has-background"><!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-group"><!-- wp:navigation {"ref":46,"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"left"}} /--></div>
+        <div class="wp-block-group"><!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"blockGap":"var:preset|spacing|50"}}} /--></div>
         <!-- /wp:group -->
     </div>
     <!-- /wp:group -->

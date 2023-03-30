@@ -27,7 +27,7 @@
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"right"}} /-->
+            <!-- wp:navigation {"icon":"menu","className":"caes-fac-navigation-one","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|50"}}} /-->
         </div>
         <!-- /wp:group -->
     </div>

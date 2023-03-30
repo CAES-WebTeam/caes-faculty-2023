@@ -24,10 +24,10 @@
 
 // For horizontal navigation (same bar as site title)
 
-.caes-fac-navigation-one .wp-block-navigation__container>.wp-block-navigation-item {
-
-    &>a:hover,
-    &>a:focus {
+a.wp-block-navigation-item__content,
+.caes-fac-navigation-one .wp-block-navigation__container>.wp-block-navigation-item a {
+    &:hover,
+    &:focus {
         text-decoration: underline;
     }
 }

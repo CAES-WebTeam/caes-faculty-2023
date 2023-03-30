@@ -127,13 +127,13 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 add_action('init', 'uga_caes_fac_2023_register_block_pattern_categories', 9);
 
 // Unregister people block patterns if plugin is not installed
-add_action( 'init', function() {
-    if ( ! function_exists( 'create_block_caes_people_block_init' ) ) {
-        unregister_block_pattern( 'uga-caes-fac-2023/people-cpt-1-cards' );
-		unregister_block_pattern( 'uga-caes-fac-2023/people-cpt-2-grid' );
-		unregister_block_pattern( 'uga-caes-fac-2023/people-cpt-3-list' );
-    }
-} );
+add_action('init', function () {
+	if (!function_exists('create_block_caes_people_block_init')) {
+		unregister_block_pattern('uga-caes-fac-2023/people-cpt-1-cards');
+		unregister_block_pattern('uga-caes-fac-2023/people-cpt-2-grid');
+		unregister_block_pattern('uga-caes-fac-2023/people-cpt-3-list');
+	}
+});
 
 // Removes some default core styles with remove-block-styles.js
 
@@ -203,6 +203,8 @@ function uga_caes_caes_fac_blocks_block_init()
 }
 add_action('init', 'uga_caes_caes_fac_blocks_block_init');
 
+
+
 /**
  * Render callback function.
  *
@@ -268,7 +270,7 @@ function gtag_code()
 		if (strpos($getDocRoot, 'devcaes') !== false || strpos($getDocRoot, 'devextension') !== false) return;
 
 		if (strpos($getDocRoot, 'caes') !== false) {
-			$output = " 
+$output = " 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -278,7 +280,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 ";
 		} else {
-			$output = "
+$output = "
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -288,28 +290,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 ";
 		}
-		echo $output;
+echo $output;
 	}
 }
 
-add_action('wp_head', 'gtag_code', 11);
+add_action('wp_head', 'gtag_code', 1);
 
-function gtag_afterbody_code()
+function gtag_body_code()
 {
 	if (!is_user_logged_in()) {
 		$getDocRoot = strtolower($_SERVER['DOCUMENT_ROOT']);
 		if (strpos($getDocRoot, 'devcaes') !== false || strpos($getDocRoot, 'devextension') !== false) return;
 
 		if (strpos($getDocRoot, 'caes') !== false) {
-			$output = '
+$output = '
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BZ6L8B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 ';
 		} else {
-			$output = '
-			<!-- Please work. -->
+$output = '
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M75RTPD"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -320,7 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	}
 }
 
-add_action('wp_footer', 'gtag_afterbody_code', 11);
+add_action('wp_body_open', 'gtag_body_code', -9999);
 
 ////////////////// END GOOGLE TAG MANAGER //////////////////
 
@@ -333,6 +334,17 @@ function change_title_separator($separator)
 add_filter('document_title_separator', 'change_title_separator');
 
 /* END Filter <title> tag's separator */
+
+/* Remove Openverse images as a media option */
+add_filter(
+	'block_editor_settings_all',
+	function ($settings) {
+		$settings['enableOpenverseMediaCategory'] = false;
+
+		return $settings;
+	},
+	10
+);
 
 
 /* META TAGS */
@@ -382,26 +394,27 @@ function add_meta_tags()
 	}
 }
 
-add_action('wp_head', 'add_meta_tags');
+add_action('wp_head', 'add_meta_tags', 2);
 
 // ADD RSS IMAGE FROM CONTENT
-function add_feed_content($content) {
-	if(is_feed()) {
+function add_feed_content($content)
+{
+	if (is_feed()) {
 		global $post;
 		$imgsize = 'medium';
-		if(isset($_GET['imgsize'])) {
-      if($_GET['imgsize'] == 'lg') $imgsize = 'large';
-    }
-		$output = '';
-		$thumbnail_ID = get_post_thumbnail_id( $post->ID );
-		if($thumbnail_ID != '') {
-			$thumbnail = wp_get_attachment_image_src($thumbnail_ID, $imgsize);
-      $thumbnail0 = $thumbnail[0] ?? null;
-      $thumbnail1 = $thumbnail[1] ?? null;
-      $thumbnail2 = $thumbnail[2] ?? null;
-			if($thumbnail0 != null || $thumbnail1 != null || $thumbnail2 != null) $output .= '<media:content xmlns:media="http://search.yahoo.com/mrss" url="'. $thumbnail0 .'" medium="image" width="'. $thumbnail1 .'" height="'. $thumbnail2 .'" />';
+		if (isset($_GET['imgsize'])) {
+			if ($_GET['imgsize'] == 'lg') $imgsize = 'large';
 		}
-		if($output != '') echo $output;
+		$output = '';
+		$thumbnail_ID = get_post_thumbnail_id($post->ID);
+		if ($thumbnail_ID != '') {
+			$thumbnail = wp_get_attachment_image_src($thumbnail_ID, $imgsize);
+			$thumbnail0 = $thumbnail[0] ?? null;
+			$thumbnail1 = $thumbnail[1] ?? null;
+			$thumbnail2 = $thumbnail[2] ?? null;
+			if ($thumbnail0 != null || $thumbnail1 != null || $thumbnail2 != null) $output .= '<media:content xmlns:media="http://search.yahoo.com/mrss" url="' . $thumbnail0 . '" medium="image" width="' . $thumbnail1 . '" height="' . $thumbnail2 . '" />';
+		}
+		if ($output != '') echo $output;
 	}
 	return $content;
 }
@@ -446,23 +459,17 @@ add_filter('get_the_author_nickname', 'update_the_author', 12);
 //<input type="hidden" name="search-type" value="global" />
 //if(is_main_site()) { $wSearch = 'global'; $searchText = 'Search all sites'; }
 
-function searchfilter($query) {
-	if(is_main_site()) {
+function searchfilter($query)
+{
+	if (is_main_site()) {
 		if ($query->is_search) {
 			//$query->set('post_type', array( 'your-custom-post-type-name' ) );
 			echo 'mikeytest';
-
-
-
-
-
-
-
 		}
 	}
-    return $query;
+	return $query;
 }
-add_filter('pre_get_posts','searchfilter');
+add_filter('pre_get_posts', 'searchfilter');
 
 
 ////////////////// END SEARCH GLOBAL //////////////////

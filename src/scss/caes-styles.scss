@@ -2,6 +2,10 @@
 
 /* CAES STYLES */
 
+main {
+  overflow-wrap: break-word;
+}
+
 main,
 footer {
   margin-block-start: 0 !important;
@@ -476,11 +480,11 @@ ul.is-style-caes-fac-list-none {
   }
 }
 
-// Sticky class - use for sticking content on screen as user scrolls, relative to its parent container's height
+// Sticky-scroll class - use for sticking content on screen as user scrolls, relative to its parent container's height
 @media (min-width:782px) {
 
-  .sticky,
-  .stick {
+  .sticky-scroll,
+  .stick-scroll {
     position: sticky;
     top: 3rem;
   }
