@@ -420,6 +420,14 @@ function add_feed_content($content)
 }
 add_filter('rss2_item', 'add_feed_content');
 
+//Adds a pretty "Continue Reading" link to custom post excerpts..
+function caes_custom_excerpt_more( $output ) {
+	$output .= '<br /><a href="'. get_the_permalink().'" class="more-link">Read More</a>';;
+	return $output;
+}
+add_filter( 'the_excerpt_rss', 'caes_custom_excerpt_more' );
+
+
 // Include the required files
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
