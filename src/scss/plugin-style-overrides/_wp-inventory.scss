@@ -1,0 +1,93 @@
+.wp-inv-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.wpinventory_loop {
+    width: 100%;
+
+    thead {
+        background-color: var(--wp--preset--color--contrast-two);
+        color: var(--wp--preset--color--base);
+    }
+
+    th,
+    td {
+        padding: var(--wp--preset--spacing--30);
+        word-break: normal;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: var(--wp--preset--color--base-two);
+    }
+
+}
+
+.wpinventory_filter {
+
+    .search,
+    .sort,
+    .categories {
+        margin-bottom: var(--wp--preset--spacing--40);
+        display: block;
+    }
+
+    .sort {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .wpinventory_filter {
+        display: flex;
+        vertical-align: middle;
+        align-items: flex-end;
+
+        .search,
+        .sort,
+        .categories {
+            margin-right: var(--wp--preset--spacing--40);
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* WP Inventory Item */
+
+div.wpinventory_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.wpinventory_item div[class^="inventory_"] {
+    margin: 1rem 0;
+}
+
+.wpinventory_item div.inventory_name {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.wpinventory_item div.inventory_price {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+div.inventory_images .image {
+    margin: 0;
+}
+
+div.inventory_images .image img {
+    margin: 0;
+}
+
+.wpinventory_item .bx-wrapper {
+    box-shadow: none;
+}
+
+/* Pagination */
+
+.wpinventory_pagination a {
+    margin: 0 var(--wp--preset--spacing--20);
+}

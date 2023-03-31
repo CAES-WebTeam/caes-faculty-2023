@@ -2,22 +2,22 @@
 
 var getParents = function (elem, selector) {
 
-	// Set up a parent array
-	var parents = [];
+  // Set up a parent array
+  var parents = [];
 
-	// Push each parent element to the array
-	for ( ; elem && elem !== document; elem = elem.parentNode ) {
-		if (selector) {
-			if (elem.matches(selector)) {
-				parents.push(elem);
-			}
-			continue;
-		}
-		parents.push(elem);
-	}
+  // Push each parent element to the array
+  for (; elem && elem !== document; elem = elem.parentNode) {
+    if (selector) {
+      if (elem.matches(selector)) {
+        parents.push(elem);
+      }
+      continue;
+    }
+    parents.push(elem);
+  }
 
-	// Return our parent array
-	return parents;
+  // Return our parent array
+  return parents;
 };
 
 // Get subNavs
@@ -82,13 +82,13 @@ const handleScrollAnimation = () => {
     }
   })
 }
-var timer=0;
-var count=0;
+var timer = 0;
+var count = 0;
 var scroll = 0;
 
 handleScrollAnimation();
 
-window.addEventListener("scroll", () => { 
+window.addEventListener("scroll", () => {
   throttle(() => {
     handleScrollAnimation();
   }, 250);
@@ -177,3 +177,18 @@ function changeTabs(e) {
     .querySelector(`#${target.getAttribute("aria-controls")}`)
     .removeAttribute("hidden");
 }
+
+// WP Inventory - add a wrapper around the wp-inventory plugin table if it exists
+
+var wpInvTables = document.querySelectorAll("table.wpinventory_loop");
+
+const wrapWPInvTables = () => {
+  wpInvTables.forEach((table) => {
+    var wrapper = document.createElement('div');
+    wrapper.className = "wp-inv-wrapper";
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  })
+}
+
+wrapWPInvTables();
