@@ -6,6 +6,7 @@
     flex-direction: $direction;
     box-shadow: 0 0 15px rgb(0 0 0 / 5%);
     position: relative;
+    gap: 0;
 }
 
 @mixin grid-item-hover() {
