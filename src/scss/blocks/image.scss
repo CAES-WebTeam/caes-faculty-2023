@@ -2,6 +2,10 @@
 
 // General styles
 
-.wp-block-image {
-    text-align: center;
+// .wp-block-image {
+//     text-align: center;
+// }
+
+.wp-block-image figcaption {
+    color: inherit;
 }
