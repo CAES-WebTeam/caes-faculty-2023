@@ -1,0 +1,11 @@
+#mixitup_container .filter {
+    display: inline-block;
+    margin: 0 0 0.5rem 0.3rem;
+    border: 1px solid var(--wp--preset--color--contrast-two);
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+    &.active {
+        background: var(--wp--preset--color--contrast-two);
+        color: var(--wp--preset--color--base);
+    }
+}
