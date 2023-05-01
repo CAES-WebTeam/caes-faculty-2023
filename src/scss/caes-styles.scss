@@ -1,4 +1,6 @@
-@import 'reusable';
+@use 'reusable';
+@use 'blocks/navigation';
+@use 'blocks/query';
 
 /* CAES STYLES */
 
@@ -45,13 +47,62 @@ textarea {
 }
 
 input[type=submit] {
-  @include primary-button(var(--wp--preset--spacing--30));
+  @include reusable.primary-button(var(--wp--preset--spacing--30));
 }
 
-// Buttons, button blocks
+// BLOCKS //
+
+// Then the rest of the block styles
+
+// Buttons, button block styles
 
 .wp-block-button .wp-block-button__link {
   transition: var(--wp--custom--transition--box-hover);
+}
+
+// Columns block styles
+
+:where(.wp-block-columns.has-background) {
+  padding: 0;
+}
+
+// Image block styles
+
+.wp-block-image figcaption {
+  color: inherit;
+}
+
+// Comment block styles
+
+.comment .wp-block-columns {
+  background-color: var(--wp--preset--color--base-two);
+  padding: var(--wp--preset--spacing--50);
+  border-radius: var(--wp--custom--radius--small-round);
+}
+
+// Search block styles
+
+.wp-block-search__input {
+  padding: 0.8rem !important;
+  border: 1px solid #a7a3a3 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.wp-block-search__button {
+  background-color: var(--wp--preset--color--primary) !important;
+  padding: 0.8rem !important;
+  margin-left: 0.2rem;
+  border-radius: var(--wp--custom--radius--small-round) !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  transition: var(--wp--custom--transition--box-hover);
+}
+
+// Separator block styles
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: unset;
 }
 
 // Iframe
@@ -268,11 +319,11 @@ figure.caes-fac-headshot {
 
 .grid-items {
   .grid-item {
-    @include grid-item(column);
+    @include reusable.grid-item(column);
   }
 
   .grid-item-img-container {
-    @include item-img-container(4/3, 100%);
+    @include reusable.item-img-container(4/3, 100%);
 
     .components-drop-zone {
       display: none;
@@ -285,7 +336,7 @@ figure.caes-fac-headshot {
   }
 
   .grid-item-grid-info {
-    @include grid-item-info(top);
+    @include reusable.grid-item-info(top);
 
     h1,
     h2,
@@ -312,7 +363,7 @@ figure.caes-fac-headshot {
     }
 
     .grid-item-img-container {
-      @include item-img-container(1, 100%);
+      @include reusable.item-img-container(1, 100%);
 
       img {
         object-position: top;

@@ -95,7 +95,7 @@ ul.job_listings li.no_job_listings_found a {
 
 .single_job_listing .application .application_button,
 .job-manager-application-wrapper .application .application_button {
-    @include primary-button(1rem 1.5rem);
+    @include reusable.primary-button(1rem 1.5rem);
 }
 
 .select2-container .select2-search--inline .select2-search__field {

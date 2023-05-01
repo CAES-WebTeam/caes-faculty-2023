@@ -8,6 +8,6 @@
  * Viewport Width: 1100
  */
 ?>
-<!-- wp:heading {"className":"sidebar-title"} -->
-<h2 class="wp-block-heading sidebar-title">Recent Posts</h2>
+<!-- wp:heading {"textAlign":"center","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"base-two","className":"sidebar-title-2","fontSize":"large"} -->
+<h2 class="wp-block-heading has-text-align-center sidebar-title-2 has-base-two-background-color has-background has-large-font-size" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">Recent Posts</h2>
 <!-- /wp:heading -->

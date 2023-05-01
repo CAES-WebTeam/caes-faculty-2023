@@ -1,8 +1,7 @@
-@import '../reusable';
+@use '../reusable';
 
 // Query loop block styles
-
-// General styles
+// This file is included in the caes-styles file
 
 .wp-block-query {
     .wp-block-post-title {
@@ -35,7 +34,7 @@
 .caes-fac-query-loop-one {
 
     .caes-fac-query-loop-img-container {
-        @include item-img-container(4/3, 100%);
+        @include reusable.item-img-container(4/3, 100%);
     }
 
     ul li {
@@ -82,20 +81,20 @@
 
 .caes-fac-query-loop-grid {
     .caes-fac-query-loop-img-container {
-        @include item-img-container(4/3, 100%);
+        @include reusable.item-img-container(4/3, 100%);
     }
 
     .caes-fac-query-loop-grid-info {
-        @include grid-item-info(top);
+        @include reusable.grid-item-info(top);
     }
 
     .caes-fac-query-loop-grid-item {
-        @include grid-item(column);
-        @include grid-item-hover;
+        @include reusable.grid-item(column);
+        @include reusable.grid-item-hover;
     }
 
     .wp-block-post-title a {
-        @include grid-item-link();
+        @include reusable.grid-item-link();
     }
 }
 
@@ -132,10 +131,10 @@
 
 .caes-fac-query-loop-featured {
     position: relative;
-    @include grid-item-hover;
+    @include reusable.grid-item-hover;
 
     .caes-fac-query-loop-featured-img-container {
-        @include item-img-container(4/3, 100%);
+        @include reusable.item-img-container(4/3, 100%);
     }
 
     .caes-fac-query-loop-featured-info {
@@ -152,7 +151,7 @@
     }
 
     .wp-block-post-title a {
-        @include grid-item-link();
+        @include reusable.grid-item-link();
     }
 
 }
