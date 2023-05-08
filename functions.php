@@ -441,15 +441,17 @@ if (is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_man
 
 ////////////////// FAVICON //////////////////
 
-// Remove WordPress's default rel="icon" tags
-remove_action('wp_head', 'wp_site_icon', 99);
-
-// Add our theme's default favicon
-function caes_fac_2023_favicon()
-{
-	echo '<link rel="icon" href="' . get_stylesheet_directory_uri() . '/favicon.ico" type="image/x-icon" />' . "\n";
+function blog_favicon() {
+	if (has_site_icon()) {
+		return;
+	} else {
+		$url = get_stylesheet_directory_uri().'/favicon.ico';
+		$output ='<link rel="icon" type="image/x-icon" href="'.$url.'" />';
+		$output .= '<link rel="shortcut icon" type="image/x-icon" href="'.$url.'" />';
+		echo $output;
+	}
 }
-add_action('wp_head', 'caes_fac_2023_favicon');
+add_action('wp_head', 'blog_favicon', 10,3);
 
 ////////////////// END FAVICON //////////////////
 
