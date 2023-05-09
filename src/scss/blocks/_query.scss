@@ -37,7 +37,7 @@
         @include reusable.item-img-container(4/3, 100%);
     }
 
-    ul li {
+    & > ul > li {
         margin-block-start: var(--wp--preset--spacing--60);
 
         &:first-child {
@@ -50,6 +50,12 @@
         background: var(--wp--preset--color--base-two);
         padding: var(--wp--preset--spacing--50);
         border-radius: var(--wp--custom--radius--small-round);
+    }
+
+    .entry-content {
+        ul {
+            list-style-type: disc;
+        }
     }
 
 }
