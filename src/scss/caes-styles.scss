@@ -409,6 +409,14 @@ ul.is-style-caes-fac-list-none {
   list-style: none;
 }
 
+// Gallery block
+
+.is-style-caes-fac-gallery-square {
+  figure.wp-block-image {
+    aspect-ratio: 1/1;
+  }
+}
+
 // Parvus is a lightbox library for images.
 // Here we're importing the scss library, and adding our own overrides.
 
@@ -432,6 +440,11 @@ ul.is-style-caes-fac-list-none {
 .parvus-zoom__indicator {
   background-color: var(--wp--preset--color--base);
   color: var(--wp--preset--color--contrast);
+}
+
+// Hide the zoom indicator in sidebars
+.caes-fac-post-cols-right .parvus-zoom__indicator {
+  display: none;
 }
 
 // Helper classes for adding bottom/top margins for post content areas

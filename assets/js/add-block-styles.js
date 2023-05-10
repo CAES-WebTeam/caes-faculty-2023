@@ -1,1 +1,1 @@
-wp.blocks.registerBlockStyle("core/list",{name:"caes-fac-list-none",label:"List Style: None"});
+wp.blocks.registerBlockStyle("core/list",{name:"caes-fac-list-none",label:"List Style: None"}),wp.blocks.registerBlockStyle("core/gallery",{name:"caes-fac-gallery-square",label:"Square Images"});
