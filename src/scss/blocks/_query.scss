@@ -178,3 +178,14 @@
         }
     }
 }
+
+// Post template - hide author and date on page results
+
+.is-style-caes-fac-page-hide-authior-date {
+    .type-page {
+        .wp-block-post-author,
+        .wp-block-post-date {
+            display: none;
+        }
+    }
+}

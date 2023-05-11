@@ -7,3 +7,8 @@ wp.blocks.registerBlockStyle( 'core/gallery', {
     name: 'caes-fac-gallery-square',
     label: 'Square Images'
 } );
+
+wp.blocks.registerBlockStyle( 'core/post-template', {
+    name: 'caes-fac-page-hide-authior-date',
+    label: 'Hide Page result author and date'
+} );
