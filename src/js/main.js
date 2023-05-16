@@ -100,6 +100,15 @@ window.addEventListener("scroll", () => {
 const linkedImgs = document.querySelectorAll('.wp-block-image a[href*=".jpg"],.wp-block-image a[href*=".jpeg"],.wp-block-image a[href*=".png"],.wp-block-image a[href*=".gif"]');
 for (const link of linkedImgs) {
   link.classList.add('lightbox');
+  // get sibling of link if it is a figcaption
+  const sibling = link.nextElementSibling;
+  // if sibling is a figcaption, add lightbox class to it
+  if (sibling && sibling.classList.contains('wp-element-caption')) {
+    // get html of sibling
+    const caption = sibling.innerHTML;
+    // set caption text to data-caption
+    link.setAttribute('data-caption', caption);
+  }
 }
 
 // Import Parvus
@@ -107,9 +116,7 @@ import Parvus from 'parvus';
 
 // // Initialize Parvus
 const prvs = new Parvus({
-  gallerySelector: '.wp-block-gallery',
-  captionsSelector: 'img',
-  captionsAttribute: 'alt'
+  gallerySelector: '.wp-block-gallery'
 })
 
 // /** PLUGINS JS **/ //
