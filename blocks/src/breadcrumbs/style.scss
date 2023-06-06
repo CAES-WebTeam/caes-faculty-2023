@@ -1,0 +1,26 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-uga-caes-caes-fac-breadcrumbs {
+
+	padding: 0 .5rem;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li:not(:last-child)::after {
+		display: inline-block;
+		margin: 0 .25rem;
+		content: "»";
+	}
+
+}
