@@ -497,10 +497,6 @@ function searchfilter($query)
 		switch_to_blog( $current_blog_id );
 		$GLOBALS[ '_wp_switched_stack' ] = array();
 		$GLOBALS[ 'switched' ] = false;
-
-
-		
-			echo 'mikeytest';
 		
 	}
 	return $query;

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "uga-caes/tribe-events-display-date",
+  "version": "0.1.0",
+  "title": "Event Date",
+  "category": "theme",
+  "icon": "calendar-alt",
+  "description": "Displays an event's date.",
+  "usesContext": [
+    "postId",
+    "postType",
+    "queryId"
+  ],
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "left"
+    }
+  },
+  "supports": {
+    "alignText": true
+  },
+  "textdomain": "tribe-events-display-date",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "uga-caes/caes-fac-breadcrumbs",
+	"version": "1.0.0",
+	"title": "CAES Faculty 2023 - Breadcrumbs",
+	"category": "widgets",
+	"icon": "layout",
+	"description": "Page breadcrumbs for the UGA CAES Faculty 2023 theme.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "uga-caes",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
