@@ -657,6 +657,8 @@ ul.is-style-caes-fac-list-none {
 }
 
 // Plugins
+// A task for later: try enqueuing the plugin styles later as
+// a single stylesheet or multiple if a plugin is used, in functions.php
 
 @import 'plugin-style-overrides/accordion-blocks';
 @import 'plugin-style-overrides/wp-job-manager';
@@ -667,3 +669,4 @@ ul.is-style-caes-fac-list-none {
 @import 'plugin-style-overrides/caes-tabs-site-shortcode';
 @import 'plugin-style-overrides/caes-mixitup';
 @import 'plugin-style-overrides/wufoo-forms';
+@import 'plugin-style-overrides/tribe-events';
