@@ -478,11 +478,30 @@ add_filter('get_the_author_nickname', 'update_the_author', 12);
 
 function searchfilter($query)
 {
-	if (is_main_site()) {
-		if ($query->is_search) {
-			//$query->set('post_type', array( 'your-custom-post-type-name' ) );
-			echo 'mikeytest';
+	if (is_main_site() && $query->is_search) {
+		$current_blog_id = get_current_blog_id();
+		if ( function_exists( 'get_sites' ) && class_exists( 'WP_Site_Query' ) ) {
+			$args  = array(
+				//'public' => 1,
+				//'site__not_in' => $current_blog_id,
+				'number' => 200,
+				'orderby' => 'path',
+			);
+			$sites = get_sites($args);
+			foreach ( $sites as $site ) {
+				switch_to_blog( $site->blog_id );
+				$query->set('post_type', array('post', 'page', 'caes-people') );
+			}
+			//restore_current_blog();
 		}
+		switch_to_blog( $current_blog_id );
+		$GLOBALS[ '_wp_switched_stack' ] = array();
+		$GLOBALS[ 'switched' ] = false;
+
+
+		
+			echo 'mikeytest';
+		
 	}
 	return $query;
 }
