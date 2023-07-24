@@ -26,7 +26,7 @@ If not:
 
 This file is referenced by the theme's functions.php, if "The Events Calendar" plugin is activated. It contains several scripts:
 
-* A function that replaces the default single event page template with our pattern. The pattern file can be found here: [../patterns/caes-tribe-calendar-event.php](../patterns/caes-tribe-calendar-event.php). Note that the plugin settings must be set to use the block editor for this to work.
+* A function that replaces the default single event page template with our own. The default template can be modified in this file. Note that the plugin settings must be set to use the block editor for this to work.
 * A function for pulling in a custom query block variation for event feeds (see caes-tribe-events-list.js).
 * A filter for sorting custom events list on the front end.
 * A filter for sorting custom events list in the editor.

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CAES The Events Calendar Functions
  *
@@ -7,17 +8,208 @@
 // TRIBE EVENTS RELATED FUNCTIONS
 
 // Replace default single event page template with our pattern
-add_filter( 'tribe_events_editor_default_template', function( $template ) {
+add_filter('tribe_events_editor_default_template', function ($template) {
 
-  $template = [
-    [ 'core/pattern', [
-      'slug' => 'uga-caes-fac-2023/caes-tribe-calendar-event',
-      ]
-  ] ];
+	// Template for single event page
+	$template = [
+		// Top Group
+		[
+			'core/group',
+			[
+				'layout' => [
+					'type' => 'constrained',
+				],
+			],
+			[
+				// Top Group > Columns Block
+				[
+					'core/columns',
+					[
+						'verticalAlignment' => 'center',
+						'align' => 'full',
+						'style' => [
+							'spacing' => [
+								'blockGap' => [
+									'top' => '0',
+									'left' => '0',
+								],
+							],
+						],
+						'backgroundColor' => 'base-two',
+					],
+					[
+						// Top Group > Columns > Column 1
+						[
+							'core/column',
+							[
+								'verticalAlignment' => 'center',
+							],
+							[ // Post Featured Image Block
+								[
+									'core/post-featured-image',
+								]
+							]
+						],
+						// Top Group > Columns > Column 2
+						[
+							'core/column',
+							[
+								'verticalAlignment' => 'center',
+								'style' => [
+									'spacing' => [
+										'padding' => [
+											'top' => 'var:preset|spacing|60',
+											'right' => 'var:preset|spacing|60',
+											'bottom' => 'var:preset|spacing|60',
+											'left' => 'var:preset|spacing|60',
+										],
+									],
+								],
+							],
+							[
+								[
+									'core/group',
+									[
+										'style' => [
+											'spacing' => [
+												'blockGap' => 'var:preset|spacing|40',
+											],
+										],
+										'layout' => [
+											'type' => 'constrained',
+										],
+									],
+									[
+										[
+											'core/post-title',
+											[
+												'level' => 1,
+											]
+										],
+										[
+											'tribe/event-datetime',
+										]
+									]
+								],
+							]
+						],
+					]
+				]
+			]
+		],
+		// Bottom Group
+		[
+			'core/group',
+			[
+				'layout' => [
+					'type' => 'constrained',
+				],
+			],
+			[
+				// Bottom Group > Columns Block
+				[
+					'core/columns',
+					[
+						'align' => 'full',
+					],
+					[
+						// Bottom Group > Columns > Column 1
+						[
+							'core/column',
+							[
+								'width' => '70%'
+							],
+							[
+								// Bottom Group > Columns > Column 1 > Paragraph Block
+								[
+									'core/paragraph',
+									[
+										'content' => 'Add description here.',
+									],
+								],
+								// Bottom Group > Columns > Column 1 > Group 
+								[
+									'core/group',
+									[
+										'style' => [
+											'spacing' => [
+												'blockGap' => 'var:preset|spacing|30',
+											]
+										]
+									],
+									[
+										// Bottom Group > Columns > Column 1 > Group > Heading for Location
+										[
+											'core/heading',
+											[
+												'fontSize' => 'x-large',
+												'level' => 2,
+												'content' => 'Location',
+											],
+										],
+										// Bottom Group > Columns > Column 1 > Group > Venue Block
+										[
+											'tribe/event-venue'
+										]
+									]
+								],
+							]
+						],
+						// Bottom Group > Columns > Column 2
+						[
+							'core/column',
+							[
+								'width' => '30%',
+							],
+							[
+								[
+									'core/group',
+									[
+										'style' => [
+											'spacing' => [
+												'padding' => [
+													'top' => '0',
+													'right' => '0',
+													'bottom' => '0',
+													'left' => '0',
+												],
+												'blockGap' => 'var:preset|spacing|30',
+											],
+											'layout' => [
+												'type' => 'constrained',
+											],
+										],
+									],
+									[
+										// Heading Block for Contact
+										[
+											'core/heading',
+											[
+												'fontSize' => 'x-large',
+												'level' => 2,
+												'content' => 'Contact',
+											],
+										],
+										// Tribe Event Organizer Block
+										[
+											'tribe/event-organizer',
+										],
+										// Tribe Event Links Block
+										[
+											'tribe/event-links',
+										],
+									]
+								],
+							]
+						],
+					]
+				]
+			]
+		]
+	];
 
-  return $template;
-
-}, 11, 1 );
+	return $template;
+}, 11, 1);
 
 // Pull in a custom query block variation for event feeds
 function tribe_events_list_caes_list()
@@ -98,5 +290,3 @@ function caes_tribe_events_date_init()
 	);
 }
 add_action('init', 'caes_tribe_events_date_init');
-
-?>

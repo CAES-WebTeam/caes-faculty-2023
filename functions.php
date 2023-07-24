@@ -117,6 +117,10 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 		'footer'  => array(
 			'label'         => __('Site Footer', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')
+		),
+		'tribe-events'  => array(
+			'label'         => __('Events', 'uga-caes-fac-2023'),
+			'categoryTypes' => array('tribe-events')
 		)
 	);
 
@@ -133,6 +137,9 @@ add_action('init', function () {
 		unregister_block_pattern('uga-caes-fac-2023/people-cpt-2-grid');
 		unregister_block_pattern('uga-caes-fac-2023/people-cpt-3-list');
 	}
+	if (!is_plugin_active('the-events-calendar/the-events-calendar.php')) {
+        unregister_block_pattern('uga-caes-fac-2023/caes-tribe-events-list');
+    }
 });
 
 // Removes some default core styles with remove-block-styles.js
@@ -270,7 +277,7 @@ function gtag_code()
 		if (strpos($getDocRoot, 'devcaes') !== false || strpos($getDocRoot, 'devextension') !== false) return;
 
 		if (strpos($getDocRoot, 'caes') !== false) {
-$output = " 
+			$output = " 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -280,14 +287,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 ";
 		} else {
-// $output = '
-// <!-- Google Tag Manager custom -->
-// <script>
-// var initGTMOnEvent=function(t){initGTM(),t.currentTarget.removeEventListener(t.type,initGTMOnEvent)},initGTM=function(){if(window.gtmDidInit)return!1;window.gtmDidInit=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=function(){dataLayer.push({event:"gtm.js","gtm.start":(new Date).getTime(),"gtm.uniqueEventId":0})},t.src="https://www.googletagmanager.com/gtm.js?id=GTM-M75RTPD",document.head.appendChild(t)};document.addEventListener("DOMContentLoaded",(function(){setTimeout(initGTM,2e3)})),document.addEventListener("scroll",initGTMOnEvent),document.addEventListener("mousemove",initGTMOnEvent),document.addEventListener("touchstart",initGTMOnEvent);
-// </script>
-// <!-- Google Tag Manager custom -->
-// ';
-$output = "
+			// $output = '
+			// <!-- Google Tag Manager custom -->
+			// <script>
+			// var initGTMOnEvent=function(t){initGTM(),t.currentTarget.removeEventListener(t.type,initGTMOnEvent)},initGTM=function(){if(window.gtmDidInit)return!1;window.gtmDidInit=!0;var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.onload=function(){dataLayer.push({event:"gtm.js","gtm.start":(new Date).getTime(),"gtm.uniqueEventId":0})},t.src="https://www.googletagmanager.com/gtm.js?id=GTM-M75RTPD",document.head.appendChild(t)};document.addEventListener("DOMContentLoaded",(function(){setTimeout(initGTM,2e3)})),document.addEventListener("scroll",initGTMOnEvent),document.addEventListener("mousemove",initGTMOnEvent),document.addEventListener("touchstart",initGTMOnEvent);
+			// </script>
+			// <!-- Google Tag Manager custom -->
+			// ';
+			$output = "
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -297,7 +304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 ";
 		}
-echo $output;
+		echo $output;
 	}
 }
 
@@ -310,14 +317,14 @@ function gtag_body_code()
 		if (strpos($getDocRoot, 'devcaes') !== false || strpos($getDocRoot, 'devextension') !== false) return;
 
 		if (strpos($getDocRoot, 'caes') !== false) {
-$output = '
+			$output = '
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BZ6L8B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 ';
 		} else {
-$output = '
+			$output = '
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M75RTPD"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -428,30 +435,33 @@ function add_feed_content($content)
 add_filter('rss2_item', 'add_feed_content');
 
 //Adds a pretty "Continue Reading" link to custom post excerpts..
-function caes_custom_excerpt_more( $output ) {
-	$output .= '<br /><a href="'. get_the_permalink().'" class="more-link">Read More</a>';;
+function caes_custom_excerpt_more($output)
+{
+	$output .= '<br /><a href="' . get_the_permalink() . '" class="more-link">Read More</a>';;
 	return $output;
 }
-add_filter( 'the_excerpt_rss', 'caes_custom_excerpt_more' );
+add_filter('the_excerpt_rss', 'caes_custom_excerpt_more');
 
 
 // Include the required files
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
+if (is_plugin_active('the-events-calendar/the-events-calendar.php')) require_once('tribe-events-calendar/tribe-events-functions.php');
 
 ////////////////// FAVICON //////////////////
 
-function blog_favicon() {
+function blog_favicon()
+{
 	if (has_site_icon()) {
 		return;
 	} else {
-		$url = get_stylesheet_directory_uri().'/favicon.ico';
-		$output ='<link rel="icon" type="image/x-icon" href="'.$url.'" />';
-		$output .= '<link rel="shortcut icon" type="image/x-icon" href="'.$url.'" />';
+		$url = get_stylesheet_directory_uri() . '/favicon.ico';
+		$output = '<link rel="icon" type="image/x-icon" href="' . $url . '" />';
+		$output .= '<link rel="shortcut icon" type="image/x-icon" href="' . $url . '" />';
 		echo $output;
 	}
 }
-add_action('wp_head', 'blog_favicon', 10,3);
+add_action('wp_head', 'blog_favicon', 10, 3);
 
 ////////////////// END FAVICON //////////////////
 
@@ -480,7 +490,7 @@ function searchfilter($query)
 {
 	if (is_main_site() && $query->is_search) {
 		$current_blog_id = get_current_blog_id();
-		if ( function_exists( 'get_sites' ) && class_exists( 'WP_Site_Query' ) ) {
+		if (function_exists('get_sites') && class_exists('WP_Site_Query')) {
 			$args  = array(
 				//'public' => 1,
 				//'site__not_in' => $current_blog_id,
@@ -488,16 +498,15 @@ function searchfilter($query)
 				'orderby' => 'path',
 			);
 			$sites = get_sites($args);
-			foreach ( $sites as $site ) {
-				switch_to_blog( $site->blog_id );
-				$query->set('post_type', array('post', 'page', 'caes-people') );
+			foreach ($sites as $site) {
+				switch_to_blog($site->blog_id);
+				$query->set('post_type', array('post', 'page', 'caes-people'));
 			}
 			//restore_current_blog();
 		}
-		switch_to_blog( $current_blog_id );
-		$GLOBALS[ '_wp_switched_stack' ] = array();
-		$GLOBALS[ 'switched' ] = false;
-		
+		switch_to_blog($current_blog_id);
+		$GLOBALS['_wp_switched_stack'] = array();
+		$GLOBALS['switched'] = false;
 	}
 	return $query;
 }
@@ -510,47 +519,50 @@ add_filter('pre_get_posts', 'searchfilter');
 /**
  * Disable the emoji's
  */
-function disable_emojis() {
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-	add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
-   }
-   add_action( 'init', 'disable_emojis' );
-   
-   /**
-	* Filter function used to remove the tinymce emoji plugin.
-	* 
-	* @param array $plugins 
-	* @return array Difference betwen the two arrays
-	*/
-   function disable_emojis_tinymce( $plugins ) {
-	if ( is_array( $plugins ) ) {
-	return array_diff( $plugins, array( 'wpemoji' ) );
+function disable_emojis()
+{
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('admin_print_scripts', 'print_emoji_detection_script');
+	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_action('admin_print_styles', 'print_emoji_styles');
+	remove_filter('the_content_feed', 'wp_staticize_emoji');
+	remove_filter('comment_text_rss', 'wp_staticize_emoji');
+	remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+	add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+	add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
+}
+add_action('init', 'disable_emojis');
+
+/**
+ * Filter function used to remove the tinymce emoji plugin.
+ * 
+ * @param array $plugins 
+ * @return array Difference betwen the two arrays
+ */
+function disable_emojis_tinymce($plugins)
+{
+	if (is_array($plugins)) {
+		return array_diff($plugins, array('wpemoji'));
 	} else {
-	return array();
+		return array();
 	}
-   }
-   
-   /**
-	* Remove emoji CDN hostname from DNS prefetching hints.
-	*
-	* @param array $urls URLs to print for resource hints.
-	* @param string $relation_type The relation type the URLs are printed for.
-	* @return array Difference betwen the two arrays.
-	*/
-   function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
-	if ( 'dns-prefetch' == $relation_type ) {
-	/** This filter is documented in wp-includes/formatting.php */
-	$emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-   
-   $urls = array_diff( $urls, array( $emoji_svg_url ) );
+}
+
+/**
+ * Remove emoji CDN hostname from DNS prefetching hints.
+ *
+ * @param array $urls URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for.
+ * @return array Difference betwen the two arrays.
+ */
+function disable_emojis_remove_dns_prefetch($urls, $relation_type)
+{
+	if ('dns-prefetch' == $relation_type) {
+		/** This filter is documented in wp-includes/formatting.php */
+		$emoji_svg_url = apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/');
+
+		$urls = array_diff($urls, array($emoji_svg_url));
 	}
-   
-   return $urls;
-   }
+
+	return $urls;
+}
