@@ -178,6 +178,12 @@ add_post_type_support('page', 'excerpt');
 function uga_caes_caes_fac_blocks_block_init()
 {
 	register_block_type(
+		__DIR__ . '/blocks/build/breadcrumbs',
+		array(
+			'render_callback' => 'uga_caes_caes_fac_breadcrumbs_brand_render_callback',
+		)
+	);
+	register_block_type(
 		__DIR__ . '/blocks/build/footer-brand',
 		array(
 			'render_callback' => 'uga_caes_caes_fac_footer_brand_render_callback',
@@ -221,6 +227,13 @@ add_action('init', 'uga_caes_caes_fac_blocks_block_init');
  *
  * @return string The rendered output.
  */
+
+ function uga_caes_caes_fac_breadcrumbs_brand_render_callback($attributes, $content, $block)
+ {
+	 ob_start();
+	 require get_template_directory() . '/blocks/build/breadcrumbs/template.php';
+	 return ob_get_clean();
+ }
 
 function uga_caes_caes_fac_footer_brand_render_callback($attributes, $content, $block)
 {
