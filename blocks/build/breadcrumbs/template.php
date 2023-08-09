@@ -1,26 +1,24 @@
 <?php
-function get_breadcrumb()
-{
+$useHome = $attributes['homepage'];
+
+function get_breadcrumb($useHome){
     echo '<ul>';
 
-    // Home link
-    if (is_front_page()) {
-        $home_title = get_the_title(get_option('page_on_front'));
-        echo '<li><span aria-current="page">' . $home_title . '</span></li>';
-    } else {
-        $home_title = get_the_title(get_option('page_on_front'));
-        echo '<li><a href="' . home_url() . '">' . $home_title . '</a></li>';
+    
+    if ($useHome == true) {
+        // Home link
+        if (is_front_page()) {
+            $home_title = get_the_title(get_option('page_on_front'));
+            echo '<li><span aria-current="page">' . $home_title . '</span></li>';
+        } else {
+            $home_title = get_the_title(get_option('page_on_front'));
+            echo '<li><a href="' . home_url() . '">' . $home_title . '</a></li>';
+        }
     }
 
-    // If the page is a single post, show the post title
-    if (is_single()) {
-        $post_title = get_the_title();
-        echo '<li><span aria-current="page">' . $post_title . '</span></li>';
-    }
-    
-     // If the page is posts page, show the page title
-    elseif (is_home()) {
-        $posts_title = get_the_title( get_option('page_for_posts', true) );
+    // If the page is posts page, show the page title
+    if (is_home()) {
+        $posts_title = get_the_title(get_option('page_for_posts', true));
         echo '<li><span aria-current="page">' . $posts_title . '</span></li>';
     }
 
@@ -73,8 +71,21 @@ function get_breadcrumb()
         echo '<li><span aria-current="page">Author: ' . $author->display_name . '</span></li>';
     }
 
+    // If the page is an event page by tribe events
+    elseif (function_exists('tribe_is_event') && tribe_is_event()) {
+        $post_title = get_the_title();
+        echo '<li><a href="' . esc_url(tribe_get_events_link()) . '">Events</a></li>';
+        echo '<li><span aria-current="page">' . $post_title . '</span></li>';
+    }
+
+    // If the page is a single post, show the post title
+    elseif (is_single()) {
+        $post_title = get_the_title();
+        echo '<li><span aria-current="page">' . $post_title . '</span></li>';
+    }
+
     echo '</ul>';
 }
 ?>
 
-<nav <?php echo get_block_wrapper_attributes(); ?> aria-label="Breadcrumb"><?php get_breadcrumb(); ?></nav>
+<nav <?php echo get_block_wrapper_attributes(); ?> aria-label="Breadcrumb"><?php get_breadcrumb($useHome); ?></nav>

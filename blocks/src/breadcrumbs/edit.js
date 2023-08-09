@@ -13,9 +13,15 @@ import { __ } from '@wordpress/i18n';
  */
 
 import {
-	useBlockProps
+	useBlockProps,
+	InspectorControls
 } from '@wordpress/block-editor';
-
+import {
+	Panel,
+	PanelBody,
+	ToggleControl
+} from '@wordpress/components';
+import { useState } from '@wordpress/element';
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -39,16 +45,60 @@ import ServerSideRender from '@wordpress/server-side-render';
  * @return {WPElement} Element to render.
  */
 
-const Edit = ({ attributes, setAttributes }) => {
+const HomeToggleControl = () => {
+	const [hasHomepage, setHasHomepage] = useState(false);
+
 	return (
-		<div {...useBlockProps()}>
-			{/* <ServerSideRender
+		<ToggleControl
+			label="Homepage breadcrumb"
+			help={
+				hasHomepage
+					? 'Show homepage breadcrumb.'
+					: 'Homepage breadcrumb is hidden.'
+			}
+			checked={hasHomepage}
+			onChange={() => {
+				setAttributes({ hasHomepage: !hasHomepage });
+			}}
+		/>
+	);
+};
+
+const Edit = ({ attributes, setAttributes }) => {
+
+	const { homepage } = attributes;
+
+	return (
+		<>
+			<InspectorControls>
+				<Panel>
+					<PanelBody>
+						<ToggleControl
+							label="Homepage breadcrumb"
+							help={
+								homepage
+									? 'Show homepage breadcrumb.'
+									: 'Homepage breadcrumb is hidden.'
+							}
+							checked={homepage}
+							onChange={() => {
+								setAttributes({ homepage: !homepage });
+							}}
+						/>
+					</PanelBody>
+				</Panel>
+			</InspectorControls>
+			<div {...useBlockProps()}>
+				{/* <ServerSideRender
 				block="uga-caes/caes-fac-breadcrumbs"
 				attributes={attributes}
 			/> */}
-			<p>Breadcrumbs will display here.</p>
-		</div>
+				<p>
+				Breadcrumbs will display here. {attributes.homepage ? '' : <em>Homepage breadcrumb is hidden.</em>}
+				</p>
+			</div>
+		</>
 	)
 }
 
-export default Edit
+export default Edit;

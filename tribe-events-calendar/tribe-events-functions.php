@@ -126,33 +126,7 @@ add_filter('tribe_events_editor_default_template', function ($template) {
 									[
 										'content' => 'Add description here.',
 									],
-								],
-								// Bottom Group > Columns > Column 1 > Group 
-								[
-									'core/group',
-									[
-										'style' => [
-											'spacing' => [
-												'blockGap' => 'var:preset|spacing|30',
-											]
-										]
-									],
-									[
-										// Bottom Group > Columns > Column 1 > Group > Heading for Location
-										[
-											'core/heading',
-											[
-												'fontSize' => 'x-large',
-												'level' => 2,
-												'content' => 'Location',
-											],
-										],
-										// Bottom Group > Columns > Column 1 > Group > Venue Block
-										[
-											'tribe/event-venue'
-										]
-									]
-								],
+								]
 							]
 						],
 						// Bottom Group > Columns > Column 2
@@ -173,7 +147,7 @@ add_filter('tribe_events_editor_default_template', function ($template) {
 													'bottom' => '0',
 													'left' => '0',
 												],
-												'blockGap' => 'var:preset|spacing|30',
+												'blockGap' => 'var:preset|spacing|60',
 											],
 											'layout' => [
 												'type' => 'constrained',
@@ -181,18 +155,73 @@ add_filter('tribe_events_editor_default_template', function ($template) {
 										],
 									],
 									[
-										// Heading Block for Contact
 										[
-											'core/heading',
+											'core/group',
 											[
-												'fontSize' => 'x-large',
-												'level' => 2,
-												'content' => 'Contact',
+												'style' => [
+													'spacing' => [
+														'padding' => [
+															'top' => '0',
+															'right' => '0',
+															'bottom' => '0',
+															'left' => '0',
+														],
+														'blockGap' => 'var:preset|spacing|40',
+													],
+													'layout' => [
+														'type' => 'constrained',
+													],
+												],
+											],
+											[
+												// Heading Block for Contact
+												[
+													'core/heading',
+													[
+														'fontSize' => 'x-large',
+														'level' => 2,
+														'content' => 'Contact',
+													],
+												],
+												// Tribe Event Organizer Block
+												[
+													'tribe/event-organizer',
+												]
 											],
 										],
-										// Tribe Event Organizer Block
 										[
-											'tribe/event-organizer',
+											'core/group',
+											[
+												'style' => [
+													'spacing' => [
+														'padding' => [
+															'top' => '0',
+															'right' => '0',
+															'bottom' => '0',
+															'left' => '0',
+														],
+														'blockGap' => 'var:preset|spacing|40',
+													],
+													'layout' => [
+														'type' => 'constrained',
+													],
+												],
+											],
+											[
+												// Heading for Location
+												[
+													'core/heading',
+													[
+														'fontSize' => 'x-large',
+														'level' => 2,
+														'content' => 'Location',
+													],
+												],
+												// Venue Block
+												[
+													'tribe/event-venue'
+												],
+											]
 										],
 										// Tribe Event Links Block
 										[
