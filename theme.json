@@ -36,6 +36,13 @@
 			"postTypes": [
 				"caes-people"
 			]
+		},
+		{
+			"name": "single-tribe_events",
+			"title": "Event",
+			"postTypes": [
+				"tribe_events"
+			]
 		}
 	],
 	"templateParts": [
@@ -347,9 +354,9 @@
 			"customSpacingSize": false,
 			"padding": {
 				"top": "0",
-				"right": "1rem",
+				"right": "var(--wp--preset--spacing--40)",
 				"bottom": "0",
-				"left": "1rem"
+				"left": "var(--wp--preset--spacing--40)"
 			}
 		},
 		"blocks": {
@@ -458,6 +465,25 @@
 						"bottom": "var(--wp--preset--spacing--30)",
 						"left": "var(--wp--preset--spacing--40)"
 					}
+				}
+			},
+			"core/code": {
+				"color": {
+					"background": "var(--wp--preset--color--base-two)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var(--wp--preset--spacing--50)",
+						"right": "var(--wp--preset--spacing--50)",
+						"bottom": "var(--wp--preset--spacing--50)",
+						"left": "var(--wp--preset--spacing--50)"
+					}
+				},
+				"border": {
+					"radius": "var(--wp--custom--radius--small-round)",
+					"width": "1px",
+					"color": "var(--wp--preset--color--contrast)",
+					"style": "solid"
 				}
 			}
 		}

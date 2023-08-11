@@ -29,9 +29,6 @@ function uga_caes_fac_2023_setup()
 	// Add theme script
 	// wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
 
-	// Add block styles.
-	add_theme_support('wp-block-styles');
-
 	// Remove core block patterns.
 	remove_theme_support('core-block-patterns');
 
@@ -39,7 +36,7 @@ function uga_caes_fac_2023_setup()
 	 * Load additional block styles.
 	 * See details on how to add more styles in the readme.txt.
 	 */
-	$styled_blocks = ['separator', 'embed', 'tag-cloud'];
+	$styled_blocks = ['separator', 'embed', 'tag-cloud', 'quote', 'pullquote', 'table'];
 	foreach ($styled_blocks as $block_name) {
 		$args = array(
 			'handle' => "uga-caes-fac-2023-$block_name",
@@ -111,11 +108,11 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 			'categoryTypes' => array('uga-caes-fac-2023')
 		),
 		'header'  => array(
-			'label'         => __('Site Header', 'uga-caes-fac-2023'),
+			'label'         => __('Headers', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')
 		),
 		'footer'  => array(
-			'label'         => __('Site Footer', 'uga-caes-fac-2023'),
+			'label'         => __('Footers', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')
 		),
 		'tribe-events'  => array(

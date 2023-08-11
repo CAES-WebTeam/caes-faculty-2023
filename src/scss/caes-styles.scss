@@ -97,7 +97,13 @@ input[type=submit] {
   border-bottom-left-radius: 0 !important;
   border-top-left-radius: 0 !important;
   transition: var(--wp--custom--transition--box-hover);
+  border-color: var(--wp--preset--color--base-two);
 }
+
+.wp-block-search .wp-block-search__label {
+  font-weight: 700;
+}
+
 
 // Separator block styles
 
@@ -415,6 +421,17 @@ ul.is-style-caes-fac-list-none {
   figure.wp-block-image {
     aspect-ratio: 1/1;
   }
+}
+
+// Centering figcaptions
+
+.wp-block-table figcaption,
+.wp-block-image figcaption,
+.wp-block-video figcaption,
+.wp-block-embed figcaption,
+.blocks-gallery-caption {
+    font-size: var(--wp--preset--font-size--small);
+    text-align: center;
 }
 
 // Parvus is a lightbox library for images.
