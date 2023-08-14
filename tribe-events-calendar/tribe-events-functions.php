@@ -253,34 +253,32 @@ function tribe_events_list_caes_list()
 add_action('enqueue_block_editor_assets', 'tribe_events_list_caes_list');
 
 // Sort by event start date on FRONT END
-add_filter('pre_render_block', 'tribe_caes_upcoming_events_pre_render_block', 10, 2);
 function tribe_caes_upcoming_events_pre_render_block($pre_render, $parsed_block)
 {
+	$filter = function ($query) use ($parsed_block, &$filter) {
+		if (!empty($parsed_block['attrs']['namespace']) && 'uga-caes-fac-2023/caes-tribe-events-list' === $parsed_block['attrs']['namespace']) {
+			// get today's date
+			$today = date('Y-m-d');
+			// the meta key was event_date, compare to today to get event's from today or later
+			$query['meta_key'] = '_EventStartDate';
+			$query['meta_value'] = $today;
+			$query['meta_compare'] = '>=';
+			// also likely want to set order by this key in ASC so next event listed first
+			$query['orderby'] = 'meta_value';
+			$query['order'] = 'ASC';
+		}
+		remove_filter('query_loop_block_query_vars', $filter, 10, 3);
+		return $query;
+	};
 	// Verify it's the block that should be modified using the namespace
 	if (!empty($parsed_block['attrs']['namespace']) && 'uga-caes-fac-2023/caes-tribe-events-list' === $parsed_block['attrs']['namespace']) {
-		add_filter(
-			'query_loop_block_query_vars',
-			function ($query, $block) {
-				// get today's date
-				$today = date('Y-m-d');
-				// the meta key was event_date, compare to today to get event's from today or later
-				$query['meta_key'] = '_EventStartDate';
-				$query['meta_value'] = $today;
-				$query['meta_compare'] = '>=';
-				// also likely want to set order by this key in ASC so next event listed first
-				$query['orderby'] = 'meta_value';
-				$query['order'] = 'ASC';
-				return $query;
-			},
-			10,
-			2
-		);
+		add_filter('query_loop_block_query_vars', $filter, 10, 3);
 	}
 	return $pre_render;
 }
+add_filter('pre_render_block', 'tribe_caes_upcoming_events_pre_render_block', 10, 3);
 
 // Sort by event start date in EDITOR
-add_filter('rest_tribe_events_query', 'tribe_caes_rest_upcoming_events', 10, 2);
 function tribe_caes_rest_upcoming_events($args, $request)
 {
 
@@ -300,6 +298,7 @@ function tribe_caes_rest_upcoming_events($args, $request)
 
 	return $args;
 }
+add_filter('rest_tribe_events_query', 'tribe_caes_rest_upcoming_events', 10, 2);
 
 // Registering our custom Event Date block
 function caes_tribe_events_date_render_callback($attributes, $content, $block)

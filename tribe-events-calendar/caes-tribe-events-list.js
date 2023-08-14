@@ -26,7 +26,3 @@ wp.blocks.registerBlockVariation(
         allowedControls: ['taxQuery'],
     }
 );
-
-// Unregister...
-
-// wp.blocks.unregisterBlockVariation( 'core/embed', 'youtube' );
