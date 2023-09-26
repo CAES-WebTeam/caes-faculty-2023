@@ -576,3 +576,18 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type)
 
 	return $urls;
 }
+
+// Allow block locking for Super Admins
+add_filter(
+    'block_editor_settings_all',
+    static function($settings) {
+        if ( is_super_admin() ) {
+			$settings['canLockBlocks'] = true; // Allow block locking for Super Admins.
+        } else {
+            $settings['canLockBlocks'] = false; // Disallow for other roles.
+        }
+        return $settings;
+    },
+    10,
+    2
+);
