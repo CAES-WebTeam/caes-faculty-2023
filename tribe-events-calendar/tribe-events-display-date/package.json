@@ -1,6 +1,6 @@
 {
 	"name": "caes-tribe-events-display-date",
-	"version": "0.1.0",
+	"version": "1.0.1",
 	"description": "CAES custom block to display the date of an event from the Tribe Events Calendar.",
 	"author": "CAES OIT Web Team",
 	"license": "GPL-2.0-or-later",

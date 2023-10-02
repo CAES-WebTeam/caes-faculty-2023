@@ -36,5 +36,5 @@ if (!empty($eventStartDate)) {
         $formattedDate = $startDateTime->format('M j, Y') . ' - ' . $endDateTime->format('M j, Y');
     }
 
-    echo '<time>' . $formattedDate . '</time>';
+    echo '<time class="wp-block-uga-caes-tribe-events-display-date">' . $formattedDate . '</time>';
 }

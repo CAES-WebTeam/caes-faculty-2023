@@ -18,12 +18,13 @@
     <!-- wp:group {"className":"caes-fac-query-loop-grid-item","layout":{"type":"default"}} -->
     <div class="wp-block-group caes-fac-query-loop-grid-item"><!-- wp:post-featured-image {"className":"caes-fac-query-loop-img-container"} /-->
 
-        <!-- wp:group {"backgroundColor":"base","className":"caes-fac-query-loop-grid-info","layout":{"type":"default"}} -->
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"backgroundColor":"base","className":"caes-fac-query-loop-grid-info","layout":{"type":"default"}} -->
         <div class="wp-block-group caes-fac-query-loop-grid-info has-base-background-color has-background"><!-- wp:post-title {"level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}}} /-->
 
             <!-- wp:uga-caes/tribe-events-display-date /-->
         </div>
         <!-- /wp:group -->
+        
     </div>
     <!-- /wp:group -->
     <!-- /wp:post-template -->
