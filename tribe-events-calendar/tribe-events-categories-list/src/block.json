@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "uga-caes/tribe-events-categories-list",
+	"version": "1.0.0",
+	"title": "Event Categories List (The Event Calendar)",
+	"category": "widgets",
+	"icon": "calendar-alt",
+	"description": "Displays a list of categories for events.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "tribe-events-categories-list",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

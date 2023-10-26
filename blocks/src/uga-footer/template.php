@@ -25,12 +25,23 @@
 						<li class="ugafooter__links-list-item">
 							<a class="ugafooter__links-list-link" href="https://eits.uga.edu/access_and_security/infosec/pols_regs/policies/privacy/">UGA Privacy Policy</a>
 						</li>
-						<li class="ugafooter__links-list-item">
-							<a class="ugafooter__links-list-link" href="https://www.caes.uga.edu/accessibility.html">CAES Accessibility Policy</a>
-						</li>
+						<?php
+						$a11ywording = $attributes['a11ywording'];
+						switch ($a11ywording) {
+							case "true": ?>
+								<li class="ugafooter__links-list-item">
+									<a class="ugafooter__links-list-link" href="https://www.caes.uga.edu/accessibility.html">CAES Accessibility Policy</a>
+								</li>
+							<?php break;
+							case "false": ?>
+								<li class="ugafooter__links-list-item">
+									<a class="ugafooter__links-list-link" href="https://www.caes.uga.edu/accessibility.html">Accessibility Policy</a>
+								</li>
+								<?php break; ?>
+						<?php } ?>
 						<?php
 						$login = $attributes['login'];
-							switch ($login) {
+						switch ($login) {
 							case "true": ?>
 								<?php if (is_user_logged_in()) : ?>
 									<li class="ugafooter__links-list-item"><a class="ugafooter__links-list-link" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out of site</a></li>
@@ -38,9 +49,9 @@
 									<li class="ugafooter__links-list-item"><a class="ugafooter__links-list-link" href="<?php echo wp_login_url(get_permalink()); ?>">Log in to site</a></li>
 								<?php endif; ?>
 							<?php break;
-        					case "false": ?>
-							<?php break; ?>
-   						 <?php } ?>
+							case "false": ?>
+								<?php break; ?>
+						<?php } ?>
 					</ul>
 				</nav>
 			</div>

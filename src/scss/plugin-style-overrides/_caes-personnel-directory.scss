@@ -16,6 +16,19 @@
               width: 100%;  
             }
         }
+        .grid-item-grid-info {
+            .mailingAddress, .dept {
+                line-height: 1.5;
+            }
+            .mailingAddress {
+                margin-top: var(--wp--preset--spacing--40);
+            }
+            h1, h2, h3, h4, h5, h6 {
+                a:not(.wp-block-button__link) {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
 }

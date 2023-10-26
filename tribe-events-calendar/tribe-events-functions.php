@@ -318,3 +318,22 @@ function caes_tribe_events_date_init()
 	);
 }
 add_action('init', 'caes_tribe_events_date_init');
+
+// Registering our custom block for displaying event categories
+function caes_tribe_events_categories_list_render_callback($attributes, $content, $block)
+{
+	ob_start();
+	require get_template_directory() . '/tribe-events-calendar/tribe-events-categories-list/build/template.php';
+	return ob_get_clean();
+}
+
+function caes_tribe_events_categories_list_init()
+{
+	register_block_type(
+		__DIR__ . '/../tribe-events-calendar/tribe-events-categories-list/build',
+		array(
+			'render_callback' => 'caes_tribe_events_categories_list_render_callback',
+		)
+	);
+}
+add_action('init', 'caes_tribe_events_categories_list_init');

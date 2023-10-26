@@ -5,6 +5,7 @@ These files extend [The Events Calendar](https://theeventscalendar.com/) plugin 
 - [x] Overriding the default single event page template with our own.
 - [x] Adding a query loop variation block to the editor for pulling event feeds.
 - [x] Adding an event date block to the editor for event feed query block variation.
+- [x] Adding an event categories list block to provide a list of categories.
 
 ## I can't see the blocks or patterns. What's happening?
 
@@ -30,6 +31,7 @@ This file is referenced by the theme's functions.php, if "The Events Calendar" p
 * A function for pulling in a custom query block variation for event feeds (see caes-tribe-events-list.js).
 * A filter for sorting custom events list on the front end.
 * A filter for sorting custom events list in the editor.
+* Registering our custom [event categories list block](tribe-events-categories-list/tribe-events-categories-list.php).
 * Registering our custom [event date block](tribe-events-display-date/tribe-events-display-date.php).
 
 ## caes-tribe-events-list.js
@@ -40,6 +42,10 @@ This file creates a query block variation that pulls in events from Tribe's plug
 * When the block is first inserted, the user can click the "Choose" button to select a grid pattern design option. 
 * The grid pattern code can be found here: [../patterns/caes-tribe-events-list.php](../patterns/caes-tribe-events-list.php)
 
+## /tribe-events-categories-list
+
+This folder contains our custom block for displaying a list of event categories from Tribe's "The Events Calendar" plugin. Before developing in this directory, install the packages with npm, and then run `npm run build` in the directory to build it.
+
 ## /tribe-events-display-date
 
-This folder contains our custom block for displaying the event date in an event feed. It uses `@wordpress/scripts` dev dependencies. Before using, install the packages with npm, and then run `npm run build` in this directory to build it.
+This folder contains our custom block for displaying the event date in an event feed. It uses `@wordpress/scripts` dev dependencies. Before developing in this directory, install the packages with npm, and then run `npm run build` in the directory to build it.

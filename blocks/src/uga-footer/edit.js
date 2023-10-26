@@ -60,6 +60,15 @@ const Edit = ({ attributes, setAttributes }) => {
 							value={attributes.login}
 							onChange={(val) => setAttributes({ login: val })}
 						/>
+						<SelectControl
+							label={__("Accessibility Link Wording", "gutenberg-multi")}
+							options={[
+								{ label: 'Include CAES in label', value: 'true' },
+								{ label: 'Exclude CAES in label', value: 'false' }
+							]}
+							value={attributes.a11ywording}
+							onChange={(val) => setAttributes({ a11ywording: val })}
+						/>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>

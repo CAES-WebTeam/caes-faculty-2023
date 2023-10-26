@@ -1,7 +1,7 @@
 {
-	"name": "caes-tribe-events-display-date",
-	"version": "1.0.2",
-	"description": "CAES custom block to display the date of an event from the Tribe Events Calendar.",
+	"name": "tribe-events-categories-list",
+	"version": "1.0.0",
+	"description": "CAES custom block to display a list of event categories from the Tribe Events Calendar.",
 	"author": "CAES OIT Web Team",
 	"license": "GPL-2.0-or-later",
 	"homepage": "https://oit.caes.uga.edu",
@@ -16,6 +16,6 @@
 		"start": "wp-scripts start --webpack-copy-php"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^24.3.0"
+		"@wordpress/scripts": "^26.15.0"
 	}
 }

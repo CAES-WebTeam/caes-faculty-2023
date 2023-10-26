@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Plugin Name:       CAES Faculty 2023 - Blocks
+ * Plugin Name:       Tribe Events Categories List
  * Plugin URI:        https://oit.caes.uga.edu
- * Description:       Blocks made for the UGA CAES Faculty 2023 theme.
- * Requires at least: 5.9
+ * Description:       CAES custom block to display a list of event categories from the Tribe Events Calendar.
+ * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           1.0.1
+ * Version:           1.0.0
  * Author:            CAES OIT Web Team
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       caes-fac-blocks
+ * Text Domain:       tribe-events-caes
  *
  * @package           uga-caes
  */
