@@ -307,7 +307,7 @@ function caes_tribe_events_date_render_callback($attributes, $content, $block)
 	require get_template_directory() . '/tribe-events-calendar/tribe-events-display-date/build/template.php';
 	return ob_get_clean();
 }
-
+// Initializing our custom Event Date block
 function caes_tribe_events_date_init()
 {
 	register_block_type(
@@ -327,6 +327,7 @@ function caes_tribe_events_categories_list_render_callback($attributes, $content
 	return ob_get_clean();
 }
 
+// Initializing our custom block for displaying event categories
 function caes_tribe_events_categories_list_init()
 {
 	register_block_type(

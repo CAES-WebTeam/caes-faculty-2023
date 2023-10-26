@@ -7,10 +7,6 @@
 	"category": "widgets",
 	"icon": "calendar-alt",
 	"description": "Displays a list of categories for events.",
-	"example": {},
-	"supports": {
-		"html": false
-	},
 	"textdomain": "tribe-events-categories-list",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

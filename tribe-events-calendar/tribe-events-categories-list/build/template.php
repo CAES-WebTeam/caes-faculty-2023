@@ -34,4 +34,3 @@ if (!empty($event_categories)) {
 } else {
     echo 'No event categories found.';
 }
-?>

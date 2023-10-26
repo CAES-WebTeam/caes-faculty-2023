@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "uga-caes/tribe-events-display-date",
 	"version": "1.0.2",
-	"title": "Event Date (The Event Calendar)",
+	"title": "Event Date (The Events Calendar)",
 	"category": "widgets",
 	"icon": "calendar-alt",
 	"description": "Displays an event's date.",
