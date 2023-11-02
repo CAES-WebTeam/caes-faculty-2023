@@ -252,7 +252,7 @@ function tribe_events_list_caes_list()
 
 add_action('enqueue_block_editor_assets', 'tribe_events_list_caes_list');
 
-// Sort by event start date on FRONT END
+// Sort by event start date for block on FRONT END
 function tribe_caes_upcoming_events_pre_render_block($pre_render, $parsed_block)
 {
 	$filter = function ($query) use ($parsed_block, &$filter) {
@@ -278,7 +278,7 @@ function tribe_caes_upcoming_events_pre_render_block($pre_render, $parsed_block)
 }
 add_filter('pre_render_block', 'tribe_caes_upcoming_events_pre_render_block', 10, 3);
 
-// Sort by event start date in EDITOR
+// Sort by event start date for block in EDITOR
 function tribe_caes_rest_upcoming_events($args, $request)
 {
 
@@ -299,6 +299,16 @@ function tribe_caes_rest_upcoming_events($args, $request)
 	return $args;
 }
 add_filter('rest_tribe_events_query', 'tribe_caes_rest_upcoming_events', 10, 2);
+
+// Sorting Tribe Events archive/category pages by ascending
+function caes_tribe_events_archive_query($query) {
+    if ((is_post_type_archive('tribe_events') || is_tax('tribe_events_cat') || is_tax('tribe_events_tag')) && $query->is_main_query()) {
+        $query->set('meta_key', '_EventStartDate'); 
+        $query->set('orderby', 'meta_value');
+        $query->set('order', 'ASC');
+    }
+}
+add_action('pre_get_posts', 'caes_tribe_events_archive_query');
 
 // Registering our custom Event Date block
 function caes_tribe_events_date_render_callback($attributes, $content, $block)

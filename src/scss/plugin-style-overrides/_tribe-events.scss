@@ -161,6 +161,14 @@
 
 }
 
+.tribe-events-schedule__all-day {
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--base);
+    padding: var(--wp--preset--spacing--20);
+    margin: 0 var(--wp--preset--spacing--20);
+    border-radius: 3px;
+}
+
 // Editor only
 .tribe-editor__venue__fields {
     width: 100%;
