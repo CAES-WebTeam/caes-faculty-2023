@@ -1,59 +1,80 @@
 // CAES Personnel Directory Styles
 
-.grid-items {
-    &.personnel {
-        .grid-item-img-container {
-            @include reusable.item-img-container(1, 100%);
+@import 'reusable';
 
-            img {
-                object-position: top;
-            }
-        }
-        .grid-item-grid-info>div:first-child {
-            flex-direction: column;
+// Personnel columns
+
+.personnel-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: var(--wp--preset--spacing--60);
+    grid-row-gap: var(--wp--preset--spacing--60);
+    margin-top: var(--wp--preset--spacing--60);
+
+    .personnel-item {
+        display: grid;
+        height: 100%;
+        box-shadow: 0 0 15px rgb(0 0 0 / 5%);
+        @include grid-item-info (left);
+    }
+
+    .personnel-item-img-container {
+        height: 100%;
+        img {
+            object-fit: cover;
+            height: 100%;
             width: 100%;
-            & > * {
-              width: 100%;  
-            }
+            aspect-ratio: 3/4;
         }
-        .grid-item-grid-info {
-            .mailingAddress, .dept {
-                line-height: 1.5;
-            }
-            .mailingAddress {
-                margin-top: var(--wp--preset--spacing--40);
-            }
-            h1, h2, h3, h4, h5, h6 {
-                a:not(.wp-block-button__link) {
-                    text-decoration: underline;
-                }
-            }
+    }
+
+    .personnel-item-grid-info {
+        padding: var(--wp--preset--spacing--40);
+        align-items: center;
+        display: grid;
+
+        &:last-of-type p:last-of-type {
+            margin-bottom: 0;
         }
+
+    }
+
+    .personnel-item-grid-info-box {
+        margin: var(--wp--preset--spacing--30) 0;
+        p {
+            margin: 0;
+        }
+    }
+
+    .name {
+        font-size: var(--wp--preset--font-size--x-large);
+        margin-bottom: var(--wp--preset--spacing--30);
+    }
+
+    .title {
+        line-height: 1.5;
+    }
+
+    .name, .title {
+        margin-top: 0;
+    }
+
+    .dept, .num-phone, .num-cell, .email, .mailingAddress {
+        font-size: var(--wp--preset--font-size--small);
+        line-height: 1.5;
+    }
+
+    .mailingAddress {
+        margin-top: var(--wp--preset--spacing--30);
     }
 
 }
 
-@media (min-width:600px) {
-    .grid-items.personnel {
-        .grid-item {
-            @include reusable.grid-item(row);
-            // max-width: calc((var(--wp--style--global--content-size)/2) - (var(--wp--preset--spacing--50)/2));
-        }
-
-        .grid-item-img-container {
-            @include reusable.item-img-container(3/4, 35%);
-            height: 100%;
-
-            img {
-                object-position: center;
-            }
-        }
-
-        .grid-item-grid-info {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            @include reusable.grid-item-info(left);
-        }
+@media (min-width: 782px) {
+    .personnel-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+    .personnel-item {
+        grid-template-columns: 40% 60%;
     }
 }

@@ -25,5 +25,11 @@
 
 }
 
+// Personnel Directory Block
+
+.personnel-columns {
+  margin-bottom: var(--wp--preset--spacing--60) !important;
+}
+
 // Plugin overrides
 @import '../plugin-style-overrides/tribe-events';
