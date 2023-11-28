@@ -16,7 +16,7 @@ Then after pulling the repo to your machine, install the packages with ```npm in
    - Use ```npm run build``` to compile theme CSS and JS
 2. **/blocks/package.json** 
    - cd to directory, and use ```npm run build``` to compile CSS, JS, and PHP for theme blocks
-3. **/tribe-events-calendar/tribe-events-categories-list/** 
+3. **/tribe/tribe-events-categories-list/** 
    - cd to directory, and use ```npm run build``` to compile CSS, JS, and PHP for Tribe Events Categories List block
-4. **/tribe-events-calendar/tribe-events-display-date/** 
+4. **/tribe/tribe-events-display-date/** 
    - cd to directory, and use ```npm run build``` to compile CSS, JS, and PHP for Tribe Events Display Date block

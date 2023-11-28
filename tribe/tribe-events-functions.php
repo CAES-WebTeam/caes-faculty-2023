@@ -12,145 +12,66 @@ add_filter('tribe_events_editor_default_template', function ($template) {
 
 	// Template for single event page
 	$template = [
-		// Top Group
+		// Main Group Block
 		[
 			'core/group',
 			[
 				'layout' => [
-					'type' => 'constrained',
+					'type' => 'default',
 				],
 			],
 			[
-				// Top Group > Columns Block
+				// Top Group
 				[
-					'core/columns',
+					'core/group',
 					[
-						'verticalAlignment' => 'center',
-						'align' => 'full',
-						'style' => [
-							'spacing' => [
-								'blockGap' => [
-									'top' => '0',
-									'left' => '0',
-								],
-							],
+						'layout' => [
+							'type' => 'constrained',
 						],
-						'backgroundColor' => 'base-two',
 					],
 					[
-						// Top Group > Columns > Column 1
+						// Top Group > Columns Block
 						[
-							'core/column',
+							'core/columns',
 							[
 								'verticalAlignment' => 'center',
-							],
-							[ // Post Featured Image Block
-								[
-									'core/post-featured-image',
-								]
-							]
-						],
-						// Top Group > Columns > Column 2
-						[
-							'core/column',
-							[
-								'verticalAlignment' => 'center',
+								'align' => 'full',
 								'style' => [
 									'spacing' => [
-										'padding' => [
-											'top' => 'var:preset|spacing|60',
-											'right' => 'var:preset|spacing|60',
-											'bottom' => 'var:preset|spacing|60',
-											'left' => 'var:preset|spacing|60',
+										'blockGap' => [
+											'top' => '0',
+											'left' => '0',
 										],
 									],
 								],
+								'backgroundColor' => 'base-two',
 							],
 							[
+								// Top Group > Columns > Column 1
 								[
-									'core/group',
+									'core/column',
 									[
-										'style' => [
-											'spacing' => [
-												'blockGap' => 'var:preset|spacing|40',
-											],
-										],
-										'layout' => [
-											'type' => 'constrained',
-										],
+										'verticalAlignment' => 'center',
 									],
-									[
+									[ // Post Featured Image Block
 										[
-											'core/post-title',
-											[
-												'level' => 1,
-											]
-										],
-										[
-											'tribe/event-datetime',
+											'core/post-featured-image',
 										]
 									]
 								],
-							]
-						],
-					]
-				]
-			]
-		],
-		// Bottom Group
-		[
-			'core/group',
-			[
-				'layout' => [
-					'type' => 'constrained',
-				],
-			],
-			[
-				// Bottom Group > Columns Block
-				[
-					'core/columns',
-					[
-						'align' => 'full',
-					],
-					[
-						// Bottom Group > Columns > Column 1
-						[
-							'core/column',
-							[
-								'width' => '70%'
-							],
-							[
-								// Bottom Group > Columns > Column 1 > Paragraph Block
+								// Top Group > Columns > Column 2
 								[
-									'core/paragraph',
+									'core/column',
 									[
-										'content' => 'Add description here.',
-									],
-								]
-							]
-						],
-						// Bottom Group > Columns > Column 2
-						[
-							'core/column',
-							[
-								'width' => '30%',
-							],
-							[
-								[
-									'core/group',
-									[
+										'verticalAlignment' => 'center',
 										'style' => [
 											'spacing' => [
 												'padding' => [
-													'top' => '0',
-													'right' => '0',
-													'bottom' => '0',
-													'left' => '0',
+													'top' => 'var:preset|spacing|60',
+													'right' => 'var:preset|spacing|60',
+													'bottom' => 'var:preset|spacing|60',
+													'left' => 'var:preset|spacing|60',
 												],
-												'blockGap' => 'var:preset|spacing|60',
-											],
-											'layout' => [
-												'type' => 'constrained',
 											],
 										],
 									],
@@ -160,77 +81,167 @@ add_filter('tribe_events_editor_default_template', function ($template) {
 											[
 												'style' => [
 													'spacing' => [
-														'padding' => [
-															'top' => '0',
-															'right' => '0',
-															'bottom' => '0',
-															'left' => '0',
-														],
 														'blockGap' => 'var:preset|spacing|40',
 													],
-													'layout' => [
-														'type' => 'constrained',
-													],
+												],
+												'layout' => [
+													'type' => 'constrained',
 												],
 											],
 											[
-												// Heading Block for Contact
 												[
-													'core/heading',
+													'core/post-title',
 													[
-														'fontSize' => 'x-large',
-														'level' => 2,
-														'content' => 'Contact',
-													],
+														'level' => 1,
+													]
 												],
-												// Tribe Event Organizer Block
 												[
-													'tribe/event-organizer',
+													'tribe/event-datetime',
 												]
-											],
-										],
-										[
-											'core/group',
-											[
-												'style' => [
-													'spacing' => [
-														'padding' => [
-															'top' => '0',
-															'right' => '0',
-															'bottom' => '0',
-															'left' => '0',
-														],
-														'blockGap' => 'var:preset|spacing|40',
-													],
-													'layout' => [
-														'type' => 'constrained',
-													],
-												],
-											],
-											[
-												// Heading for Location
-												[
-													'core/heading',
-													[
-														'fontSize' => 'x-large',
-														'level' => 2,
-														'content' => 'Location',
-													],
-												],
-												// Venue Block
-												[
-													'tribe/event-venue'
-												],
 											]
-										],
-										// Tribe Event Links Block
-										[
-											'tribe/event-links',
 										],
 									]
 								],
 							]
+						]
+					]
+				],
+				// Bottom Group
+				[
+					'core/group',
+					[
+						'layout' => [
+							'type' => 'constrained',
 						],
+					],
+					[
+						// Bottom Group > Columns Block
+						[
+							'core/columns',
+							[
+								'align' => 'full',
+							],
+							[
+								// Bottom Group > Columns > Column 1
+								[
+									'core/column',
+									[
+										'width' => '70%'
+									],
+									[
+										// Bottom Group > Columns > Column 1 > Paragraph Block
+										[
+											'core/paragraph',
+											[
+												'content' => 'Add description here.',
+											],
+										]
+									]
+								],
+								// Bottom Group > Columns > Column 2
+								[
+									'core/column',
+									[
+										'width' => '30%',
+									],
+									[
+										[
+											'core/group',
+											[
+												'style' => [
+													'spacing' => [
+														'padding' => [
+															'top' => '0',
+															'right' => '0',
+															'bottom' => '0',
+															'left' => '0',
+														],
+														'blockGap' => 'var:preset|spacing|60',
+													],
+													'layout' => [
+														'type' => 'constrained',
+													],
+												],
+											],
+											[
+												[
+													'core/group',
+													[
+														'style' => [
+															'spacing' => [
+																'padding' => [
+																	'top' => '0',
+																	'right' => '0',
+																	'bottom' => '0',
+																	'left' => '0',
+																],
+																'blockGap' => 'var:preset|spacing|40',
+															],
+															'layout' => [
+																'type' => 'constrained',
+															],
+														],
+													],
+													[
+														// Heading Block for Contact
+														[
+															'core/heading',
+															[
+																'fontSize' => 'x-large',
+																'level' => 2,
+																'content' => 'Contact',
+															],
+														],
+														// Tribe Event Organizer Block
+														[
+															'tribe/event-organizer',
+														]
+													],
+												],
+												[
+													'core/group',
+													[
+														'style' => [
+															'spacing' => [
+																'padding' => [
+																	'top' => '0',
+																	'right' => '0',
+																	'bottom' => '0',
+																	'left' => '0',
+																],
+																'blockGap' => 'var:preset|spacing|40',
+															],
+															'layout' => [
+																'type' => 'constrained',
+															],
+														],
+													],
+													[
+														// Heading for Location
+														[
+															'core/heading',
+															[
+																'fontSize' => 'x-large',
+																'level' => 2,
+																'content' => 'Location',
+															],
+														],
+														// Venue Block
+														[
+															'tribe/event-venue'
+														],
+													]
+												],
+												// Tribe Event Links Block
+												[
+													'tribe/event-links',
+												],
+											]
+										],
+									]
+								],
+							]
+						]
 					]
 				]
 			]
@@ -245,7 +256,7 @@ function tribe_events_list_caes_list()
 {
 	wp_enqueue_script(
 		'enqueue-tribe-events-caes-list',
-		get_template_directory_uri() . '/tribe-events-calendar/caes-tribe-events-list.js',
+		get_template_directory_uri() . '/tribe/caes-tribe-events-list.js',
 		array('wp-blocks')
 	);
 }
@@ -314,14 +325,14 @@ add_action('pre_get_posts', 'caes_tribe_events_archive_query');
 function caes_tribe_events_date_render_callback($attributes, $content, $block)
 {
 	ob_start();
-	require get_template_directory() . '/tribe-events-calendar/tribe-events-display-date/build/template.php';
+	require get_template_directory() . '/tribe/tribe-events-display-date/build/template.php';
 	return ob_get_clean();
 }
 // Initializing our custom Event Date block
 function caes_tribe_events_date_init()
 {
 	register_block_type(
-		__DIR__ . '/../tribe-events-calendar/tribe-events-display-date/build',
+		__DIR__ . '/../tribe/tribe-events-display-date/build',
 		array(
 			'render_callback' => 'caes_tribe_events_date_render_callback',
 		)
@@ -333,7 +344,7 @@ add_action('init', 'caes_tribe_events_date_init');
 function caes_tribe_events_categories_list_render_callback($attributes, $content, $block)
 {
 	ob_start();
-	require get_template_directory() . '/tribe-events-calendar/tribe-events-categories-list/build/template.php';
+	require get_template_directory() . '/tribe/tribe-events-categories-list/build/template.php';
 	return ob_get_clean();
 }
 
@@ -341,7 +352,7 @@ function caes_tribe_events_categories_list_render_callback($attributes, $content
 function caes_tribe_events_categories_list_init()
 {
 	register_block_type(
-		__DIR__ . '/../tribe-events-calendar/tribe-events-categories-list/build',
+		__DIR__ . '/../tribe/tribe-events-categories-list/build',
 		array(
 			'render_callback' => 'caes_tribe_events_categories_list_render_callback',
 		)

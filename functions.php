@@ -137,6 +137,9 @@ add_action('init', function () {
 	if (!is_plugin_active('the-events-calendar/the-events-calendar.php')) {
         unregister_block_pattern('uga-caes-fac-2023/caes-tribe-events-list');
     }
+	if (is_plugin_active('gutenslider/eedee-gutenslider.php')) {
+        unregister_block_pattern('gutenslider/pattern-testimonial-slider');
+    }
 });
 
 // Removes some default core styles with remove-block-styles.js
@@ -456,7 +459,7 @@ add_filter('the_excerpt_rss', 'caes_custom_excerpt_more');
 // Include the required files
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('wp-job-manager/wp-job-manager.php')) require_once('job_manager/wpjm-functions.php');
-if (is_plugin_active('the-events-calendar/the-events-calendar.php')) require_once('tribe-events-calendar/tribe-events-functions.php');
+if (is_plugin_active('the-events-calendar/the-events-calendar.php')) require_once('tribe/tribe-events-functions.php');
 
 ////////////////// FAVICON //////////////////
 

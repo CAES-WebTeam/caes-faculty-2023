@@ -42,6 +42,10 @@ This file creates a query block variation that pulls in events from Tribe's plug
 * When the block is first inserted, the user can click the "Choose" button to select a grid pattern design option. 
 * The grid pattern code can be found here: [../patterns/caes-tribe-events-list.php](../patterns/caes-tribe-events-list.php)
 
+## /events/single-event-blocks.php
+
+This is a template file for single events that overrides the default from the plugin. Note that the majority of the formatting is not in this file, but rather in the function in tribe-events-functions.php.
+
 ## /tribe-events-categories-list
 
 This folder contains our custom block for displaying a list of event categories from Tribe's "The Events Calendar" plugin. Before developing in this directory, install the packages with npm, and then run `npm run build` in the directory to build it.

@@ -23,6 +23,6 @@ wp.blocks.registerBlockVariation(
         },
         isActive: ['namespace'],
         scope: ['inserter'],
-        allowedControls: ['taxQuery'],
+        allowedControls: ['inherit','taxQuery','search'],
     }
 );

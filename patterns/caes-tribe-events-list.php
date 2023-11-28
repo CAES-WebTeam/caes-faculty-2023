@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Title: Default event layout for "The Events Calendar" plugin.
+ * Title: Grid style event list for "The Events Calendar" plugin.
  * Slug: uga-caes-fac-2023/caes-tribe-events-list
  * Categories: tribe-events
  * Block Types: core/query/uga-caes-fac-2023/caes-tribe-events-list
