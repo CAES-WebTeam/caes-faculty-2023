@@ -69,6 +69,9 @@
 .tribe-events-single a {
     color: var(--wp--preset--color--primary);
     text-decoration: underline !important;
+    &.wp-block-button__link {
+        color: var(--wp--preset--color--base);
+    }
 }
 
 .tribe-common .tribe-common-h3,
