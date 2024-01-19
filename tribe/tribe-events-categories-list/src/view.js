@@ -21,7 +21,7 @@
  */
 
 /* eslint-disable no-console */
-console.log(
-	'Hello World! (from uga-caes-tribe-events-categories-list block)'
-);
+// console.log(
+// 	'Hello World! (from uga-caes-tribe-events-categories-list block)'
+// );
 /* eslint-enable no-console */

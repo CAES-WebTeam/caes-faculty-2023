@@ -1,1 +1,0 @@
-console.log("Hello World! (from uga-caes-tribe-events-categories-list block)");

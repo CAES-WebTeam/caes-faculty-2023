@@ -490,6 +490,11 @@ ul.is-style-caes-fac-list-none {
   height: 100%;
 }
 
+// Class for forcing 0 padding, created for Gutenslider when we want full width
+.padding-0 {
+  padding: 0 !important;
+}
+
 // JS Scroll Animations
 
 .js-scroll {

@@ -311,12 +311,21 @@ function tribe_caes_rest_upcoming_events($args, $request)
 }
 add_filter('rest_tribe_events_query', 'tribe_caes_rest_upcoming_events', 10, 2);
 
-// Sorting Tribe Events archive/category pages by ascending
+// Sorting Tribe Events archive/category pages by ascending, AND remove dates older than current date
 function caes_tribe_events_archive_query($query) {
-    if ((is_post_type_archive('tribe_events') || is_tax('tribe_events_cat') || is_tax('tribe_events_tag')) && $query->is_main_query()) {
+    if (!is_admin() && (is_post_type_archive('tribe_events') || is_tax('tribe_events_cat') || is_tax('tribe_events_tag')) && $query->is_main_query()) {
+		$today = date('Y-m-d');
+        $meta_query = array(
+            array(
+                'key'     => '_EventStartDate',
+                'value'   => $today,
+                'compare' => '>='
+            ),
+        );
         $query->set('meta_key', '_EventStartDate'); 
         $query->set('orderby', 'meta_value');
         $query->set('order', 'ASC');
+		$query->set('meta_query', $meta_query);
     }
 }
 add_action('pre_get_posts', 'caes_tribe_events_archive_query');
