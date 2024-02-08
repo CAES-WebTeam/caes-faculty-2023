@@ -31,5 +31,19 @@
   margin-bottom: var(--wp--preset--spacing--60) !important;
 }
 
+// Helper class for hiding thumbnail captions ON FRONT END.
+// This forces the caption to display in the editor so users can create captions.
+.wp-block-gallery.hide-thumbnail-caption {
+  figure.wp-block-image figcaption {
+      display: block;
+  }
+}
+
+.wp-block-image.hide-thumbnail-caption {
+  figcaption {
+      display: block;
+  }
+}
+
 // Plugin overrides
 @import '../plugin-style-overrides/tribe-events';
