@@ -43,6 +43,13 @@
 			"postTypes": [
 				"tribe_events"
 			]
+		},
+		{
+			"name": "single-fog-product",
+			"title": "Product",
+			"postTypes": [
+				"fog-product"
+			]
 		}
 	],
 	"templateParts": [
