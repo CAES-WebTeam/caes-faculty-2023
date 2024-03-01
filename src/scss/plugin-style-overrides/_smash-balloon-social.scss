@@ -1,0 +1,38 @@
+/* Styles for Smash Balloon social media feed plugins */
+/* As of 02/27/24, we use the pro version of the Smash Balloon plugin. 
+These may work in the free version, but it's not tested. */
+
+// Twitter Plugin
+
+#ctf.ctf-narrow .ctf-tweet-actions,
+#ctf.ctf-narrow .ctf-tweet-content {
+    margin-top: var(--wp--preset--spacing--20);
+}
+
+#ctf .ctf-item {
+    padding: 1rem;
+    font-size: var(--wp--preset--font-size--small);
+}
+
+#ctf.ctf-narrow .ctf-context {
+    padding-left: 0px;
+}
+
+#ctf .ctf-author-name,
+#ctf .ctf-author-screenname,
+#ctf.ctf-styles .ctf-tweet-meta {
+    margin-top: 0 !important;
+}
+
+#ctf .ctf-author-box-link,
+#ctf_lightbox .ctf-author-box-link {
+    align-items: center;
+}
+
+#ctf.ctf-narrow .ctf-author-box {
+    margin-bottom: 0;
+}
+
+.ctf-owl-stage-outer {
+    padding: 1rem 0;
+}
