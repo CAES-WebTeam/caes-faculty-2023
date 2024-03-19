@@ -523,7 +523,7 @@ function searchfilter($query)
 	}
 	return $query;
 }
-add_filter('pre_get_posts', 'searchfilter');
+//add_filter('pre_get_posts', 'searchfilter');
 
 
 ////////////////// END SEARCH GLOBAL //////////////////
