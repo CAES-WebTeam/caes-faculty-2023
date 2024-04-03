@@ -430,11 +430,11 @@ ul.is-style-caes-fac-list-none {
 // to add a toggle in the core table block for this using WP hooks, but I need time to figure 
 // it out. - AW 04/03/2024
 
-.wp-block-table.is-style-caes-fac-sticky-header {
+.wp-block-table.-fac-sticky-header {
   overflow-x: unset;
 }
 
-.wp-block-table.is-style-caes-fac-sticky-header th {
+.wp-block-table.-fac-sticky-header th {
   position: sticky;
   top: 0;
   background-color: var(--wp--preset--color--base-two);
@@ -494,15 +494,16 @@ ul.is-style-caes-fac-list-none {
 
 // Helper classes for adding bottom/top margins for post content areas
 
-.caes-fac-t-margin>*:first-child:not(.wp-block-cover) {
+.caes-fac-t-margin>*:first-child:not(.wp-block-cover):not(.wp-block-media-text) {
   margin-block-start: var(--wp--preset--spacing--60) !important;
 }
 
-.caes-fac-b-margin>*:last-child:not(.wp-block-cover) {
+.caes-fac-b-margin>*:last-child:not(.wp-block-cover):not(.wp-block-media-text) {
   margin-block-end: var(--wp--preset--spacing--60) !important;
 }
 
-.caes-fac-b-margin > *:last-child:is(.wp-block-group:has(>.wp-block-cover:last-child)) {
+.caes-fac-b-margin > *:last-child:is(.wp-block-group:has(>.wp-block-cover:last-child)),
+.caes-fac-b-margin > *:last-child:is(.wp-block-group:has(>.wp-block-media-text:last-child)) {
   margin-block-end: 0 !important;
 }
 
