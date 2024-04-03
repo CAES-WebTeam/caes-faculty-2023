@@ -423,6 +423,34 @@ ul.is-style-caes-fac-list-none {
   }
 }
 
+// Table block
+
+// Note for later: the sticky header style is NOT implemented as a style option for the table block,
+// and the user must add the class manually in the table block's properties. We are planning
+// to add a toggle in the core table block for this using WP hooks, but I need time to figure 
+// it out. - AW 04/03/2024
+
+.wp-block-table.is-style-caes-fac-sticky-header {
+  overflow-x: unset;
+}
+
+.wp-block-table.is-style-caes-fac-sticky-header th {
+  position: sticky;
+  top: 0;
+  background-color: var(--wp--preset--color--base-two);
+  border: 1px solid var(--wp--preset--color--contrast);
+}
+
+.wp-block-table.is-style-caes-fac-sticky-header table {
+  position: relative;
+}
+
+.wp-block-table.is-style-stripes.is-style-caes-fac-sticky-header th {
+  background-color: var(--wp--preset--color--contrast-two);
+  color: var(--wp--preset--color--base);
+  border: 1px solid var(--wp--preset--color--contrast-two);
+}
+
 // Centering figcaptions
 
 .wp-block-table figcaption,
@@ -472,6 +500,10 @@ ul.is-style-caes-fac-list-none {
 
 .caes-fac-b-margin>*:last-child:not(.wp-block-cover) {
   margin-block-end: var(--wp--preset--spacing--60) !important;
+}
+
+.caes-fac-b-margin > *:last-child:is(.wp-block-group:has(>.wp-block-cover:last-child)) {
+  margin-block-end: 0 !important;
 }
 
 // Use to visually hide content that should be available to screen readers
