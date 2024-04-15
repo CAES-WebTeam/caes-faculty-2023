@@ -1,0 +1,13 @@
+// CAES Extended Table Options
+
+.wp-block-table.caes-extended-core-table {
+    &.caes-sticky-header-row thead th {
+        background-color: var(--wp--preset--color--contrast-two);
+        color: var(--wp--preset--color--base);
+        border: 1px solid var(--wp--preset--color--contrast-two);
+    }
+
+    &.caes-header-column tbody th {
+        background-color: var(--wp--preset--color--base-two);
+    }
+}

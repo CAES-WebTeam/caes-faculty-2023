@@ -135,11 +135,11 @@ add_action('init', function () {
 		unregister_block_pattern('uga-caes-fac-2023/people-cpt-3-list');
 	}
 	if (!is_plugin_active('the-events-calendar/the-events-calendar.php')) {
-        unregister_block_pattern('uga-caes-fac-2023/caes-tribe-events-list');
-    }
+		unregister_block_pattern('uga-caes-fac-2023/caes-tribe-events-list');
+	}
 	if (is_plugin_active('gutenslider/eedee-gutenslider.php')) {
-        unregister_block_pattern('gutenslider/pattern-testimonial-slider');
-    }
+		unregister_block_pattern('gutenslider/pattern-testimonial-slider');
+	}
 });
 
 // Removes some default core styles with remove-block-styles.js
@@ -228,12 +228,12 @@ add_action('init', 'uga_caes_caes_fac_blocks_block_init');
  * @return string The rendered output.
  */
 
- function uga_caes_caes_fac_breadcrumbs_brand_render_callback($attributes, $content, $block)
- {
-	 ob_start();
-	 require get_template_directory() . '/blocks/build/breadcrumbs/template.php';
-	 return ob_get_clean();
- }
+function uga_caes_caes_fac_breadcrumbs_brand_render_callback($attributes, $content, $block)
+{
+	ob_start();
+	require get_template_directory() . '/blocks/build/breadcrumbs/template.php';
+	return ob_get_clean();
+}
 
 function uga_caes_caes_fac_footer_brand_render_callback($attributes, $content, $block)
 {
@@ -270,6 +270,14 @@ function uga_caes_caes_fac_post_social_share_render_callback($attributes, $conte
 	return ob_get_clean();
 }
 ////////////////// END BLOCKS FOR THEME //////////////////
+
+/////////////////// START EXTEND CORE BLOCKS ///////////////////
+
+// Function to activate extend core blocks if theme active
+
+require_once get_template_directory() . '/extend-core-blocks/caes-extend-core-blocks.php';
+
+/////////////////// END EXTEND CORE BLOCKS ///////////////////
 
 ////////////////// ADD LOG IN PAGE STYLING //////////////////
 function uga_caes_fac_2023_login_stylesheet()
@@ -582,15 +590,15 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type)
 
 // Allow block locking for Super Admins
 add_filter(
-    'block_editor_settings_all',
-    static function($settings) {
-        if ( is_super_admin() ) {
+	'block_editor_settings_all',
+	static function ($settings) {
+		if (is_super_admin()) {
 			$settings['canLockBlocks'] = true; // Allow block locking for Super Admins.
-        } else {
-            $settings['canLockBlocks'] = false; // Disallow for other roles.
-        }
-        return $settings;
-    },
-    10,
-    2
+		} else {
+			$settings['canLockBlocks'] = false; // Disallow for other roles.
+		}
+		return $settings;
+	},
+	10,
+	2
 );

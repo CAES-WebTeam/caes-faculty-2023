@@ -35,15 +35,37 @@
 // This forces the caption to display in the editor so users can create captions.
 .wp-block-gallery.hide-thumbnail-caption {
   figure.wp-block-image figcaption {
-      display: block;
+    display: block;
   }
 }
 
 .wp-block-image.hide-thumbnail-caption {
   figcaption {
-      display: block;
+    display: block;
   }
 }
+
+// Table Block
+
+// CAES Extended Table Options
+
+.caes-sticky-header-row thead th {
+  background-color: var(--wp--preset--color--contrast-two);
+  color: var(--wp--preset--color--base);
+  border: 1px solid var(--wp--preset--color--contrast-two);
+}
+
+.caes-sticky-header-column tbody th {
+  background-color: var(--wp--preset--color--base-two);
+}
+
+.caes-header-column tbody th,
+.caes-header-column tbody tr td:first-child {
+  background-color: var(--wp--preset--color--base-two);
+  font-weight: 700;
+  text-align: center;
+}
+
 
 // Plugin overrides
 @import '../plugin-style-overrides/tribe-events';

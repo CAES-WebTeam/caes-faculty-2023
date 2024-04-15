@@ -430,11 +430,11 @@ ul.is-style-caes-fac-list-none {
 // to add a toggle in the core table block for this using WP hooks, but I need time to figure 
 // it out. - AW 04/03/2024
 
-.wp-block-table.-fac-sticky-header {
+.wp-block-table.is-style-caes-fac-sticky-header {
   overflow-x: unset;
 }
 
-.wp-block-table.-fac-sticky-header th {
+.wp-block-table.is-style-caes-fac-sticky-header th {
   position: sticky;
   top: 0;
   background-color: var(--wp--preset--color--base-two);
@@ -716,6 +716,7 @@ ul.is-style-caes-fac-list-none {
 // a single stylesheet or multiple if a plugin is used, in functions.php
 
 @import 'plugin-style-overrides/accordion-blocks';
+@import 'plugin-style-overrides/caes-extend-core-blocks';
 @import 'plugin-style-overrides/wp-job-manager';
 @import 'plugin-style-overrides/wp-inventory';
 @import 'plugin-style-overrides/caes-personnel-directory';
