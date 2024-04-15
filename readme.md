@@ -1,4 +1,4 @@
-# :teacher: CAES Faculty 2023 Theme
+# :woman_teacher: CAES Faculty 2023 Theme
 
 This repo is for the 2023 WordPress theme for UGA CAES and Extension faculty sites. It's a block theme with ready-to-go patterns designed for faculty websites. It also supports the site editor for further customization.
 
