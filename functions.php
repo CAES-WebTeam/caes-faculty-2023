@@ -602,3 +602,10 @@ add_filter(
 	10,
 	2
 );
+
+// Disable the font library addded in WordPress 6.5
+function disable_font_library_ui( $editor_settings ) { 
+	$editor_settings['fontLibraryEnabled'] = false;
+	return $editor_settings; 
+}
+add_filter( "block_editor_settings_all", "disable_font_library_ui" );

@@ -270,6 +270,16 @@
 				}
 			]
 		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [
+				{
+					"name": "CAES Shadow",
+					"shadow": "0 0 15px rgb(0 0 0 / 5%)",
+					"slug": "caes-shadow"
+				}
+			]
+		},
 		"blocks": {
 			"core/image": {
 				"lightbox": {
