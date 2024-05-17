@@ -72,6 +72,15 @@
                         font-weight: 400;
                         line-height: 1.2;
                     }
+
+                    .caes-rss-feed-event-date-wrapper {
+                        display: flex;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        font-size: var(--wp--preset--font-size--large);
+                        font-family: var(--wp--preset--font-family--oswald);
+                    }
+
                 }
             }
 
@@ -128,6 +137,22 @@
                         font-size: var(--wp--preset--font-size--x-large);
                         font-weight: 400;
                         line-height: 1.2;
+                    }
+
+                    .caes-rss-feed-title-and-event-date-wrapper {
+                        display: flex;
+                        display: flex;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        .caes-rss-feed-event-date-wrapper {
+                            display: flex;
+                            align-content: center;
+                            flex-wrap: wrap;
+                            font-size: var(--wp--preset--font-size--large);
+                            font-family: var(--wp--preset--font-family--oswald);
+                        }
                     }
 
                 }
@@ -195,6 +220,7 @@
                     @include item-img-container (4/3, 100%);
                     height: auto;
                 }
+
                 .caes-rss-feed-details-wrapper {
                     @include grid-item-info(top);
                     width: auto;
