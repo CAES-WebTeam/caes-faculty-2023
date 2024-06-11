@@ -377,17 +377,20 @@ figure.caes-fac-headshot {
     }
 
     .grid-item-grid-info {
-      &> div:first-child {
+      &>div:first-child {
         gap: var(--wp--preset--spacing--40);
-        &> div {
+
+        &>div {
           gap: 0;
           flex-direction: column;
           align-items: flex-start;
+
           .title {
             line-height: 1.2;
           }
         }
-        &> div:nth-child(1) {
+
+        &>div:nth-child(1) {
           gap: var(--wp--preset--spacing--20);
         }
       }
@@ -458,8 +461,8 @@ ul.is-style-caes-fac-list-none {
 .wp-block-video figcaption,
 .wp-block-embed figcaption,
 .blocks-gallery-caption {
-    font-size: var(--wp--preset--font-size--small);
-    text-align: center;
+  font-size: var(--wp--preset--font-size--small);
+  text-align: center;
 }
 
 // Parvus is a lightbox library for images.
@@ -502,8 +505,8 @@ ul.is-style-caes-fac-list-none {
   margin-block-end: var(--wp--preset--spacing--60) !important;
 }
 
-.caes-fac-b-margin > *:last-child:is(.wp-block-group:has(>.wp-block-cover:last-child)),
-.caes-fac-b-margin > *:last-child:is(.wp-block-group:has(>.wp-block-media-text:last-child)) {
+.caes-fac-b-margin>*:last-child:is(.wp-block-group:has(>.wp-block-cover:last-child)),
+.caes-fac-b-margin>*:last-child:is(.wp-block-group:has(>.wp-block-media-text:last-child)) {
   margin-block-end: 0 !important;
 }
 
@@ -526,6 +529,48 @@ ul.is-style-caes-fac-list-none {
 // Class for forcing 0 padding, created for Gutenslider when we want full width
 .padding-0 {
   padding: 0 !important;
+}
+
+/* Back to top button */
+.caes-fac-back-to-top {
+  align-items: center;
+  background-color: var(--wp--preset--color--primary);
+  bottom: -50px;
+  border-radius: var(--wp--custom--radius--small-round);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  color: var(--wp--preset--color--base);
+  display: flex;
+  font-size: var(--wp--preset--font-size--small);
+  justify-content: center;
+  margin-block-end: var(--wp--preset--spacing--40) !important;
+  opacity: 0;
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
+  position: fixed;
+  right: var(--wp--preset--spacing--40);
+  text-decoration: none;
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.caes-fac-back-to-top svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: var(--wp--preset--color--base);
+  margin-left: var(--wp--preset--spacing--20);
+}
+
+.caes-fac-back-to-top-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50px);
+}
+
+/* Hiding state for transition */
+.caes-fac-back-to-top-hiding {
+  opacity: 0;
+  transform: translateY(0);
 }
 
 // JS Scroll Animations

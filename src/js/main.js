@@ -203,3 +203,53 @@ const wrapWPInvTables = () => {
 }
 
 wrapWPInvTables();
+
+/* BACK TO TOP BUTTON */
+
+// First, wait until the whole page is loaded
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Add new link element to dom
+  const backToTop = document.createElement('a');
+  backToTop.innerHTML = `
+  <span>Back to top</span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>`;
+  backToTop.href = '#';
+  backToTop.classList.add('caes-fac-back-to-top');
+
+  // Append backToTop to <main> element
+  let mainSection;
+
+  if (document.querySelector('main .caes-fac-post-cols') !== null) {
+    mainSection = document.querySelector('main .caes-fac-post-cols');
+  } else {
+    mainSection = document.querySelector('main');
+  }
+
+  mainSection.appendChild(backToTop);
+
+  // Show or hide button if scroll position is lower than viewport height
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > (window.innerHeight / 2)) {
+      if (!backToTop.classList.contains('caes-fac-back-to-top-visible')) {
+        backToTop.classList.add('caes-fac-back-to-top-visible');
+      }
+    } else {
+      if (backToTop.classList.contains('caes-fac-back-to-top-visible')) {
+        backToTop.classList.add('caes-fac-back-to-top-hiding');
+        setTimeout(() => {
+          backToTop.classList.remove('caes-fac-back-to-top-visible', 'caes-fac-back-to-top-hiding');
+        }, 250); // Match the timeout to the CSS transition duration for opacity
+      }
+    }
+  });
+  // Add event listener to backToTop
+  backToTop.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+});
