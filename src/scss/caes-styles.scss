@@ -413,9 +413,13 @@ figure.caes-fac-headshot {
 // List block
 
 
-ul.is-style-caes-fac-list-none {
+ul.is-style-caes-fac-list-none,ul.list-none {
   padding-inline-start: 0;
   list-style: none;
+}
+
+ul.list-none ul.list-none {
+  padding-inline-start: revert;
 }
 
 // Gallery block
