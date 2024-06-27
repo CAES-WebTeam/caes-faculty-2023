@@ -69,6 +69,15 @@ const Edit = ({ attributes, setAttributes }) => {
 							value={attributes.a11ywording}
 							onChange={(val) => setAttributes({ a11ywording: val })}
 						/>
+						<SelectControl
+							label={__("Submit a Student Complaint Link", "gutenberg-multi")}
+							options={[
+								{ label: 'Include student complaint link', value: 'true' },
+								{ label: 'Exclude student complaint link', value: 'false' }
+							]}
+							value={attributes.submitComplaintLink}
+							onChange={(val) => setAttributes({ submitComplaintLink: val })}
+						/>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>

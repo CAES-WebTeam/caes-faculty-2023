@@ -18,6 +18,10 @@
 		"a11ywording": {
 			"type": "string",
 			"default": "true"
+		},
+		"submitComplaintLink": {
+			"type": "string",
+			"default": "false"
 		}
 	},
 	"textdomain": "caes-fac-uga-footer",

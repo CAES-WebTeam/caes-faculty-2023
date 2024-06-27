@@ -40,6 +40,15 @@
 								<?php break; ?>
 						<?php } ?>
 						<?php
+						$submitComplaintLink = $attributes['submitComplaintLink'];
+						switch ($submitComplaintLink) {
+							case "true": ?>
+								<li class="ugafooter__links-list-item">
+									<a class="ugafooter__links-list-link" href="https://studentcomplaints.uga.edu/">Submit a Student Complaint</a>
+								</li>
+								<?php break; ?>
+						<?php } ?>
+						<?php
 						$login = $attributes['login'];
 						switch ($login) {
 							case "true": ?>
