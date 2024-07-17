@@ -1,5 +1,6 @@
 {
-	"version": 2,
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
 	"title": "UGA Bold",
 	"customTemplates": [
 		{
@@ -134,6 +135,7 @@
 			"fontWeight": false,
 			"fontStyle": false,
 			"letterSpacing": false,
+			"defaultFontSizes": false,
 			"fontFamilies": [
 				{
 					"fontFamily": "\"Merriweather Sans\",Georgia,Helvetica, Arial, Sans-Serif",
