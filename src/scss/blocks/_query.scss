@@ -92,6 +92,7 @@
 
     .caes-fac-query-loop-grid-info {
         @include reusable.grid-item-info(top);
+        position: static;
     }
 
     .caes-fac-query-loop-grid-item {
