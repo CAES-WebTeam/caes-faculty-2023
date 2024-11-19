@@ -95,7 +95,7 @@ function uga_caes_fac_2023_register_block_pattern_categories()
 			'label'         => __('General', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')
 		),
-		'uga-caes-fac-2023-query'  => array(
+		'query'  => array(
 			'label'         => __('Post List', 'uga-caes-fac-2023'),
 			'categoryTypes' => array('uga-caes-fac-2023')
 		),

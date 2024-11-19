@@ -3,8 +3,8 @@
 /**
  * Title: A list of posts.
  * Slug: uga-caes-fac-2023/query-list
- * Categories: uga-caes-fac-2023-query
- * Block Types: core/template-part/query
+ * Categories: query
+ * Block Types: core/query
  * Viewport Width: 1100
  */
 ?>

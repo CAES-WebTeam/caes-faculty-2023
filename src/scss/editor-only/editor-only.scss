@@ -66,6 +66,11 @@
   text-align: center;
 }
 
+// QUERY BLOCK
+:where(.editor-styles-wrapper) .caes-fac-query-loop-grid .caes-fac-query-loop-grid-item {
+  padding: 0;
+}
+
 
 // Plugin overrides
 @import '../plugin-style-overrides/tribe-events';
