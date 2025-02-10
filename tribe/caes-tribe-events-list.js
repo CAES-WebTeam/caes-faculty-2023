@@ -1,3 +1,4 @@
+console.log('test');
 
 // Variable with name of block variation
 const MY_VARIATION_NAME = 'uga-caes-fac-2023/caes-tribe-events-list';
@@ -22,7 +23,6 @@ wp.blocks.registerBlockVariation(
             }
         },
         isActive: ['namespace'],
-        scope: ['inserter'],
-        allowedControls: ['inherit','taxQuery','search'],
+        scope: ['inserter']
     }
 );
