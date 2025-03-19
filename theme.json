@@ -277,8 +277,23 @@
 			"presets": [
 				{
 					"name": "CAES Shadow",
-					"shadow": "0 0 15px rgb(0 0 0 / 5%)",
+					"shadow": "0 0 15px rgb(0 0 0 / 25%)",
 					"slug": "caes-shadow"
+				},
+				{
+					"name": "CAES Shadow 2",
+					"shadow": "0 0 15px rgb(0 0 0 / 40%)",
+					"slug": "caes-shadow-2"
+				},
+				{
+					"name": "CAES Shadow 3",
+					"shadow": "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+					"slug": "caes-shadow-3"
+				},
+				{
+					"name": "CAES Shadow 4",
+					"shadow": "rgba(0, 0, 0, 0.5) 0px 2px 4px",
+					"slug": "caes-shadow-4"
 				}
 			]
 		},

@@ -1,0 +1,21 @@
+// Group styles
+
+.is-style-caes-fac-basic-card {
+    position: relative;
+    transition: all .2s ease;
+    a {
+        text-decoration: none;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &:hover,&:focus-within {
+        // transform: translateY(calc(-1 * var(--wp--preset--spacing--30)));
+        transform: scale(1.05);
+    }
+}

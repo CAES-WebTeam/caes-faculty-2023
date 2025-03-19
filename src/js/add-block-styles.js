@@ -12,3 +12,8 @@ wp.blocks.registerBlockStyle( 'core/post-template', {
     name: 'caes-fac-page-hide-authior-date',
     label: 'Hide Page result author and date'
 } );
+
+wp.blocks.registerBlockStyle( 'core/group', {
+    name: 'caes-fac-basic-card',
+    label: 'Basic Card'
+} );
