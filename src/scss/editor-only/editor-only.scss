@@ -71,6 +71,16 @@
   padding: 0;
 }
 
+// GROUP BLOCK
+
+.is-style-caes-fac-basic-card {
+  transform: none !important;
+  a::after {
+    content: none !important;
+  }
+}
+
+
 
 // Plugin overrides
 @import '../plugin-style-overrides/tribe-events';
