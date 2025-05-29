@@ -487,19 +487,20 @@ add_action('wp_head', 'blog_favicon', 10, 3);
 ////////////////// END FAVICON //////////////////
 
 ////////////////// START GUEST AUTHOR NAME //////////////////
+// 05/29/2025: Commenting out so Mikey can move this functionality to the caes admin plugin.
 // Filter the_author to guestname if existed
-function update_the_author($display_name)
-{
-	if (get_post_meta(get_the_ID(), 'guestauthorname', true) != '')
-		return get_post_meta(get_the_ID(), 'guestauthorname', true);
-	else
-		return $display_name;
-}
-//add_filter( 'the_author', 'update_the_author', PHP_INT_MAX, 1 );
-add_filter('the_author', 'update_the_author', 12);
-add_filter('get_the_author_display_name', 'update_the_author', 12);
-add_filter('get_the_author_user_nicename', 'update_the_author', 12);
-add_filter('get_the_author_nickname', 'update_the_author', 12);
+// function update_the_author($display_name)
+// {
+// 	if (get_post_meta(get_the_ID(), 'guestauthorname', true) != '')
+// 		return get_post_meta(get_the_ID(), 'guestauthorname', true);
+// 	else
+// 		return $display_name;
+// }
+// //add_filter( 'the_author', 'update_the_author', PHP_INT_MAX, 1 );
+// add_filter('the_author', 'update_the_author', 12);
+// add_filter('get_the_author_display_name', 'update_the_author', 12);
+// add_filter('get_the_author_user_nicename', 'update_the_author', 12);
+// add_filter('get_the_author_nickname', 'update_the_author', 12);
 
 ////////////////// END GUEST AUTHOR NAME //////////////////
 
