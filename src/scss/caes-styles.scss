@@ -761,6 +761,14 @@ ul.list-none ul.list-none {
 
 }
 
+// Mobile visibility helper classes
+@media (max-width:600px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+
 // Plugins
 // A task for later: try enqueuing the plugin styles later as
 // a single stylesheet or multiple if a plugin is used, in functions.php
