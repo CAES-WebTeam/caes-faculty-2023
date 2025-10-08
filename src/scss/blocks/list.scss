@@ -1,0 +1,9 @@
+// Use checkbox for ul
+ul.is-style-caes-fac-list-checkbox {
+    list-style: none;
+
+    li::marker {
+        content: "☐ ";
+        font-size: var(--wp--preset--font-size--large);
+    }
+}
