@@ -1,0 +1,8 @@
+// Apply to the Gutenslider block
+
+.caes-gutenslider {
+    &.caes-gutenslider-white-buttons-black-arrows .bg {
+        --gutenslider-arrow-bg-color: #ffffff !important;
+        --gutenslider-arrow-color: #000000 !important;
+    }
+}
