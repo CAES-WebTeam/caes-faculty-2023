@@ -1,28 +1,6 @@
-.wp-block-accordion-panel[inert] {
-    display: grid !important;
-}
-
-.wp-block-accordion-panel {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease, padding 0.3s ease;
-    overflow: hidden;
-    padding-block: 0;
-}
-
 .wp-block-accordion-panel:not([inert]) {
-    grid-template-rows: 1fr;
     padding-block: var(--wp--preset--spacing--50);
     border-bottom: 2px solid #eaeaea;
-}
-
-.wp-block-accordion-item.is-open .wp-block-accordion-panel {
-    grid-template-rows: 1fr;
-}
-
-/* The direct child needs overflow:hidden for the trick to work */
-.wp-block-accordion-panel > * {
-    overflow: hidden;
 }
 
 .wp-block-accordion-heading__toggle-icon {
