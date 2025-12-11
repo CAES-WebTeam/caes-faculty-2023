@@ -1,7 +1,8 @@
 const gulp = require('gulp'),
     clean = require('gulp-clean'),
     concatCss = require('gulp-concat-css'),
-    cssnano = require('gulp-cssnano'),
+    postcss = require('gulp-postcss'),
+    cssnanoPlugin = require('cssnano'),
     sass = require('gulp-sass')(require('sass')),
     rename = require('gulp-rename'),
     webpack = require('webpack-stream');
@@ -60,7 +61,7 @@ gulp.task('minify-shared', function () {
             includePaths: ['./node_modules'],
         }).on('error', sass.logError))
         .pipe(concatCss('style-shared.min.css'))
-        .pipe(cssnano())
+        .pipe(postcss([cssnanoPlugin()]))
         .pipe(gulp.dest('assets/css/'));
 });
 
@@ -70,7 +71,7 @@ gulp.task('minify-editor-only', function () {
             includePaths: ['./node_modules'],
         }).on('error', sass.logError))
         .pipe(concatCss('editor-only.min.css'))
-        .pipe(cssnano())
+        .pipe(postcss([cssnanoPlugin()]))
         .pipe(gulp.dest('assets/css/editor-only'));
 });
 
@@ -78,7 +79,7 @@ gulp.task('minify-blocks', function () {
     return gulp.src('src/scss/blocks/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(cssnano())
+        .pipe(postcss([cssnanoPlugin()]))
         .pipe(gulp.dest('assets/css/blocks'));
 });
 
@@ -88,7 +89,7 @@ gulp.task('minify-login', function () {
             includePaths: ['./node_modules'],
         }).on('error', sass.logError))
         .pipe(concatCss('caes-login.min.css'))
-        .pipe(cssnano())
+        .pipe(postcss([cssnanoPlugin()]))
         .pipe(gulp.dest('assets/css/login'));
 });
 

@@ -44,7 +44,7 @@
                 }
 
                 .caes-events-img-wrapper {
-                    @include item-img-container (4/3, 100%);
+                    @include item-img-container (math.div(4, 3), 100%);
                 }
 
                 .caes-events-details-wrapper {
@@ -230,7 +230,7 @@
 
                 .caes-events-img-wrapper {
                     justify-content: flex-start;
-                    @include item-img-container (4/3, 100%);
+                    @include item-img-container (math.div(4, 3), 100%);
                     height: auto;
                     margin: 0;
                 }

@@ -36,7 +36,7 @@ function uga_caes_fac_2023_setup()
 	 * Load additional block styles.
 	 * See details on how to add more styles in the readme.txt.
 	 */
-	$styled_blocks = ['separator', 'embed', 'tag-cloud', 'quote', 'pullquote', 'table', 'gallery', 'image', 'list'];
+	$styled_blocks = ['separator', 'embed', 'tag-cloud', 'quote', 'pullquote', 'table', 'gallery', 'image', 'list', 'accordion'];
 	foreach ($styled_blocks as $block_name) {
 		$args = array(
 			'handle' => "uga-caes-fac-2023-$block_name",

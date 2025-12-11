@@ -1,4 +1,5 @@
 @use '../reusable';
+@use 'sass:math';
 
 // Query loop block styles
 // This file is included in the caes-styles file
@@ -34,7 +35,7 @@
 .caes-fac-query-loop-one {
 
     .caes-fac-query-loop-img-container {
-        @include reusable.item-img-container(4/3, 100%);
+        @include reusable.item-img-container(math.div(4, 3), 100%);
     }
 
     & > ul > li {
@@ -87,7 +88,7 @@
 
 .caes-fac-query-loop-grid {
     .caes-fac-query-loop-img-container {
-        @include reusable.item-img-container(4/3, 100%);
+        @include reusable.item-img-container(math.div(4, 3), 100%);
     }
 
     .caes-fac-query-loop-grid-info {
@@ -141,7 +142,7 @@
     @include reusable.grid-item-hover;
 
     .caes-fac-query-loop-featured-img-container {
-        @include reusable.item-img-container(4/3, 100%);
+        @include reusable.item-img-container(math.div(4, 3), 100%);
     }
 
     .caes-fac-query-loop-featured-info {

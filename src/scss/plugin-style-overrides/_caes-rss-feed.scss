@@ -44,7 +44,7 @@
                 }
 
                 .caes-rss-feed-img-wrapper {
-                    @include item-img-container (4/3, 100%);
+                    @include item-img-container (math.div(4, 3), 100%);
                 }
 
                 .caes-rss-feed-details-wrapper {
@@ -217,7 +217,7 @@
 
                 .caes-rss-feed-img-wrapper {
                     justify-content: flex-start;
-                    @include item-img-container (4/3, 100%);
+                    @include item-img-container (math.div(4, 3), 100%);
                     height: auto;
                 }
 

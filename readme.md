@@ -44,3 +44,9 @@ This directory contains code for extending the core blocks in WordPress when the
    - cd to directory, and use ```npm run build``` to compile CSS, JS, and PHP for Tribe Events Categories List block
 5. **/tribe/tribe-events-display-date/** 
    - cd to directory, and use ```npm run build``` to compile CSS, JS, and PHP for Tribe Events Display Date block
+
+## Changelog
+
+### [1.4.2] - 2025-12-11
+#### Added
+- Styles added for new accordion block

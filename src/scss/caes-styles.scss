@@ -2,6 +2,7 @@
 @use 'blocks/navigation';
 @use 'blocks/query';
 @use 'blocks/group';
+@use 'sass:math';
 
 /* CAES STYLES */
 
@@ -330,7 +331,7 @@ figure.caes-fac-headshot {
   }
 
   .grid-item-img-container {
-    @include reusable.item-img-container(4/3, 100%);
+    @include reusable.item-img-container(math.div(4, 3), 100%);
 
     .components-drop-zone {
       display: none;

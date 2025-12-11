@@ -529,6 +529,33 @@
 					"color": "var(--wp--preset--color--contrast)",
 					"style": "solid"
 				}
+			},
+			"core/accordion": {
+				"spacing": {
+					"blockGap": "0px"
+				}
+			},
+			"core/accordion-item": {
+				"spacing": {
+					"blockGap": "0px"
+				}
+			},
+			"core/accordion-heading": {
+				"border": {
+					"bottom": {
+						"color": "#eaeaea",
+						"style": "solid",
+						"width": "2px"
+					}
+				},
+				"spacing": {
+					"padding": {
+						"top": "var(--wp--preset--spacing--30)",
+						"right": "0",
+						"bottom": "var(--wp--preset--spacing--30)",
+						"left": "0)"
+					}
+				}
 			}
 		}
 	}
