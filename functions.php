@@ -432,28 +432,28 @@ function add_meta_tags()
 add_action('wp_head', 'add_meta_tags', 2);
 
 // ADD RSS IMAGE FROM CONTENT
-function add_feed_content($content)
-{
-	if (is_feed()) {
-		global $post;
-		$imgsize = 'medium';
-		if (isset($_GET['imgsize'])) {
-			if ($_GET['imgsize'] == 'lg') $imgsize = 'large';
-		}
-		$output = '';
-		$thumbnail_ID = get_post_thumbnail_id($post->ID);
-		if ($thumbnail_ID != '') {
-			$thumbnail = wp_get_attachment_image_src($thumbnail_ID, $imgsize);
-			$thumbnail0 = $thumbnail[0] ?? null;
-			$thumbnail1 = $thumbnail[1] ?? null;
-			$thumbnail2 = $thumbnail[2] ?? null;
-			if ($thumbnail0 != null || $thumbnail1 != null || $thumbnail2 != null) $output .= '<media:content xmlns:media="http://search.yahoo.com/mrss" url="' . $thumbnail0 . '" medium="image" width="' . $thumbnail1 . '" height="' . $thumbnail2 . '" />';
-		}
-		if ($output != '') echo $output;
-	}
-	return $content;
+function add_media_namespace() {
+	echo 'xmlns:media="http://search.yahoo.com/mrss/"';
 }
-add_filter('rss2_item', 'add_feed_content');
+add_action('rss2_ns', 'add_media_namespace');
+
+// Add RSS image from content
+function add_feed_content() {
+	global $post;
+	$imgsize = 'medium';
+	if (isset($_GET['imgsize']) && $_GET['imgsize'] == 'lg') {
+		$imgsize = 'large';
+	}
+	
+	$thumbnail_ID = get_post_thumbnail_id($post->ID);
+	if ($thumbnail_ID) {
+		$thumbnail = wp_get_attachment_image_src($thumbnail_ID, $imgsize);
+		if ($thumbnail) {
+			echo '<media:content url="' . esc_url($thumbnail[0]) . '" medium="image" width="' . intval($thumbnail[1]) . '" height="' . intval($thumbnail[2]) . '" />';
+		}
+	}
+}
+add_action('rss2_item', 'add_feed_content');
 
 //Adds a pretty "Continue Reading" link to custom post excerpts..
 function caes_custom_excerpt_more($output)
@@ -605,8 +605,9 @@ add_filter(
 );
 
 // Disable the font library addded in WordPress 6.5
-function disable_font_library_ui( $editor_settings ) { 
+function disable_font_library_ui($editor_settings)
+{
 	$editor_settings['fontLibraryEnabled'] = false;
-	return $editor_settings; 
+	return $editor_settings;
 }
-add_filter( "block_editor_settings_all", "disable_font_library_ui" );
+add_filter("block_editor_settings_all", "disable_font_library_ui");
