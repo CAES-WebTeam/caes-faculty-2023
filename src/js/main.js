@@ -252,4 +252,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // WP Accordion scroll
+  const accordionButtons = document.querySelectorAll('.wp-block-accordion-item button');
+
+  if (accordionButtons.length) {
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        setTimeout(() => {
+          const accordionItem = this.closest('.wp-block-accordion-item');
+          const offset = 20;
+          const top = accordionItem.getBoundingClientRect().top + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: top,
+            behavior: 'smooth'
+          });
+        }, 300);
+      });
+    });
+  }
+
 });
