@@ -490,10 +490,6 @@ ul.list-none ul.list-none {
 // Parvus is a lightbox library for images.
 // Here we're importing the scss library, and adding our own overrides.
 
-.parvus:not([open]) {
-  display: none;
-}
-
 .parvus__slide {
   background: var(--wp--preset--color--base);
   color: var(--wp--preset--color--contrast);

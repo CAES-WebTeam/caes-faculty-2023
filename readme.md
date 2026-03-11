@@ -49,6 +49,7 @@ This directory contains code for extending the core blocks in WordPress when the
 
 | Version | Date | Changes | Contributor |
 |---------|------|---------|-------------|
+| 1.4.57 | 2026-03-11 | Reverted parvus to 2.6.0 due to v3 bugs | Ashley |
 | 1.4.56 | 2026-03-11 | Fix Parvus 3 dialog overlay bug on gallery pages | Ashley |
 | 1.4.55 | 2026-03-11 | Updated remaining packages | Ashley |
 | 1.4.5 | 2026-03-11 | Update blocks to API version 3, updated low risk packages, updated SASS @import to @use | Ashley |
