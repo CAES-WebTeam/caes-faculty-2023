@@ -99,7 +99,7 @@ window.addEventListener("scroll", () => {
 // // First, find all the image blocks that link to an image.
 const linkedImgs = document.querySelectorAll('.wp-block-image a[href*=".jpg"],.wp-block-image a[href*=".jpeg"],.wp-block-image a[href*=".png"],.wp-block-image a[href*=".gif"]');
 for (const link of linkedImgs) {
-  link.classList.add('lightbox');
+  link.classList.add('parvus-lightbox');
   // get sibling of link if it is a figcaption
   const sibling = link.nextElementSibling;
   // if sibling is a figcaption, add lightbox class to it
@@ -116,6 +116,7 @@ import Parvus from 'parvus';
 
 // // Initialize Parvus
 const prvs = new Parvus({
+  selector: '.parvus-lightbox',
   gallerySelector: '.wp-block-gallery'
 })
 
