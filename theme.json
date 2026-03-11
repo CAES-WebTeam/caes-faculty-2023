@@ -300,6 +300,7 @@
 		"blocks": {
 			"core/image": {
 				"lightbox": {
+					"enabled": false,
 					"allowEditing": false
 				}
 			}
