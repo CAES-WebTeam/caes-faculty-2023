@@ -1,6 +1,6 @@
 // CAES Personnel Directory Styles
 
-@import 'reusable';
+@use '../reusable';
 
 // Personnel columns
 
@@ -15,7 +15,7 @@
         display: grid;
         height: 100%;
         box-shadow: 0 0 15px rgb(0 0 0 / 5%);
-        @include grid-item-info (left);
+        @include reusable.grid-item-info (left);
     }
 
     .personnel-item-img-container {

@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "uga-caes/caes-fac-post-social-share",
 	"version": "1.0.0",
 	"title": "CAES Faculty 2023 - Post Social Share",

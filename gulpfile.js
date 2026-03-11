@@ -58,7 +58,7 @@ gulp.task('clean-login', function () {
 gulp.task('minify-shared', function () {
     return gulp.src('src/scss/*.scss')
         .pipe(sass({
-            includePaths: ['./node_modules'],
+            loadPaths: ['./node_modules'],
         }).on('error', sass.logError))
         .pipe(concatCss('style-shared.min.css'))
         .pipe(postcss([cssnanoPlugin()]))
@@ -68,7 +68,7 @@ gulp.task('minify-shared', function () {
 gulp.task('minify-editor-only', function () {
     return gulp.src('src/scss/editor-only/*.scss')
         .pipe(sass({
-            includePaths: ['./node_modules'],
+            loadPaths: ['./node_modules'],
         }).on('error', sass.logError))
         .pipe(concatCss('editor-only.min.css'))
         .pipe(postcss([cssnanoPlugin()]))
@@ -86,7 +86,7 @@ gulp.task('minify-blocks', function () {
 gulp.task('minify-login', function () {
     return gulp.src('src/scss/login/*.scss')
         .pipe(sass({
-            includePaths: ['./node_modules'],
+            loadPaths: ['./node_modules'],
         }).on('error', sass.logError))
         .pipe(concatCss('caes-login.min.css'))
         .pipe(postcss([cssnanoPlugin()]))

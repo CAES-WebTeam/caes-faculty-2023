@@ -3,6 +3,22 @@
 @use 'blocks/query';
 @use 'blocks/group';
 @use 'sass:math';
+@use 'parvus/src/scss/parvus';
+@use 'plugin-style-overrides/accordion-blocks';
+@use 'plugin-style-overrides/caes-extend-core-blocks';
+@use 'plugin-style-overrides/wp-job-manager';
+@use 'plugin-style-overrides/wp-inventory';
+@use 'plugin-style-overrides/caes-personnel-directory';
+@use 'plugin-style-overrides/caes-rss-feed';
+@use 'plugin-style-overrides/caes-people';
+@use 'plugin-style-overrides/caes-google-search';
+@use 'plugin-style-overrides/caes-tabs-site-shortcode';
+@use 'plugin-style-overrides/caes-mixitup';
+@use 'plugin-style-overrides/wufoo-forms';
+@use 'plugin-style-overrides/tribe-events';
+@use 'plugin-style-overrides/smash-balloon-social';
+@use 'plugin-style-overrides/caes-events';
+@use 'plugin-style-overrides/gutenslider';
 
 /* CAES STYLES */
 
@@ -474,8 +490,6 @@ ul.list-none ul.list-none {
 // Parvus is a lightbox library for images.
 // Here we're importing the scss library, and adding our own overrides.
 
-@import 'parvus/src/scss/parvus';
-
 .parvus__slide {
   background: var(--wp--preset--color--base);
   color: var(--wp--preset--color--contrast);
@@ -770,22 +784,3 @@ ul.list-none ul.list-none {
 }
 
 
-// Plugins
-// A task for later: try enqueuing the plugin styles later as
-// a single stylesheet or multiple if a plugin is used, in functions.php
-
-@import 'plugin-style-overrides/accordion-blocks';
-@import 'plugin-style-overrides/caes-extend-core-blocks';
-@import 'plugin-style-overrides/wp-job-manager';
-@import 'plugin-style-overrides/wp-inventory';
-@import 'plugin-style-overrides/caes-personnel-directory';
-@import 'plugin-style-overrides/caes-rss-feed';
-@import 'plugin-style-overrides/caes-people';
-@import 'plugin-style-overrides/caes-google-search';
-@import 'plugin-style-overrides/caes-tabs-site-shortcode';
-@import 'plugin-style-overrides/caes-mixitup';
-@import 'plugin-style-overrides/wufoo-forms';
-@import 'plugin-style-overrides/tribe-events';
-@import 'plugin-style-overrides/smash-balloon-social';
-@import 'plugin-style-overrides/caes-events';
-@import 'plugin-style-overrides/gutenslider';

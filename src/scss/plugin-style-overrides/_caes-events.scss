@@ -1,3 +1,6 @@
+@use '../reusable';
+@use 'sass:math';
+
 .wp-block-uga-caes-caes-events {
     gap: var(--wp--preset--spacing--50);
     display: flex;
@@ -30,11 +33,11 @@
                 background-color: var(--wp--preset--color--base);
                 color: var(--wp--preset--color--contrast);
 
-                @include grid-item(column);
+                @include reusable.grid-item(column);
 
                 &:hover,
                 &:focus-within {
-                    @include grid-item-hover;
+                    @include reusable.grid-item-hover;
 
                     .caes-events-details-wrapper {
                         .caes-events-link {
@@ -44,11 +47,11 @@
                 }
 
                 .caes-events-img-wrapper {
-                    @include item-img-container (math.div(4, 3), 100%);
+                    @include reusable.item-img-container (math.div(4, 3), 100%);
                 }
 
                 .caes-events-details-wrapper {
-                    @include grid-item-info(top);
+                    @include reusable.grid-item-info(top);
                     width: auto;
                     display: flex;
                     flex-direction: column;
@@ -60,7 +63,7 @@
                     }
 
                     .caes-events-link {
-                        @include grid-item-link();
+                        @include reusable.grid-item-link();
                         text-decoration: none;
                         font-weight: bold;
                         line-height: 1.5;
@@ -97,14 +100,14 @@
                 background-color: var(--wp--preset--color--base);
                 color: var(--wp--preset--color--contrast);
 
-                @include grid-item(row);
+                @include reusable.grid-item(row);
 
                 align-items: center;
                 box-shadow: none;
 
                 &:hover,
                 &:focus-within {
-                    @include grid-item-hover;
+                    @include reusable.grid-item-hover;
 
                     .caes-events-details-wrapper {
                         .caes-events-link {
@@ -114,13 +117,13 @@
                 }
 
                 .caes-events-img-wrapper {
-                    @include item-img-container (1, 30%);
+                    @include reusable.item-img-container (1, 30%);
                     z-index: 1;
                     margin: 1rem 0;
                 }
 
                 .caes-events-details-wrapper {
-                    @include grid-item-info(left);
+                    @include reusable.grid-item-info(left);
                     width: auto;
                     display: flex;
                     flex-direction: column;
@@ -135,7 +138,7 @@
                     }
 
                     .caes-events-link {
-                        @include grid-item-link();
+                        @include reusable.grid-item-link();
                         text-decoration: none;
                     }
 
@@ -199,7 +202,7 @@
 }
 
 .caes-events-read-more-link {
-    @include primary-button (var(--wp--preset--spacing--30) var(--wp--preset--spacing--40));
+    @include reusable.primary-button (var(--wp--preset--spacing--30) var(--wp--preset--spacing--40));
     text-decoration: none;
     display: inline-block;
 }
@@ -226,17 +229,17 @@
     .wp-block-uga-caes-caes-events {
         .caes-events-container.list-layout {
             .caes-events-item {
-                @include grid-item(column);
+                @include reusable.grid-item(column);
 
                 .caes-events-img-wrapper {
                     justify-content: flex-start;
-                    @include item-img-container (math.div(4, 3), 100%);
+                    @include reusable.item-img-container (math.div(4, 3), 100%);
                     height: auto;
                     margin: 0;
                 }
 
                 .caes-events-details-wrapper {
-                    @include grid-item-info(top);
+                    @include reusable.grid-item-info(top);
                     width: auto;
                     padding: var(--wp--preset--spacing--50);
                     margin: auto;

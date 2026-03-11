@@ -49,6 +49,7 @@ This directory contains code for extending the core blocks in WordPress when the
 
 | Version | Date | Changes | Contributor |
 |---------|------|---------|-------------|
+| 1.4.5 | 2026-03-11 | Update blocks to API version 3 and updated low risk packages | Ashley |
 | 1.4.4 | 2026-01-27 | Scroll to accordion when it opens | Ashley, Mikey |
 | 1.4.3 | 2026-01-06 | Image fix on RSS feed | Ashley |
 | 1.4.2 | 2025-12-11 | Styles added for new accordion block | Ashley |
