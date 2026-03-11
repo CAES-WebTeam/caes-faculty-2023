@@ -49,6 +49,7 @@ This directory contains code for extending the core blocks in WordPress when the
 
 | Version | Date | Changes | Contributor |
 |---------|------|---------|-------------|
+| 1.4.56 | 2026-03-11 | Fix Parvus 3 dialog overlay bug on gallery pages | Ashley |
 | 1.4.55 | 2026-03-11 | Updated remaining packages | Ashley |
 | 1.4.5 | 2026-03-11 | Update blocks to API version 3, updated low risk packages, updated SASS @import to @use | Ashley |
 | 1.4.4 | 2026-01-27 | Scroll to accordion when it opens | Ashley, Mikey |
