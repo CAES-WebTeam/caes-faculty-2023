@@ -604,6 +604,46 @@ add_filter(
 	2
 );
 
+// Add title attribute to Wufoo shortcode iframe output for accessibility.
+// Authors can pass a caes_title attribute on the [wufoo] shortcode, e.g.
+// [wufoo username="..." formhash="..." caes_title="Contact form"]
+function caes_wufoo_add_iframe_title($output, $tag, $attr)
+{
+	if ($tag !== 'wufoo' || empty($output)) {
+		return $output;
+	}
+
+	$title = '';
+	if (is_array($attr)) {
+		if (!empty($attr['caes_title'])) {
+			$title = $attr['caes_title'];
+		} elseif (!empty($attr['caes-title'])) {
+			$title = $attr['caes-title'];
+		}
+	}
+
+	if ($title === '') {
+		return $output;
+	}
+
+	$title_attr = ' title="' . esc_attr($title) . '"';
+
+	// Replace existing title attribute on the iframe, or add one if missing.
+	if (preg_match('/<iframe[^>]*\stitle=("[^"]*"|\'[^\']*\')/i', $output)) {
+		$output = preg_replace(
+			'/(<iframe[^>]*)\stitle=("[^"]*"|\'[^\']*\')/i',
+			'$1' . $title_attr,
+			$output,
+			1
+		);
+	} else {
+		$output = preg_replace('/<iframe\b/i', '<iframe' . $title_attr, $output, 1);
+	}
+
+	return $output;
+}
+add_filter('do_shortcode_tag', 'caes_wufoo_add_iframe_title', 10, 3);
+
 // Disable the font library addded in WordPress 6.5
 function disable_font_library_ui($editor_settings)
 {
