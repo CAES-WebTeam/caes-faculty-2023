@@ -273,4 +273,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Wufoo iframe title (a11y): apply caes_title from [wufoo] shortcode markers
+  // to the iframe Wufoo injects client-side (id="wufooForm<hash>").
+  const wufooTitles = {};
+  document.querySelectorAll('.caes-wufoo-title[data-form-hash][data-title]').forEach((marker) => {
+    const hash = marker.getAttribute('data-form-hash');
+    const title = marker.getAttribute('data-title');
+    if (hash && title) wufooTitles[hash] = title;
+  });
+
+  if (Object.keys(wufooTitles).length) {
+    const applyWufooTitle = (iframe) => {
+      if (!iframe || !iframe.id) return;
+      const match = iframe.id.match(/^wufooForm(.+)$/);
+      if (!match) return;
+      const title = wufooTitles[match[1]];
+      if (title && iframe.getAttribute('title') !== title) {
+        iframe.setAttribute('title', title);
+      }
+    };
+
+    document.querySelectorAll('iframe[id^="wufooForm"]').forEach(applyWufooTitle);
+
+    if (typeof MutationObserver !== 'undefined') {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((m) => {
+          m.addedNodes.forEach((node) => {
+            if (node.nodeType !== 1) return;
+            if (node.tagName === 'IFRAME') {
+              applyWufooTitle(node);
+            } else if (node.querySelectorAll) {
+              node.querySelectorAll('iframe[id^="wufooForm"]').forEach(applyWufooTitle);
+            }
+          });
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
 });

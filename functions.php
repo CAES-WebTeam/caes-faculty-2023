@@ -605,7 +605,11 @@ add_filter(
 );
 
 // Add title attribute to Wufoo shortcode iframe output for accessibility.
-// Authors can pass a caes_title attribute on the [wufoo] shortcode, e.g.
+// The Wufoo plugin injects the visible iframe client-side via form.js, so we
+// emit a hidden marker with the form hash + title, then a small JS observer
+// applies the title to the iframe once Wufoo creates it.
+//
+// Authors pass a caes_title attribute on the [wufoo] shortcode, e.g.
 // [wufoo username="..." formhash="..." caes_title="Contact form"]
 function caes_wufoo_add_iframe_title($output, $tag, $attr)
 {
@@ -626,9 +630,13 @@ function caes_wufoo_add_iframe_title($output, $tag, $attr)
 		return $output;
 	}
 
-	$title_attr = ' title="' . esc_attr($title) . '"';
+	$formhash = '';
+	if (is_array($attr) && !empty($attr['formhash'])) {
+		$formhash = $attr['formhash'];
+	}
 
-	// Replace existing title attribute on the iframe, or add one if missing.
+	// Also patch the <noscript> iframe in the shortcode output (no-JS fallback).
+	$title_attr = ' title="' . esc_attr($title) . '"';
 	if (preg_match('/<iframe[^>]*\stitle=("[^"]*"|\'[^\']*\')/i', $output)) {
 		$output = preg_replace(
 			'/(<iframe[^>]*)\stitle=("[^"]*"|\'[^\']*\')/i',
@@ -638,6 +646,16 @@ function caes_wufoo_add_iframe_title($output, $tag, $attr)
 		);
 	} else {
 		$output = preg_replace('/<iframe\b/i', '<iframe' . $title_attr, $output, 1);
+	}
+
+	// Emit a marker for the JS observer to pick up.
+	if ($formhash !== '') {
+		$marker = sprintf(
+			'<span class="caes-wufoo-title" data-form-hash="%s" data-title="%s" hidden></span>',
+			esc_attr($formhash),
+			esc_attr($title)
+		);
+		$output = $marker . $output;
 	}
 
 	return $output;
