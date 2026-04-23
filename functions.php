@@ -662,6 +662,16 @@ function caes_wufoo_add_iframe_title($output, $tag, $attr)
 }
 add_filter('do_shortcode_tag', 'caes_wufoo_add_iframe_title', 10, 3);
 
+// Hide core/post-author when the post's author can't be resolved (deleted user, etc.).
+// Core renders an empty <a> tag in that case, which fails a11y link-name checks.
+add_filter('render_block_core/post-author', function ($block_content) {
+	$author_id = (int) get_post_field('post_author', get_the_ID());
+	if ($author_id && get_userdata($author_id)) {
+		return $block_content;
+	}
+	return '';
+});
+
 // Disable the font library addded in WordPress 6.5
 function disable_font_library_ui($editor_settings)
 {
