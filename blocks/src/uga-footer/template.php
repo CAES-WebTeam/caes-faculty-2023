@@ -26,6 +26,15 @@
 							<a class="ugafooter__links-list-link" href="https://eits.uga.edu/access_and_security/infosec/pols_regs/policies/privacy/">UGA Privacy Policy</a>
 						</li>
 						<?php
+						$submitComplaintLink = $attributes['submitComplaintLink'];
+						switch ($submitComplaintLink) {
+							case "true": ?>
+								<li class="ugafooter__links-list-item">
+									<a class="ugafooter__links-list-link" href="https://studentcomplaints.uga.edu/">Submit a Student Complaint</a>
+								</li>
+								<?php break; ?>
+						<?php } ?>
+						<?php
 						$a11ywording = $attributes['a11ywording'];
 						switch ($a11ywording) {
 							case "true": ?>
@@ -39,15 +48,8 @@
 								</li>
 								<?php break; ?>
 						<?php } ?>
-						<?php
-						$submitComplaintLink = $attributes['submitComplaintLink'];
-						switch ($submitComplaintLink) {
-							case "true": ?>
-								<li class="ugafooter__links-list-item">
-									<a class="ugafooter__links-list-link" href="https://studentcomplaints.uga.edu/">Submit a Student Complaint</a>
-								</li>
-								<?php break; ?>
-						<?php } ?>
+						<li class="ugafooter__links-list-item">
+							<a class="ugafooter__links-list-link" href="https://uga.teamdynamix.com/TDClient/3190/eitsclientportal/Requests/TicketRequests/NewForm?ID=7tC59R-FSCY_&RequestorType=Service">Report an Accessibility Barrier</a>
 						<?php
 						$login = $attributes['login'];
 						switch ($login) {
