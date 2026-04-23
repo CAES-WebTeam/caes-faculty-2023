@@ -49,6 +49,7 @@ This directory contains code for extending the core blocks in WordPress when the
 
 | Version | Date | Changes | Contributor |
 |---------|------|---------|-------------|
+| 1.4.59 | 2026-04-23 | Hide core/post-author block when author is unresolved, fixing empty link issue | Ashley |
 | 1.4.58 | 2026-04-15 | Add caes_title support tp Wufoo shortcode for iframe a11y | Ashley |
 | 1.4.57 | 2026-03-11 | Reverted parvus to 2.6.0 due to v3 bugs | Ashley |
 | 1.4.56 | 2026-03-11 | Fix Parvus 3 dialog overlay bug on gallery pages | Ashley |
