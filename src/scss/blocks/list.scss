@@ -7,3 +7,14 @@ ul.is-style-caes-fac-list-checkbox {
         font-size: var(--wp--preset--font-size--large);
     }
 }
+
+// Hanging indent for citations
+.is-style-caes-fac-list-citation {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        padding-inline-start: var(--wp--preset--spacing--60);
+        text-indent: calc(var(--wp--preset--spacing--60) * -1);
+    }
+}

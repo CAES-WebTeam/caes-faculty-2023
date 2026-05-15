@@ -1,1 +1,1 @@
-@charset "UTF-8";ul.is-style-caes-fac-list-checkbox{list-style:none}ul.is-style-caes-fac-list-checkbox li::marker{content:"☐ ";font-size:var(--wp--preset--font-size--large)}
+@charset "UTF-8";ul.is-style-caes-fac-list-checkbox{list-style:none}ul.is-style-caes-fac-list-checkbox li::marker{content:"☐ ";font-size:var(--wp--preset--font-size--large)}.is-style-caes-fac-list-citation{list-style:none;padding-left:0}.is-style-caes-fac-list-citation li{padding-inline-start:var(--wp--preset--spacing--60);text-indent:calc(var(--wp--preset--spacing--60)*-1)}

@@ -8,6 +8,11 @@ wp.blocks.registerBlockStyle( 'core/list', {
     label: 'List Style: Checkbox'
 } );
 
+wp.blocks.registerBlockStyle( 'core/list', {
+    name: 'caes-fac-list-citation',
+    label: 'List Style: Citation'
+} );
+
 wp.blocks.registerBlockStyle( 'core/gallery', {
     name: 'caes-fac-gallery-square',
     label: 'Square Images'
