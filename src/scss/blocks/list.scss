@@ -16,5 +16,6 @@ ul.is-style-caes-fac-list-checkbox {
     li {
         padding-inline-start: var(--wp--preset--spacing--60);
         text-indent: calc(var(--wp--preset--spacing--60) * -1);
+        margin-bottom: var(--wp--preset--spacing--30);
     }
 }
